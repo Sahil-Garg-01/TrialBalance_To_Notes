@@ -122,18 +122,45 @@ def generate_notes(tb_df, debtors_df=None, creditors_df=None):
 | 54,25,210 equity shares of ₹ 10/- each | {to_lakhs(result['total'])} | {to_lakhs(54252100)} |
 | Total issued, subscribed and fully paid-up share capital | {to_lakhs(result['total'])} | {to_lakhs(54252100)} |
 """
+        elif note_name == '3. Reserves and Surplus':
+            content = f"""
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                           | {to_lakhs(result['total'])}  
+"""
+        elif note_name == '4. Long Term Borrowings':
+                content = f"""
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                           | {to_lakhs(result['total'])}  
+"""
+        elif note_name == '5. Deferred Tax Liability':
+            content = f"""
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                         | {to_lakhs(result['total'])}  
+"""
+        elif note_name == '6. Trade Payables':
+            content = f"""
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                                 | {to_lakhs(result['total'])}  
+"""
         elif note_name == '7. Other Current Liabilities':
             expenses_payable = calculate_note(tb_df, note_name, ['Expenses Payable', 'payable', 'accrued'])['total']
             current_maturities = calculate_note(tb_df, note_name, ['Current Maturities', 'current portion'])['total']
             statutory_dues = 7935166.72  # Static value
             content = f"""
-| Particulars | 2024-03-31 | 2023-03-31 |
-|-------------|------------|------------|
-| Current Maturities of Long Term Borrowings | {to_lakhs(current_maturities)} | {to_lakhs(13920441)} |
-| Outstanding Liabilities for Expenses | {to_lakhs(expenses_payable)} | {to_lakhs(15688272)} |
-| Statutory dues | {to_lakhs(statutory_dues)} | {to_lakhs(4803131.66)} |
-| Total | {to_lakhs(current_maturities + expenses_payable + statutory_dues)} | {to_lakhs(34411844.66)} |
+                                             | March,31 2024  | March,31 2023         
+
+| Current Maturities of Long Term Borrowings | {to_lakhs(current_maturities)}          | {to_lakhs(13920441)} 
+| Outstanding Liabilities for Expenses       | {to_lakhs(expenses_payable)}         | {to_lakhs(15688272)} 
+| Statutory dues                             | {to_lakhs(statutory_dues)}          | {to_lakhs(4803131.66)} 
+                                             | {to_lakhs(current_maturities + expenses_payable + statutory_dues)}         | {to_lakhs(34411844.66)} 
 """
+        elif note_name == '8. Short Term Provisions':
+            content = f"""
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                          | {to_lakhs(result['total'])}  
+"""
+            
+
         elif note_name == '9. Fixed Assets':
             equipments = calculate_note(tb_df, note_name, ['Equipment', 'equipment'])['total']
             furniture = calculate_note(tb_df, note_name, ['Furniture', 'furniture', 'fixture'])['total']
@@ -143,12 +170,18 @@ def generate_notes(tb_df, debtors_df=None, creditors_df=None):
 | Particulars | Gross Carrying Value | Accumulated Depreciation | Net Carrying Value |
 |-------------|----------------------|--------------------------|--------------------|
 | As at 1st April 2023 | Additions | Deletion | As at 31st March 2024 | As at 1st April 2023 | For the year | Deletion | As at 31st March 2024 | As at 31st March 2024 | As at 1st April 2023 |
-| **Tangible Assets** | | | | | | | | | |
+| *Tangible Assets* | | | | | | | | | |
 | Buildings | {to_lakhs(312655)} | {to_lakhs(building)} | 0 | {to_lakhs(312655 + building)} | {to_lakhs(312654)} | {to_lakhs(1478808)} | 0 | {to_lakhs(1791462)} | {to_lakhs(building)} | {to_lakhs(1)} |
 | Equipments | {to_lakhs(equipments)} | {to_lakhs(0)} | 0 | {to_lakhs(equipments)} | {to_lakhs(0)} | {to_lakhs(0)} | 0 | {to_lakhs(0)} | {to_lakhs(equipments)} | {to_lakhs(equipments)} |
 | Furniture & Fixtures | {to_lakhs(furniture)} | {to_lakhs(0)} | 0 | {to_lakhs(furniture)} | {to_lakhs(0)} | {to_lakhs(0)} | 0 | {to_lakhs(0)} | {to_lakhs(furniture)} | {to_lakhs(furniture)} |
 | Motor Vehicle | {to_lakhs(vehicle)} | 0 | 0 | {to_lakhs(vehicle)} | {to_lakhs(0)} | {to_lakhs(752982.45)} | 0 | {to_lakhs(752982.45)} | {to_lakhs(vehicle - 752982.45)} | {to_lakhs(vehicle)} |
 """
+        elif note_name == '11. Inventories':
+                content = f"""
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                                    | {to_lakhs(result['total'])}  
+"""
+
         elif note_name == '12. Trade Receivables':
             over_6m = result.get('over_6m', 0)
             content = f"""
@@ -162,7 +195,35 @@ def generate_notes(tb_df, debtors_df=None, creditors_df=None):
             content = """
 As per Accounting Standard 18, the disclosures of related parties as defined in the Accounting Standard are given below:
 [Related party details require external input.]
+
 """
+        elif note_name == '13. Cash and Cash Equivalents':
+            content = f"""
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                      | {to_lakhs(result['total'])}  
+"""
+        elif note_name == '14. Short Term Loans and Advances':
+            content = f"""
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                  | {to_lakhs(result['total'])}  
+"""
+        
+        elif note_name == '16. Revenue from Operations':
+            content = f"""
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                        | {to_lakhs(result['total'])}  
+"""
+        elif note_name == '17. Other Income':
+            content = f"""
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                                   | {to_lakhs(result['total'])}  
+"""
+        elif note_name == '18. Cost of Materials Consumed':
+            content = f"""
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                     | {to_lakhs(result['total'])}  
+"""
+            
         elif note_name == '30. Financial Ratios':
             current_assets = sum(calculate_note(tb_df, note_name, [kw])['total'] for kw in ['Stock', 'Cash', 'Bank', 'Receivables', 'Prepaid'])
             current_liabilities = sum(calculate_note(tb_df, note_name, [kw])['total'] for kw in ['Creditors', 'Payable'])
@@ -176,9 +237,8 @@ As per Accounting Standard 18, the disclosures of related parties as defined in 
 """
         else:
             content = f"""
-| Particulars | 2024-03-31 | 2023-03-31 |
-|-------------|------------|------------|
-| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name} | {to_lakhs(result['total'])} | - |
+                                                 | March,31 2024  | March,31 2023    
+| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                      | {to_lakhs(result['total'])}  
 """
         notes.append({'Note': note_name, 'Content': content, 'Total': result['total'], 'Matched_Accounts': len(result.get('matched_accounts', []))})
     return notes
@@ -186,7 +246,7 @@ As per Accounting Standard 18, the disclosures of related parties as defined in 
 def main():
     try:
         # Load parsed_trial_balance.json from test_mapping.py output
-        json_file = "parsed_trial_balance.json"
+        json_file = "output1/parsed_trial_balance.json"
         if not os.path.exists(json_file):
             raise FileNotFoundError(f"❌ {json_file} not found! Please run test_mapping.py first.")
 
@@ -224,7 +284,7 @@ def main():
         notes = generate_notes(tb_df, debtors_df, creditors_df)
 
         # Save to markdown
-        os.makedirs("outputs", exist_ok=True)
+        os.makedirs("output2", exist_ok=True)
         output = "# Notes to Financial Statements for the Year Ended March 31, 2024\n\n"
         
         print(f"\n📝 Generated {len(notes)} notes:")
@@ -233,9 +293,9 @@ def main():
             if note['Total'] != 0:
                 print(f"   ✅ {note['Note']}: ₹{note['Total']:,.2f} ({note['Matched_Accounts']} accounts)")
             else:
-                print(f"   ⚠️  {note['Note']}: No matching accounts found")
+                print(f"   ⚠  {note['Note']}: No matching accounts found")
         
-        with open("outputs/financial_notes_all.md", "w", encoding="utf-8") as f:
+        with open("output2/financial_notes_all.md", "w", encoding="utf-8") as f:
             f.write(output)
 
         # Save to CSV
@@ -245,7 +305,7 @@ def main():
         
         # output_df.to_csv("outputs/notes_output.csv", index=False, encoding="utf-8")
         # Save to JSON instead of CSV
-        with open("outputs/notes_output.json", "w", encoding="utf-8") as f:
+        with open("output2/notes_output.json", "w", encoding="utf-8") as f:
             json.dump(notes, f, ensure_ascii=False, indent=2)
         
         print(f"\n🎉 Notes generated successfully!")
