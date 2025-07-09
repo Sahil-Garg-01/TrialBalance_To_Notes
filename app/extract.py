@@ -83,7 +83,7 @@ def classify_account(account_name, exact_mappings, keyword_rules, smart_rules, l
     #                 "Content-Type": "application/json"
     #             },
     #             json={
-    #                 "model": "qwen/qwen3-30b-a3b",
+    #                 "model": "mistralai/mixtral-8x7b-instruct",
     #                 "messages": [
     #                     {
     #                         "role": "system",
@@ -94,14 +94,17 @@ def classify_account(account_name, exact_mappings, keyword_rules, smart_rules, l
     #                         "content": account_name
     #                     }
     #                 ]
-    #             }
+    #             },
+    #             timeout=10  # <-- Add this line!
     #         )
+    #         response.raise_for_status()
     #         llm_response = response.json()
     #         llm_suggestion = llm_response['choices'][0]['message']['content'].strip()
     #         return llm_suggestion, "llm_fallback"
-    #     except Exception as e:
+    #     except requests.exceptions.RequestException as e:
     #         print(f"LLM fallback failed: {e}")
-    #         pass
+    #     except Exception as e:
+    #         print(f"Unexpected error in LLM fallback: {e}")
     return 'Unmapped', 'Unmapped'
 
 def extract_trial_balance_data(file_path, sheet_name=0, header_row=0):

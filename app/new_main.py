@@ -364,18 +364,22 @@ Generate the complete JSON structure now:
         try:
             with open(raw_output_path, 'w', encoding='utf-8') as f:
                 f.write(note_data)
-            print(f"💾 Raw response saved to {raw_output_path}")
-
+            # Only print JSON path if you want
+            # print(f"💾 Raw response saved to {raw_output_path}")
+            
             json_data, json_string = self.extract_json_from_markdown(note_data)
             if json_data:
                 with open(json_output_path, 'w', encoding='utf-8') as f:
                     json.dump(json_data, f, indent=2, ensure_ascii=False)
                 print(f"✅ JSON saved to {json_output_path}")
                 
-                if 'markdown_content' in json_data:
-                    with open(formatted_md_path, 'w', encoding='utf-8') as f:
-                        f.write(json_data['markdown_content'])
-                    print(f"📝 Formatted markdown saved to {formatted_md_path}")
+                # Always write markdown file, fallback if missing
+                md_content = json_data.get('markdown_content')
+                if not md_content:
+                    md_content = f"# Note {note_number}\n\n```json\n{json.dumps(json_data, indent=2)}\n```"
+                with open(formatted_md_path, 'w', encoding='utf-8') as f:
+                    f.write(md_content)
+                # print(f"📝 Formatted markdown saved to {formatted_md_path}")
                 
                 return True
             else:

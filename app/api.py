@@ -86,7 +86,14 @@ async def generate_llm_note(
         success = generator.generate_note(note_number, trial_balance_path=output_json)
         if not success:
             raise HTTPException(status_code=500, detail=f"Failed to generate note {note_number}. LLM API may be down or unreachable.")
-        return JSONResponse({"message": f"Note {note_number} generated successfully."})
+        # Read and return the generated JSON file content
+        json_path = f"generated_notes/note_{note_number}.json"
+        if not os.path.exists(json_path):
+            raise HTTPException(status_code=404, detail=f"Generated note file not found: {json_path}")
+        with open(json_path, "r", encoding="utf-8") as f:
+            note_content = f.read()
+        import json as pyjson
+        return JSONResponse(content=pyjson.loads(note_content))
     else:
         results = generator.generate_all_notes(trial_balance_path=output_json)
         if not any(results.values()):
