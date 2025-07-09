@@ -70,41 +70,38 @@ def classify_account(account_name, exact_mappings, keyword_rules, smart_rules, l
         for pattern in patterns:
             if re.search(pattern, account_name_clean):
                 return group, "smart_rules"
+            
     # LLM Fallback
-    load_dotenv()
-    api_key = os.getenv("OPENROUTER_API_KEY")
-    if api_key:
-        try:
-            response = requests.post(
-                "https://openrouter.ai/api/v1/chat/completions",
-                headers={
-                    "Authorization": f"Bearer {api_key}",
-                    "Content-Type": "application/json"
-                },
-                json={
-                    "model": llm_model,
-                    "messages": [
-                        {
-                            "role": "system",
-                            "content": "You are a financial expert. Classify the following account name into one of these categories: Equity, Non-Current Liability, Current Liability, Non-Current Asset, Current Asset, Revenue from Operations, Cost of Materials Consumed, Direct Expenses, Other Income, Other Expenses, Employee Benefits Expense, Finance Cost, Accumulated Depreciation, Deferred Tax Liability, Profit and Loss Account. Respond only with the category name."
-                        },
-                        {
-                            "role": "user",
-                            "content": account_name
-                        }
-                    ]
-                }
-            )
-            response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
-            llm_response = response.json()
-            llm_suggestion = llm_response['choices'][0]['message']['content'].strip()
-            return llm_suggestion, "llm_fallback"
-        except requests.exceptions.RequestException as e:
-            print(f"LLM fallback failed: {e}")
-            pass
-        except (KeyError, IndexError) as e:
-            print(f"LLM response parsing error: {e}")
-            pass
+    # load_dotenv()
+    # api_key = os.getenv("OPENROUTER_API_KEY")
+    # if api_key:
+    #     try:
+    #         response = requests.post(
+    #             "https://openrouter.ai/api/v1/chat/completions",
+    #             headers={
+    #                 "Authorization": f"Bearer {api_key}",
+    #                 "Content-Type": "application/json"
+    #             },
+    #             json={
+    #                 "model": "qwen/qwen3-30b-a3b",
+    #                 "messages": [
+    #                     {
+    #                         "role": "system",
+    #                         "content": "You are a financial expert. Classify the following account name into one of these categories: Equity, Non-Current Liability, Current Liability, Non-Current Asset, Current Asset, Revenue from Operations, Cost of Materials Consumed, Direct Expenses, Other Income, Other Expenses, Employee Benefits Expense, Finance Cost, Accumulated Depreciation, Deferred Tax Liability, Profit and Loss Account. Respond only with the category name."
+    #                     },
+    #                     {
+    #                         "role": "user",
+    #                         "content": account_name
+    #                     }
+    #                 ]
+    #             }
+    #         )
+    #         llm_response = response.json()
+    #         llm_suggestion = llm_response['choices'][0]['message']['content'].strip()
+    #         return llm_suggestion, "llm_fallback"
+    #     except Exception as e:
+    #         print(f"LLM fallback failed: {e}")
+    #         pass
     return 'Unmapped', 'Unmapped'
 
 def extract_trial_balance_data(file_path, sheet_name=0, header_row=0):

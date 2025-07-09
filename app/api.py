@@ -1,4 +1,4 @@
-from fastapi import APIRouter, UploadFile, File, Form
+from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 from fastapi.responses import JSONResponse, PlainTextResponse
 from typing import Optional
 from app.notes import generate_notes
@@ -7,6 +7,7 @@ import pandas as pd
 import os
 import shutil
 from app.extract import extract_trial_balance_data, analyze_and_save_results
+from app.new_main import FlexibleFinancialNoteGenerator  
 
 router = APIRouter()
 
@@ -55,3 +56,39 @@ async def post_notes_text(
     for note in notes:
         md += f"## {note['Note']}\n\n{note['Content']}\n\n"
     return PlainTextResponse(md, media_type="text/plain")
+
+
+@router.post("/llm")
+async def generate_llm_note(
+    file: UploadFile = File(...),
+    note_number: Optional[str] = Form(None)
+):
+    
+    # 1. Save uploaded Excel file
+    os.makedirs("input", exist_ok=True)
+    file_location = f"input/{file.filename}"
+    with open(file_location, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+
+    # 2. Extract trial balance and save as JSON
+    structured_data = extract_trial_balance_data(file_location)
+    output_json = "output1/parsed_trial_balance.json"
+    analyze_and_save_results(structured_data, output_json)
+
+    # 3. Initialize the generator
+    try:
+        generator = FlexibleFinancialNoteGenerator()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Generator init failed: {e}")
+
+    # 4. Generate notes using the extracted JSON
+    if note_number:
+        success = generator.generate_note(note_number, trial_balance_path=output_json)
+        if not success:
+            raise HTTPException(status_code=500, detail=f"Failed to generate note {note_number}. LLM API may be down or unreachable.")
+        return JSONResponse({"message": f"Note {note_number} generated successfully."})
+    else:
+        results = generator.generate_all_notes(trial_balance_path=output_json)
+        if not any(results.values()):
+            raise HTTPException(status_code=500, detail="Failed to generate any notes. LLM API may be down or unreachable.")
+        return JSONResponse({"results": results})
