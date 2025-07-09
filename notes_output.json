@@ -1,0 +1,122 @@
+[
+  {
+    "Note": "2. Share Capital",
+    "Content": "\n| Particulars | 2024-03-31 | 2023-03-31 |\n|-------------|------------|------------|\n| Authorised shares | | |\n| 75,70,000 equity shares of ₹ 10/- each | 757.0 | 757.0 |\n| Issued, subscribed and fully paid-up shares | | |\n| 54,25,210 equity shares of ₹ 10/- each | 542.52 | 542.52 |\n| Total issued, subscribed and fully paid-up share capital | 542.52 | 542.52 |\n",
+    "Total": 54252100.0,
+    "Matched_Accounts": 1
+  },
+  {
+    "Note": "3. Reserves and Surplus",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Reserves and Surplus                           | 315.31  \n",
+    "Total": 31530868.0,
+    "Matched_Accounts": 1
+  },
+  {
+    "Note": "4. Long Term Borrowings",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Long Term Borrowings                           | 2416.29  \n",
+    "Total": 241628599.92000002,
+    "Matched_Accounts": 11
+  },
+  {
+    "Note": "5. Deferred Tax Liability",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Deferred Tax Liability                         | 43.19  \n",
+    "Total": 4318647.0,
+    "Matched_Accounts": 1
+  },
+  {
+    "Note": "6. Trade Payables",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Trade Payables                                 | 147.01  \n",
+    "Total": 14701343.76,
+    "Matched_Accounts": 1
+  },
+  {
+    "Note": "7. Other Current Liabilities",
+    "Content": "\n                                             | March,31 2024  | March,31 2023         \n\n| Current Maturities of Long Term Borrowings | 79.35          | 139.2 \n| Outstanding Liabilities for Expenses       | 124.98         | 156.88 \n| Statutory dues                             | 79.35          | 48.03 \n                                             | 283.68         | 344.12 \n",
+    "Total": 12497916.059999999,
+    "Matched_Accounts": 3
+  },
+  {
+    "Note": "8. Short Term Provisions",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Short Term Provisions                          | 36.46  \n",
+    "Total": 3645955.0,
+    "Matched_Accounts": 1
+  },
+  {
+    "Note": "9. Fixed Assets",
+    "Content": "\n| Particulars | Gross Carrying Value | Accumulated Depreciation | Net Carrying Value |\n|-------------|----------------------|--------------------------|--------------------|\n| As at 1st April 2023 | Additions | Deletion | As at 31st March 2024 | As at 1st April 2023 | For the year | Deletion | As at 31st March 2024 | As at 31st March 2024 | As at 1st April 2023 |\n| *Tangible Assets* | | | | | | | | | |\n| Buildings | 3.13 | 50.42 | 0 | 53.55 | 3.13 | 14.79 | 0 | 17.91 | 50.42 | 0.0 |\n| Equipments | 2081.97 | 0.0 | 0 | 2081.97 | 0.0 | 0.0 | 0 | 0.0 | 2081.97 | 2081.97 |\n| Furniture & Fixtures | 380.01 | 0.0 | 0 | 380.01 | 0.0 | 0.0 | 0 | 0.0 | 380.01 | 380.01 |\n| Motor Vehicle | 77.21 | 0 | 0 | 77.21 | 0.0 | 7.53 | 0 | 7.53 | 69.68 | 77.21 |\n",
+    "Total": 982803257.7400001,
+    "Matched_Accounts": 11
+  },
+  {
+    "Note": "10. Long Term Loans and Advances",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Long Term Loans and Advances                      | 741.42  \n",
+    "Total": 74141596.0,
+    "Matched_Accounts": 2
+  },
+  {
+    "Note": "11. Inventories",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Inventories                                    | 10.13  \n",
+    "Total": 1013265.0,
+    "Matched_Accounts": 1
+  },
+  {
+    "Note": "12. Trade Receivables",
+    "Content": "\n| Particulars | 2024-03-31 | 2023-03-31 |\n|-------------|------------|------------|\n| Unsecured, considered good | | |\n| Outstanding for a period exceeding six months | 0.0 | 104.65 |\n| Total | 951.11 | 1037.59 |\n",
+    "Total": 95110816.25,
+    "Matched_Accounts": 3
+  },
+  {
+    "Note": "13. Cash and Cash Equivalents",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Cash and Cash Equivalents                      | 1031.67  \n",
+    "Total": 103166775.06,
+    "Matched_Accounts": 5
+  },
+  {
+    "Note": "14. Short Term Loans and Advances",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Short Term Loans and Advances                  | 502.98  \n",
+    "Total": 50298049.19,
+    "Matched_Accounts": 8
+  },
+  {
+    "Note": "15. Other Current Assets",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Other Current Assets                      | 2024.45  \n",
+    "Total": 202445127.03,
+    "Matched_Accounts": 1
+  },
+  {
+    "Note": "16. Revenue from Operations",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Revenue from Operations                        | 3423.95  \n",
+    "Total": 342395090.92,
+    "Matched_Accounts": 8
+  },
+  {
+    "Note": "17. Other Income",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Other Income                                   | 89.75  \n",
+    "Total": 8975187.16,
+    "Matched_Accounts": 2
+  },
+  {
+    "Note": "18. Cost of Materials Consumed",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Cost of Materials Consumed                     | 1874.97  \n",
+    "Total": 187496750.67,
+    "Matched_Accounts": 5
+  },
+  {
+    "Note": "28. Earnings per Share",
+    "Content": "\n                                                 | March,31 2024  | March,31 2023    \n| Earnings per Share                      | 2241.88  \n",
+    "Total": 224187708.15000004,
+    "Matched_Accounts": 3
+  },
+  {
+    "Note": "29. Related Party Disclosures",
+    "Content": "\nAs per Accounting Standard 18, the disclosures of related parties as defined in the Accounting Standard are given below:\n[Related party details require external input.]\n\n",
+    "Total": 0,
+    "Matched_Accounts": 0
+  },
+  {
+    "Note": "30. Financial Ratios",
+    "Content": "\n| Particulars | 2024-03-31 | 2023-03-31 |\n|-------------|------------|------------|\n| Current Ratio | 5.97 | 2.52 |\n| Current Assets | 1149.85 | - |\n| Current Liabilities | 192.64 | - |\n",
+    "Total": 132659125.1,
+    "Matched_Accounts": 11
+  }
+]

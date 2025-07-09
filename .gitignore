@@ -2,3 +2,5 @@ venv/
 output1/
 output2/
 Book2.xlsx
+.env
+app/__pycache__/

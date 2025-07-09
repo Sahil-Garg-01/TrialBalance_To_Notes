@@ -1,6 +1,5 @@
 import pandas as pd
 import json
-import sys
 import os
 import re
 import glob
@@ -8,22 +7,23 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
-api_key = os.getenv("OPENROUTER_API_KEY")
-
-def load_mappings():
+def load_mappings(mapping_file='mapping1.json', rules_file='rules1.json'):
+    """Loads exact mappings and keyword rules from JSON files."""
     exact_mappings = {}
     keyword_rules = {}
-    if Path('mapping1.json').exists():
-        with open('mapping1.json', 'r') as f:
-            exact_mappings = json.load(f)
-    if Path('rules1.json').exists():
-        with open('rules1.json', 'r') as f:
-            keyword_rules = json.load(f)
+    try:
+        if Path(mapping_file).exists():
+            with open(mapping_file, 'r') as f:
+                exact_mappings = json.load(f)
+        if Path(rules_file).exists():
+            with open(rules_file, 'r') as f:
+                keyword_rules = json.load(f)
+    except Exception as e:
+        print(f"Error loading mappings: {e}")
     return exact_mappings, keyword_rules
 
 def get_smart_rules():
+    """Returns a dictionary of smart rules for account classification."""
     return {
         'Cash and Cash Equivalents': [r'\b(cash|bank|petty|till|vault|fd|fixed\s*deposit)\b'],
         'Trade Receivables': [r'\b(debtor|receivable|customer|outstanding.*debtor)\b'],
@@ -38,11 +38,11 @@ def get_smart_rules():
     }
 
 def parse_amount(amount_str):
+    """Parses an amount string and returns a float."""
     if pd.isna(amount_str) or amount_str == '':
         return 0.0
     amount_str = str(amount_str).strip()
-    is_credit = bool(re.search(r'\bcr\b', amount_str, re.IGNORECASE))
-    is_debit = bool(re.search(r'\bdr\b', amount_str, re.IGNORECASE))
+    is_credit = amount_str.lower().endswith('cr')
     amount_str = re.sub(r'[^\d\.\-\+]', '', amount_str)
     if not amount_str or amount_str in ['-', '+']:
         return 0.0
@@ -54,29 +54,25 @@ def parse_amount(amount_str):
     except ValueError:
         return 0.0
 
-def classify_account(account_name, exact_mappings, keyword_rules, smart_rules):
+def classify_account(account_name, exact_mappings, keyword_rules, smart_rules, llm_model="qwen/qwen3-30b-a3b"):
+    """Classifies an account name into a category."""
     account_name_clean = account_name.strip().lower()
-    
-    # Prioritize exact match from mapping.json
     if account_name in exact_mappings:
         return exact_mappings[account_name], "mapping.json"
     for mapped_name, group in exact_mappings.items():
         if mapped_name.lower() == account_name_clean:
             return group, "mapping.json"
-    
-    # Check keyword rules from rules.json
     for group, keywords in keyword_rules.items():
         for keyword in keywords:
             if keyword.lower() in account_name_clean.split():
                 return group, "rules.json"
-    
-    # Check smart rules with regex
     for group, patterns in smart_rules.items():
         for pattern in patterns:
             if re.search(pattern, account_name_clean):
                 return group, "smart_rules"
-    
-    # Fallback to LLM if API key is available
+    # LLM Fallback
+    load_dotenv()
+    api_key = os.getenv("OPENROUTER_API_KEY")
     if api_key:
         try:
             response = requests.post(
@@ -86,7 +82,7 @@ def classify_account(account_name, exact_mappings, keyword_rules, smart_rules):
                     "Content-Type": "application/json"
                 },
                 json={
-                    "model": "qwen/qwen3-30b-a3b",
+                    "model": llm_model,
                     "messages": [
                         {
                             "role": "system",
@@ -99,18 +95,25 @@ def classify_account(account_name, exact_mappings, keyword_rules, smart_rules):
                     ]
                 }
             )
+            response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
             llm_response = response.json()
             llm_suggestion = llm_response['choices'][0]['message']['content'].strip()
             return llm_suggestion, "llm_fallback"
-        except Exception as e:
+        except requests.exceptions.RequestException as e:
             print(f"LLM fallback failed: {e}")
             pass
-    
-    # Default to Unmapped if no match or LLM fails
+        except (KeyError, IndexError) as e:
+            print(f"LLM response parsing error: {e}")
+            pass
     return 'Unmapped', 'Unmapped'
 
-def extract_trial_balance_data(file_path):
-    df_raw = pd.read_excel(file_path, header=None)
+def extract_trial_balance_data(file_path, sheet_name=0, header_row=0):
+    """Extracts trial balance data from an Excel file."""
+    try:
+        df_raw = pd.read_excel(file_path, sheet_name=sheet_name, header=header_row)
+    except Exception as e:
+        print(f"Error reading Excel file: {e}")
+        return []
     exact_mappings, keyword_rules = load_mappings()
     smart_rules = get_smart_rules()
     structured_data = []
@@ -141,6 +144,7 @@ def extract_trial_balance_data(file_path):
     return structured_data
 
 def analyze_and_save_results(structured_data, output_file):
+    """Analyzes and saves the extracted data to a JSON file."""
     total_records = len(structured_data)
     mapped_records = [r for r in structured_data if r['mapped_by'] != 'Unmapped']
     unmapped_records = [r for r in structured_data if r['mapped_by'] == 'Unmapped']
@@ -158,22 +162,15 @@ def analyze_and_save_results(structured_data, output_file):
         account_groups[group]['count'] += 1
         account_groups[group]['total_amount'] += abs(record['amount'])
     os.makedirs('output1', exist_ok=True)
-    with open(output_file, 'w') as f:
-        json.dump(structured_data, f, indent=2)
-    
-    if mapping_methods:
-        for method, count in sorted(mapping_methods.items()):
-            percentage = (count / len(mapped_records) * 100) if mapped_records else 0
-    if account_groups:
-        for group, data in sorted(account_groups.items(), key=lambda x: x[1]['count'], reverse=True):
-            percentage = (data['count'] / total_records * 100) if total_records > 0 else 0
-    if unmapped_records:
-        for i, record in enumerate(unmapped_records[:10], 1):
-            amount_str = f"₹{abs(record['amount']):,.2f}" if record['amount'] != 0 else "₹0.00"
-        
+    try:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(structured_data, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"Error saving results to JSON: {e}")
     return structured_data
 
 def find_file(filename):
+    """Finds a file with a given name in the current directory and the input directory."""
     possible_paths = [
         filename,
         f"input/{filename}",
@@ -189,18 +186,3 @@ def find_file(filename):
         if filename_lower in file_name_lower:
             return file_path
     return None
-
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Start fails")
-        sys.exit(1)
-    filename = sys.argv[1]
-    file_path = find_file(filename)
-    structured_data = extract_trial_balance_data(file_path)
-    output_file = "output1/parsed_trial_balance.json"
-    final_data = analyze_and_save_results(structured_data, output_file)
-    if final_data:
-        sample_record = final_data[0]
-        
-    print(f"\nComplete! Check {output_file}.") 
-    

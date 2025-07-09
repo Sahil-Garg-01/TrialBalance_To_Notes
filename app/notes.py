@@ -1,46 +1,20 @@
-import pandas as pd
-import os
-import json
-
-def clean_value(value):
-    try:
-        if isinstance(value, str):
-            value = value.replace(',', '').strip()
-        return float(value) if value else 0.0
-    except (ValueError, TypeError):
-        return 0.0
-
-def to_lakhs(value):
-    return round(value / 100000, 2)
-
-def find_account_col(df):
-    for col in df.columns:
-        if df[col].astype(str).str.contains('account|particulars|name', case=False, na=False).any():
-            return col
-    return df.columns[0]
-
-def find_balance_col(df):
-    for col in df.columns:
-        if df[col].dtype in [float, int] and df[col].notna().any():
-            return col
-    return df.columns[1] if len(df.columns) > 1 else None
+from app.utils import clean_value, to_lakhs
 
 def calculate_note(df, note_name, keywords, exclude=None, other_df=None):
-    # Updated to work with the new DataFrame structure from test_mapping.py
     if 'account_name' in df.columns:
         account_col = 'account_name'
         balance_col = 'amount'
     else:
-        account_col = find_account_col(df)
-        balance_col = find_balance_col(df)
-    
+        account_col = df.columns[0]
+        balance_col = df.columns[1] if len(df.columns) > 1 else None
+
     if not balance_col:
         return {'total': 0}
-    
+
     df = df.fillna(0)
     total = 0
     matched_accounts = []
-    
+
     for idx, row in df.iterrows():
         account_name = str(row[account_col]).strip().lower()
         if any(kw.lower() in account_name for kw in keywords) and (not exclude or not any(ex.lower() in account_name for ex in exclude)):
@@ -51,8 +25,8 @@ def calculate_note(df, note_name, keywords, exclude=None, other_df=None):
                 'amount': amount,
                 'group': row.get('group', 'Unknown') if 'group' in df.columns else 'Unknown'
             })
-    
-    # Handle special cases
+
+    # Special case for Trade Receivables
     if other_df is not None and note_name == '12. Trade Receivables':
         if 'Pending' in other_df.columns:
             total = other_df['Pending'].sum()
@@ -60,11 +34,11 @@ def calculate_note(df, note_name, keywords, exclude=None, other_df=None):
         else:
             over_6m = 0
         return {'total': total, 'over_6m': over_6m, 'matched_accounts': matched_accounts}
-    
+
     if note_name == '7. Other Current Liabilities' and other_df is None:
         statutory_dues = 7935166.72  # Static value
         total += statutory_dues
-    
+
     return {'total': total, 'matched_accounts': matched_accounts}
 
 def generate_notes(tb_df, debtors_df=None, creditors_df=None):
@@ -81,35 +55,22 @@ def generate_notes(tb_df, debtors_df=None, creditors_df=None):
         '10. Long Term Loans and Advances': {'keywords': ['Long Term', 'Security Deposits', 'advances', 'deposits']},
         '11. Inventories': {'keywords': ['Stock', 'Inventory', 'stock', 'inventory', 'goods']},
         '12. Trade Receivables': {'keywords': ['Receivables', 'receivables', 'debtors', 'trade receivable']},
-        '13. Cash and Cash Equivalents': {'keywords': ['Cash', 'Bank', 'cash', 'bank', 'Fixed Deposit', 'fd']},
-        '14. Short Term Loans and Advances': {'keywords': ['Prepaid', 'TDS', 'Advance', 'advance', 'prepaid']},
+        '13. Cash and Bank Balances': {'keywords': ['Cash-in-hand', 'Bank accounts','Deposits']},
+        '14. Short Term Loans and Advances': {'keywords': ['Prepaid Expenses', 'TDS Receivables', 'Loans & Advances', 'TCS RECEIVABLES', 'TDS Advance Tax Paid', 'Advance to Perennail']},
         '15. Other Current Assets': {'keywords': ['Interest accrued', 'accrued', 'current asset']},
         '16. Revenue from Operations': {'keywords': ['Revenue', 'Sales', 'Service', 'income', 'operations']},
-        '17. Other Income': {'keywords': ['Interest income', 'other income', 'gain', 'forex']},
-        '18. Cost of Materials Consumed': {'keywords': ['Purchase', 'Cost', 'Material', 'consumed']},
+        '17. Other Income': {'keywords': ['Interest on FD', 'Interest on Income Tax Refund', 'Unadjusted Forex Gain/Loss', 'Forex Gain / Loss']},
+        '18. Cost of Materials Consumed': {'keywords': ['opening stock', 'Bio Lab Consumables', 'Non GST', 'Purchase GST','closing stock']},
         '28. Earnings per Share': {'keywords': ['Profit', 'Loss', 'profit', 'loss']},
         '29. Related Party Disclosures': {'keywords': []},
         '30. Financial Ratios': {'keywords': ['Stock', 'Cash', 'Bank', 'Receivables', 'Creditors', 'Payable']}
     }
 
-    print("🔍 Generating notes from parsed trial balance data...")
-    print(f"📊 Total records in trial balance: {len(tb_df)}")
-    
     for note_name, mapping in note_mappings.items():
         keywords = mapping['keywords']
         exclude = mapping.get('exclude', [])
         other_df = debtors_df if note_name == '12. Trade Receivables' else creditors_df if note_name == '6. Trade Payables' else None
         result = calculate_note(tb_df, note_name, keywords, exclude, other_df)
-
-        # Print matching info for debugging
-        if result['matched_accounts']:
-            print(f"\n📝 {note_name}:")
-            print(f"   💰 Total: ₹{result['total']:,.2f} ({to_lakhs(result['total'])} Lakhs)")
-            print(f"   🎯 Matched {len(result['matched_accounts'])} accounts:")
-            for acc in result['matched_accounts'][:3]:  # Show first 3
-                print(f"      • {acc['account']}: ₹{acc['amount']:,.2f}")
-            if len(result['matched_accounts']) > 3:
-                print(f"      ... and {len(result['matched_accounts']) - 3} more")
 
         content = ""
         if note_name == '2. Share Capital':
@@ -128,7 +89,7 @@ def generate_notes(tb_df, debtors_df=None, creditors_df=None):
 | {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                           | {to_lakhs(result['total'])}  
 """
         elif note_name == '4. Long Term Borrowings':
-                content = f"""
+            content = f"""
                                                  | March,31 2024  | March,31 2023    
 | {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                           | {to_lakhs(result['total'])}  
 """
@@ -159,8 +120,6 @@ def generate_notes(tb_df, debtors_df=None, creditors_df=None):
                                                  | March,31 2024  | March,31 2023    
 | {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                          | {to_lakhs(result['total'])}  
 """
-            
-
         elif note_name == '9. Fixed Assets':
             equipments = calculate_note(tb_df, note_name, ['Equipment', 'equipment'])['total']
             furniture = calculate_note(tb_df, note_name, ['Furniture', 'furniture', 'fixture'])['total']
@@ -170,18 +129,17 @@ def generate_notes(tb_df, debtors_df=None, creditors_df=None):
 | Particulars | Gross Carrying Value | Accumulated Depreciation | Net Carrying Value |
 |-------------|----------------------|--------------------------|--------------------|
 | As at 1st April 2023 | Additions | Deletion | As at 31st March 2024 | As at 1st April 2023 | For the year | Deletion | As at 31st March 2024 | As at 31st March 2024 | As at 1st April 2023 |
-| *Tangible Assets* | | | | | | | | | |
+| Tangible Assets | | | | | | | | | |
 | Buildings | {to_lakhs(312655)} | {to_lakhs(building)} | 0 | {to_lakhs(312655 + building)} | {to_lakhs(312654)} | {to_lakhs(1478808)} | 0 | {to_lakhs(1791462)} | {to_lakhs(building)} | {to_lakhs(1)} |
 | Equipments | {to_lakhs(equipments)} | {to_lakhs(0)} | 0 | {to_lakhs(equipments)} | {to_lakhs(0)} | {to_lakhs(0)} | 0 | {to_lakhs(0)} | {to_lakhs(equipments)} | {to_lakhs(equipments)} |
 | Furniture & Fixtures | {to_lakhs(furniture)} | {to_lakhs(0)} | 0 | {to_lakhs(furniture)} | {to_lakhs(0)} | {to_lakhs(0)} | 0 | {to_lakhs(0)} | {to_lakhs(furniture)} | {to_lakhs(furniture)} |
 | Motor Vehicle | {to_lakhs(vehicle)} | 0 | 0 | {to_lakhs(vehicle)} | {to_lakhs(0)} | {to_lakhs(752982.45)} | 0 | {to_lakhs(752982.45)} | {to_lakhs(vehicle - 752982.45)} | {to_lakhs(vehicle)} |
 """
         elif note_name == '11. Inventories':
-                content = f"""
+            content = f"""
                                                  | March,31 2024  | March,31 2023    
-| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                                    | {to_lakhs(result['total'])}  
+| Consumables                                    | {to_lakhs(result['total'])}  
 """
-
         elif note_name == '12. Trade Receivables':
             over_6m = result.get('over_6m', 0)
             content = f"""
@@ -191,48 +149,105 @@ def generate_notes(tb_df, debtors_df=None, creditors_df=None):
 | Outstanding for a period exceeding six months | {to_lakhs(over_6m)} | {to_lakhs(10465395)} |
 | Total | {to_lakhs(result['total'])} | {to_lakhs(103758506)} |
 """
-        elif note_name == '29. Related Party Disclosures':
-            content = """
-As per Accounting Standard 18, the disclosures of related parties as defined in the Accounting Standard are given below:
-[Related party details require external input.]
-
-"""
-        elif note_name == '13. Cash and Cash Equivalents':
+        elif note_name == '13. Cash and Bank Balances':
+            cash_in_hand = calculate_note(tb_df, note_name, ['Cash-in-hand'])['total']
+            bank_accounts = calculate_note(tb_df, note_name, ['Bank accounts'])['total']
+            fixed_deposit = calculate_note(tb_df, note_name, ['Deposits'])['total']
+            total = cash_in_hand + bank_accounts + fixed_deposit
             content = f"""
-                                                 | March,31 2024  | March,31 2023    
-| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                      | {to_lakhs(result['total'])}  
+| Particulars      | March 31, 2024 | March 31, 2023 |
+|------------------|----------------|----------------|
+| Cash in hand     | {to_lakhs(cash_in_hand)}        | -              |
+| Bank accounts    | {to_lakhs(bank_accounts)}       | -              |
+| Fixed Deposit    | {to_lakhs(fixed_deposit)}       | -              |
+| **Total**        | **{to_lakhs(total)}**           | -              |
 """
+            result['total'] = total
         elif note_name == '14. Short Term Loans and Advances':
+            otherAdvances = calculate_note(tb_df, note_name, ['Loans & Advances'])['total']
+            PrepaidExpenses = calculate_note(tb_df, note_name, ['Prepaid Expenses'])['total']
+            advancetaxes = calculate_note(tb_df, note_name, ['TDS Advance Tax Paid'])['total']
+            balances = calculate_note(tb_df, note_name, ['TDS Receivables'])['total']
+            total = otherAdvances + PrepaidExpenses + advancetaxes + balances
             content = f"""
-                                                 | March,31 2024  | March,31 2023    
-| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                  | {to_lakhs(result['total'])}  
+| Particulars      | March 31, 2024 | March 31, 2023 |
+|------------------|----------------|----------------|
+| Prepaid Expenses | {to_lakhs(PrepaidExpenses)}     | -              |
+| Other Advances   | {to_lakhs(otherAdvances)}       | -              |
+| Advance tax      | {to_lakhs(advancetaxes)}        | -              |
+| Balances with statutory/government authorities | {to_lakhs(balances)} | - |
+| **Total**        | **{to_lakhs(total)}**           | -              |
 """
-        
+            result['total'] = total
         elif note_name == '16. Revenue from Operations':
+            ServicingBABEExport = calculate_note(tb_df, note_name, ['Servicing of BA/BE PROJECTS EXPORT'])['total']
+            WorkingStandardsExport = calculate_note(tb_df, note_name, ['Working Standards - Export'])['total']
+            exports = ServicingBABEExport + WorkingStandardsExport
+
+            ServicingBABEInterState = calculate_note(tb_df, note_name, ['Servicing of BA/BE PROJECTS-Inter State'])['total']
+            ServicingBABEIntraState = calculate_note(tb_df, note_name, ['Servicing of BA/BE PROJECTS-Intra State'])['total']
+            ServicingBAIntraState = calculate_note(tb_df, note_name, ['SERVICING OF BA PROJECTS-Intra State'])['total']
+            ServicingClinicalIntraState = calculate_note(tb_df, note_name, ['SERVICING OF ONLY CLINICAL INTRA STATE'])['total']
+            domestic = ServicingBABEInterState + ServicingBABEIntraState + ServicingBAIntraState + ServicingClinicalIntraState
+
+            total = exports + domestic
+
             content = f"""
-                                                 | March,31 2024  | March,31 2023    
-| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                        | {to_lakhs(result['total'])}  
+|                    | March 31, 2024          | March 31, 2023 |
+|--------------------|------------------------|----------------|
+| Sale of Services   |                        |                |
+| Domestic           | {to_lakhs(domestic)}   | -              |
+| Exports            | {to_lakhs(exports)}    | -              |
+| **Total**          | {to_lakhs(total)}      | -              |
 """
+            result['total'] = total
         elif note_name == '17. Other Income':
+            InterestnFD = calculate_note(tb_df, note_name, ['Interest on FD'])['total']
+            InterestonIncomeTaxRefund = calculate_note(tb_df, note_name, ['Interest on Income Tax Refund'])['total']
+            UnadjustedForexGainLoss = calculate_note(tb_df, note_name, ['Unadjusted Forex Gain/Loss'])['total']
+            ForexGainLoss = calculate_note(tb_df, note_name, ['Forex Gain/Loss'])['total']
+            Interestincome = InterestnFD + InterestonIncomeTaxRefund
+            ForeignexchangeainNet = UnadjustedForexGainLoss + ForexGainLoss
+            total = Interestincome + ForeignexchangeainNet
+
             content = f"""
-                                                 | March,31 2024  | March,31 2023    
-| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                                   | {to_lakhs(result['total'])}  
+| Particulars                | March 31, 2024 | March 31, 2023 |
+|----------------------------|----------------|----------------|
+| Interest income            | {to_lakhs(Interestincome)} | - |
+| Foreign exchange gain (Net)| {to_lakhs(ForeignexchangeainNet)} | - |
+| **Total**                  | {to_lakhs(total)} | - |
 """
+            result['total'] = total
         elif note_name == '18. Cost of Materials Consumed':
+            openingstock = calculate_note(tb_df, note_name, ['opening stock'])['total']
+            BioLabConsumables = calculate_note(tb_df, note_name, ['Bio Lab Consumables'])['total']
+            NonGST = calculate_note(tb_df, note_name, ['Non GST'])['total']
+            PurchaseGST = calculate_note(tb_df, note_name, ['Purchase GST'])['total']
+            closingstock = calculate_note(tb_df, note_name, ['closing stock'])['total']
+
+            purchases = BioLabConsumables + NonGST + PurchaseGST
+            mid = openingstock + purchases
+            total = openingstock + purchases - closingstock
+
             content = f"""
-                                                 | March,31 2024  | March,31 2023    
-| {note_name.split('.', 1)[1].strip() if '.' in note_name else note_name}                     | {to_lakhs(result['total'])}  
+| Particulars         | March 31, 2024 | March 31, 2023 |
+|---------------------|----------------|----------------|
+| Opening Stock       | {to_lakhs(openingstock)} | - |
+| Purchases           | {to_lakhs(purchases)} | - |
+|                     | {to_lakhs(mid)} | - |
+| Closing Stock       | {to_lakhs(closingstock)} | - |
+| Cost of materials consumed | {to_lakhs(total)} | - |
 """
-            
+            result['total'] = total
         elif note_name == '30. Financial Ratios':
             current_assets = sum(calculate_note(tb_df, note_name, [kw])['total'] for kw in ['Stock', 'Cash', 'Bank', 'Receivables', 'Prepaid'])
             current_liabilities = sum(calculate_note(tb_df, note_name, [kw])['total'] for kw in ['Creditors', 'Payable'])
             current_ratio = current_assets / abs(current_liabilities) if current_liabilities != 0 else 0
             content = f"""
-| Particulars | 2024-03-31 | 2023-03-31 |
-|-------------|------------|------------|
-| Current Ratio | {round(current_ratio, 2)} | 2.52 |
-| Current Assets | {to_lakhs(current_assets)} | - |
+| Particulars     | 2024-03-31 | 2023-03-31 |
+|-----------------|------------|------------|
+| Current Ratio   | {round(current_ratio, 2)} | 2.52 |
+| Current Assets  | {to_lakhs(current_assets)} | - |
 | Current Liabilities | {to_lakhs(abs(current_liabilities))} | - |
 """
         else:
@@ -242,81 +257,3 @@ As per Accounting Standard 18, the disclosures of related parties as defined in 
 """
         notes.append({'Note': note_name, 'Content': content, 'Total': result['total'], 'Matched_Accounts': len(result.get('matched_accounts', []))})
     return notes
-
-def main():
-    try:
-        # Load parsed_trial_balance.json from test_mapping.py output
-        json_file = "output1/parsed_trial_balance.json"
-        if not os.path.exists(json_file):
-            raise FileNotFoundError(f"❌ {json_file} not found! Please run test_mapping.py first.")
-
-        print(f"📂 Loading data from {json_file}...")
-        with open(json_file, "r", encoding="utf-8") as f:
-            parsed_data = json.load(f)
-
-        # Convert the list of records to DataFrame
-        if isinstance(parsed_data, list):
-            tb_df = pd.DataFrame(parsed_data)
-        else:
-            # Handle if it's wrapped in an object
-            tb_records = parsed_data.get("trial_balance", parsed_data)
-            tb_df = pd.DataFrame(tb_records)
-
-        print(f"📊 Loaded {len(tb_df)} records from trial balance")
-        print(f"🔍 Columns available: {tb_df.columns.tolist()}")
-        
-        # Ensure we have the required columns
-        if 'account_name' not in tb_df.columns or 'amount' not in tb_df.columns:
-            raise ValueError("❌ JSON must have 'account_name' and 'amount' columns")
-
-        # Clean amount values
-        tb_df['amount'] = tb_df['amount'].apply(clean_value)
-        
-        # Show sample data
-        print(f"\n📋 Sample records:")
-        for i, row in tb_df.head(3).iterrows():
-            print(f"   • {row['account_name']}: ₹{row['amount']:,.2f} ({row.get('group', 'Unknown')})")
-
-        # Generate notes (no debtors/creditors for now)
-        debtors_df = None
-        creditors_df = None
-
-        notes = generate_notes(tb_df, debtors_df, creditors_df)
-
-        # Save to markdown
-        os.makedirs("output2", exist_ok=True)
-        output = "# Notes to Financial Statements for the Year Ended March 31, 2024\n\n"
-        
-        print(f"\n📝 Generated {len(notes)} notes:")
-        for note in notes:
-            output += f"## {note['Note']}\n{note['Content']}\n"
-            if note['Total'] != 0:
-                print(f"   ✅ {note['Note']}: ₹{note['Total']:,.2f} ({note['Matched_Accounts']} accounts)")
-            else:
-                print(f"   ⚠  {note['Note']}: No matching accounts found")
-        
-        with open("output2/financial_notes_all.md", "w", encoding="utf-8") as f:
-            f.write(output)
-
-        # Save to CSV
-        output_df = pd.DataFrame([
-            [note['Note'], note['Content'], note['Total'], note['Matched_Accounts']] for note in notes
-        ], columns=["Note", "Content", "Total_Amount", "Matched_Accounts"])
-        
-        # output_df.to_csv("outputs/notes_output.csv", index=False, encoding="utf-8")
-        # Save to JSON instead of CSV
-        with open("output2/notes_output.json", "w", encoding="utf-8") as f:
-            json.dump(notes, f, ensure_ascii=False, indent=2)
-        
-        print(f"\n🎉 Notes generated successfully!")
-        print(f"📄 Markdown: outputs/financial_notes_all.md")
-        print(f"📊 JSON: outputs/notes_output.json")
-
-    except Exception as e:
-        print(f"❌ Error: {str(e)}")
-        if 'tb_df' in locals():
-            print("📋 Sample trial balance data:")
-            print(tb_df.head().to_string())
-
-if __name__ == "__main__":
-    main()

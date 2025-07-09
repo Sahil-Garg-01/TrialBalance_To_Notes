@@ -1,0 +1,1149 @@
+{
+  "metadata": {
+    "generated_on": "2025-07-05T11:39:13.832832",
+    "financial_year": "2024-03-31",
+    "company_name": "Company Name",
+    "total_notes": 20
+  },
+  "notes": [
+    {
+      "note_number": "2",
+      "note_title": "Share Capital",
+      "full_title": "2. Share Capital",
+      "total_amount": 54252100.0,
+      "total_amount_lakhs": 542.52,
+      "matched_accounts_count": 1,
+      "matched_accounts": [
+        {
+          "account": "Share Capital",
+          "amount": 54252100.0,
+          "amount_lakhs": 542.52,
+          "group": "Equity"
+        }
+      ],
+      "breakdown": {
+        "authorised_shares": {
+          "description": "75,70,000 equity shares of ₹ 10/- each",
+          "amount": 75700000,
+          "amount_lakhs": 757.0
+        },
+        "issued_subscribed_paid_up": {
+          "description": "54,25,210 equity shares of ₹ 10/- each",
+          "amount": 54252100.0,
+          "amount_lakhs": 542.52
+        }
+      },
+      "table_data": [
+        {
+          "particulars": "Authorised shares",
+          "current_year": "",
+          "previous_year": ""
+        },
+        {
+          "particulars": "75,70,000 equity shares of ₹ 10/- each",
+          "current_year": 757.0,
+          "previous_year": 757.0
+        },
+        {
+          "particulars": "Issued, subscribed and fully paid-up shares",
+          "current_year": "",
+          "previous_year": ""
+        },
+        {
+          "particulars": "54,25,210 equity shares of ₹ 10/- each",
+          "current_year": 542.52,
+          "previous_year": 542.52
+        },
+        {
+          "particulars": "Total issued, subscribed and fully paid-up share capital",
+          "current_year": 542.52,
+          "previous_year": 542.52
+        }
+      ],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 54252100.0,
+          "amount_lakhs": 542.52
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 2. Share Capital\n\n\n| Particulars | 2024-03-31 | 2023-03-31 |\n|-------------|------------|------------|\n| **Authorised shares** | | |\n| 75,70,000 equity shares of ₹ 10/- each | 757.0 | 757.0 |\n| **Issued, subscribed and fully paid-up shares** | | |\n| 54,25,210 equity shares of ₹ 10/- each | 542.52 | 542.52 |\n| **Total issued, subscribed and fully paid-up share capital** | 542.52 | 542.52 |\n\n**Account-wise breakdown:**\n- Share Capital: ₹54,252,100.00 (542.52 Lakhs)\n"
+    },
+    {
+      "note_number": "3",
+      "note_title": "Reserves and Surplus",
+      "full_title": "3. Reserves and Surplus",
+      "total_amount": 31530868.0,
+      "total_amount_lakhs": 315.31,
+      "matched_accounts_count": 1,
+      "matched_accounts": [
+        {
+          "account": "Reserves & Surplus",
+          "amount": 31530868.0,
+          "amount_lakhs": 315.31,
+          "group": "Equity"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 31530868.0,
+          "amount_lakhs": 315.31
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 3. Reserves and Surplus\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Reserves and Surplus | 315.31 | - |\n\n**Account-wise breakdown:**\n- Reserves & Surplus: ₹31,530,868.00 (315.31 Lakhs)\n"
+    },
+    {
+      "note_number": "4",
+      "note_title": "Long Term Borrowings",
+      "full_title": "4. Long Term Borrowings",
+      "total_amount": 241628599.92000002,
+      "total_amount_lakhs": 2416.29,
+      "matched_accounts_count": 11,
+      "matched_accounts": [
+        {
+          "account": "Loans (Liability)",
+          "amount": 105665253.45,
+          "amount_lakhs": 1056.65,
+          "group": "Non-Current Liability"
+        },
+        {
+          "account": "Loan From APSFC HYDERABAD",
+          "amount": 19799790.0,
+          "amount_lakhs": 198.0,
+          "group": "Non-Current Liability"
+        },
+        {
+          "account": "Loan From ICICI Bank 603090031420",
+          "amount": 81396076.35,
+          "amount_lakhs": 813.96,
+          "group": "Non-Current Liability"
+        },
+        {
+          "account": "LOAN FROM SBI SME HYDERABAD 40392204781",
+          "amount": 0.0,
+          "amount_lakhs": 0.0,
+          "group": "Non-Current Liability"
+        },
+        {
+          "account": "Interest Payable on APSFC LOAN",
+          "amount": 184767.0,
+          "amount_lakhs": 1.85,
+          "group": "Current Liability"
+        },
+        {
+          "account": "Loans & Advances (Asset)",
+          "amount": 25661755.0,
+          "amount_lakhs": 256.62,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Interest of Car Loan",
+          "amount": 387546.1,
+          "amount_lakhs": 3.88,
+          "group": "Finance Cost"
+        },
+        {
+          "account": "Interest on APSFC Loan",
+          "amount": 3129488.0,
+          "amount_lakhs": 31.29,
+          "group": "Finance Cost"
+        },
+        {
+          "account": "Interest on ICICI Loan-Commercial Building",
+          "amount": 5041999.02,
+          "amount_lakhs": 50.42,
+          "group": "Finance Cost"
+        },
+        {
+          "account": "Interest on Loan From SBI",
+          "amount": 73925.0,
+          "amount_lakhs": 0.74,
+          "group": "Finance Cost"
+        },
+        {
+          "account": "Loan Processing Charges",
+          "amount": 288000.0,
+          "amount_lakhs": 2.88,
+          "group": "Other Expenses"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 241628599.92000002,
+          "amount_lakhs": 2416.29
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 4. Long Term Borrowings\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Long Term Borrowings | 2416.29 | - |\n\n**Account-wise breakdown:**\n- Loans (Liability): ₹105,665,253.45 (1056.65 Lakhs)\n- Loan From APSFC HYDERABAD: ₹19,799,790.00 (198.0 Lakhs)\n- Loan From ICICI Bank 603090031420: ₹81,396,076.35 (813.96 Lakhs)\n- LOAN FROM SBI SME HYDERABAD 40392204781: ₹0.00 (0.0 Lakhs)\n- Interest Payable on APSFC LOAN: ₹184,767.00 (1.85 Lakhs)\n- Loans & Advances (Asset): ₹25,661,755.00 (256.62 Lakhs)\n- Interest of Car Loan: ₹387,546.10 (3.88 Lakhs)\n- Interest on APSFC Loan: ₹3,129,488.00 (31.29 Lakhs)\n- Interest on ICICI Loan-Commercial Building: ₹5,041,999.02 (50.42 Lakhs)\n- Interest on Loan From SBI: ₹73,925.00 (0.74 Lakhs)\n- Loan Processing Charges: ₹288,000.00 (2.88 Lakhs)\n"
+    },
+    {
+      "note_number": "5",
+      "note_title": "Deferred Tax Liability",
+      "full_title": "5. Deferred Tax Liability",
+      "total_amount": 4318647.0,
+      "total_amount_lakhs": 43.19,
+      "matched_accounts_count": 1,
+      "matched_accounts": [
+        {
+          "account": "Deferred Tax Liability",
+          "amount": 4318647.0,
+          "amount_lakhs": 43.19,
+          "group": "Deferred Tax Liability"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 4318647.0,
+          "amount_lakhs": 43.19
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 5. Deferred Tax Liability\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Deferred Tax Liability | 43.19 | - |\n\n**Account-wise breakdown:**\n- Deferred Tax Liability: ₹4,318,647.00 (43.19 Lakhs)\n"
+    },
+    {
+      "note_number": "6",
+      "note_title": "Trade Payables",
+      "full_title": "6. Trade Payables",
+      "total_amount": 14701343.76,
+      "total_amount_lakhs": 147.01,
+      "matched_accounts_count": 1,
+      "matched_accounts": [
+        {
+          "account": "Sundry Creditors",
+          "amount": 14701343.76,
+          "amount_lakhs": 147.01,
+          "group": "Current Liability"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 14701343.76,
+          "amount_lakhs": 147.01
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 6. Trade Payables\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Trade Payables | 147.01 | - |\n\n**Account-wise breakdown:**\n- Sundry Creditors: ₹14,701,343.76 (147.01 Lakhs)\n"
+    },
+    {
+      "note_number": "7",
+      "note_title": "Other Current Liabilities",
+      "full_title": "7. Other Current Liabilities",
+      "total_amount": 12497916.059999999,
+      "total_amount_lakhs": 124.98,
+      "matched_accounts_count": 3,
+      "matched_accounts": [
+        {
+          "account": "Expenses Payable",
+          "amount": 4377982.34,
+          "amount_lakhs": 43.78,
+          "group": "Current Liability"
+        },
+        {
+          "account": "Commission Payable",
+          "amount": 0.0,
+          "amount_lakhs": 0.0,
+          "group": "Current Liability"
+        },
+        {
+          "account": "Interest Payable on APSFC LOAN",
+          "amount": 184767.0,
+          "amount_lakhs": 1.85,
+          "group": "Current Liability"
+        }
+      ],
+      "breakdown": {
+        "current_maturities": {
+          "description": "Current Maturities of Long Term Borrowings",
+          "amount": 7935166.72,
+          "amount_lakhs": 79.35
+        },
+        "expenses_payable": {
+          "description": "Outstanding Liabilities for Expenses",
+          "amount": 12497916.059999999,
+          "amount_lakhs": 124.98
+        },
+        "statutory_dues": {
+          "description": "Statutory dues",
+          "amount": 7935166.72,
+          "amount_lakhs": 79.35
+        }
+      },
+      "table_data": [
+        {
+          "particulars": "Current Maturities of Long Term Borrowings",
+          "current_year": 79.35,
+          "previous_year": 139.2
+        },
+        {
+          "particulars": "Outstanding Liabilities for Expenses",
+          "current_year": 124.98,
+          "previous_year": 156.88
+        },
+        {
+          "particulars": "Statutory dues",
+          "current_year": 79.35,
+          "previous_year": 48.03
+        },
+        {
+          "particulars": "Total",
+          "current_year": 283.68,
+          "previous_year": 344.12
+        }
+      ],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 12497916.059999999,
+          "amount_lakhs": 124.98
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 7. Other Current Liabilities\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Current Maturities of Long Term Borrowings | 79.35 | 139.20 |\n| Outstanding Liabilities for Expenses | 124.98 | 156.88 |\n| Statutory dues | 79.35 | 48.03 |\n| **Total** | 124.98 | 344.12 |\n\n**Account-wise breakdown:**\n- Expenses Payable: ₹4,377,982.34 (43.78 Lakhs)\n- Commission Payable: ₹0.00 (0.0 Lakhs)\n- Interest Payable on APSFC LOAN: ₹184,767.00 (1.85 Lakhs)\n"
+    },
+    {
+      "note_number": "8",
+      "note_title": "Short Term Provisions",
+      "full_title": "8. Short Term Provisions",
+      "total_amount": 3645955.0,
+      "total_amount_lakhs": 36.46,
+      "matched_accounts_count": 1,
+      "matched_accounts": [
+        {
+          "account": "Provisions",
+          "amount": 3645955.0,
+          "amount_lakhs": 36.46,
+          "group": "Current Liability"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 3645955.0,
+          "amount_lakhs": 36.46
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 8. Short Term Provisions\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Short Term Provisions | 36.46 | - |\n\n**Account-wise breakdown:**\n- Provisions: ₹3,645,955.00 (36.46 Lakhs)\n"
+    },
+    {
+      "note_number": "9",
+      "note_title": "Fixed Assets",
+      "full_title": "9. Fixed Assets",
+      "total_amount": 982803257.7400001,
+      "total_amount_lakhs": 9828.03,
+      "matched_accounts_count": 11,
+      "matched_accounts": [
+        {
+          "account": "Fixed Assets",
+          "amount": 454696134.36,
+          "amount_lakhs": 4546.96,
+          "group": "Non-Current Asset"
+        },
+        {
+          "account": "Equipments",
+          "amount": 207959641.05,
+          "amount_lakhs": 2079.6,
+          "group": "Non-Current Asset"
+        },
+        {
+          "account": "Furniture & Fixtures",
+          "amount": 38000617.72,
+          "amount_lakhs": 380.01,
+          "group": "Non-Current Asset"
+        },
+        {
+          "account": "Current Assets",
+          "amount": 202445127.03,
+          "amount_lakhs": 2024.45,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Deposits (Asset)",
+          "amount": 48479841.0,
+          "amount_lakhs": 484.8,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Loans & Advances (Asset)",
+          "amount": 25661755.0,
+          "amount_lakhs": 256.62,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Diesel Expences For Vehicle(Car)",
+          "amount": 140405.58,
+          "amount_lakhs": 1.4,
+          "group": "Other Expenses"
+        },
+        {
+          "account": "INSURANCE FOR ASSETS BUGLARY",
+          "amount": 14065.0,
+          "amount_lakhs": 0.14,
+          "group": "Other Expenses"
+        },
+        {
+          "account": "INSURANCE FOR ASSETS FIRE POLICY",
+          "amount": 126171.98,
+          "amount_lakhs": 1.26,
+          "group": "Other Expenses"
+        },
+        {
+          "account": "Interest on ICICI Loan-Commercial Building",
+          "amount": 5041999.02,
+          "amount_lakhs": 50.42,
+          "group": "Finance Cost"
+        },
+        {
+          "account": "Software Equipment",
+          "amount": 237500.0,
+          "amount_lakhs": 2.38,
+          "group": "Non-Current Asset"
+        }
+      ],
+      "breakdown": {
+        "buildings": {
+          "gross_value": 5041999.02,
+          "net_value": 5041999.02,
+          "accumulated_depreciation": 0
+        },
+        "equipments": {
+          "gross_value": 208197141.05,
+          "net_value": 208197141.05,
+          "accumulated_depreciation": 0
+        },
+        "furniture_fixtures": {
+          "gross_value": 38000617.72,
+          "net_value": 38000617.72,
+          "accumulated_depreciation": 0
+        },
+        "motor_vehicle": {
+          "gross_value": 7721262.149999999,
+          "net_value": 6968279.699999999,
+          "accumulated_depreciation": 752982.45
+        }
+      },
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 982803257.7400001,
+          "amount_lakhs": 9828.03
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 9. Fixed Assets\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Fixed Assets | 9828.03 | - |\n\n**Account-wise breakdown:**\n- Fixed Assets: ₹454,696,134.36 (4546.96 Lakhs)\n- Equipments: ₹207,959,641.05 (2079.6 Lakhs)\n- Furniture & Fixtures: ₹38,000,617.72 (380.01 Lakhs)\n- Current Assets: ₹202,445,127.03 (2024.45 Lakhs)\n- Deposits (Asset): ₹48,479,841.00 (484.8 Lakhs)\n- Loans & Advances (Asset): ₹25,661,755.00 (256.62 Lakhs)\n- Diesel Expences For Vehicle(Car): ₹140,405.58 (1.4 Lakhs)\n- INSURANCE FOR ASSETS BUGLARY: ₹14,065.00 (0.14 Lakhs)\n- INSURANCE FOR ASSETS FIRE POLICY: ₹126,171.98 (1.26 Lakhs)\n- Interest on ICICI Loan-Commercial Building: ₹5,041,999.02 (50.42 Lakhs)\n- Software Equipment: ₹237,500.00 (2.38 Lakhs)\n"
+    },
+    {
+      "note_number": "10",
+      "note_title": "Long Term Loans and Advances",
+      "full_title": "10. Long Term Loans and Advances",
+      "total_amount": 74141596.0,
+      "total_amount_lakhs": 741.42,
+      "matched_accounts_count": 2,
+      "matched_accounts": [
+        {
+          "account": "Deposits (Asset)",
+          "amount": 48479841.0,
+          "amount_lakhs": 484.8,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Loans & Advances (Asset)",
+          "amount": 25661755.0,
+          "amount_lakhs": 256.62,
+          "group": "Current Asset"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 74141596.0,
+          "amount_lakhs": 741.42
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 10. Long Term Loans and Advances\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Long Term Loans and Advances | 741.42 | - |\n\n**Account-wise breakdown:**\n- Deposits (Asset): ₹48,479,841.00 (484.8 Lakhs)\n- Loans & Advances (Asset): ₹25,661,755.00 (256.62 Lakhs)\n"
+    },
+    {
+      "note_number": "11",
+      "note_title": "Inventories",
+      "full_title": "11. Inventories",
+      "total_amount": 1013265.0,
+      "total_amount_lakhs": 10.13,
+      "matched_accounts_count": 1,
+      "matched_accounts": [
+        {
+          "account": "Opening Stock",
+          "amount": 1013265.0,
+          "amount_lakhs": 10.13,
+          "group": "Current Asset"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 1013265.0,
+          "amount_lakhs": 10.13
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 11. Inventories\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Inventories | 10.13 | - |\n\n**Account-wise breakdown:**\n- Opening Stock: ₹1,013,265.00 (10.13 Lakhs)\n"
+    },
+    {
+      "note_number": "12",
+      "note_title": "Trade Receivables",
+      "full_title": "12. Trade Receivables",
+      "total_amount": 95110816.25,
+      "total_amount_lakhs": 951.11,
+      "matched_accounts_count": 3,
+      "matched_accounts": [
+        {
+          "account": "Sundry Debtors",
+          "amount": 83378906.31,
+          "amount_lakhs": 833.79,
+          "group": "Current Asset"
+        },
+        {
+          "account": "TCS RECEIVABLES",
+          "amount": 13980.75,
+          "amount_lakhs": 0.14,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Tds Receivables",
+          "amount": 11717929.19,
+          "amount_lakhs": 117.18,
+          "group": "Current Asset"
+        }
+      ],
+      "breakdown": {
+        "over_six_months": {
+          "description": "Outstanding for a period exceeding six months",
+          "amount": 0,
+          "amount_lakhs": 0.0
+        },
+        "total_receivables": {
+          "description": "Total Trade Receivables",
+          "amount": 95110816.25,
+          "amount_lakhs": 951.11
+        }
+      },
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 95110816.25,
+          "amount_lakhs": 951.11
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 12. Trade Receivables\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Trade Receivables | 951.11 | - |\n\n**Account-wise breakdown:**\n- Sundry Debtors: ₹83,378,906.31 (833.79 Lakhs)\n- TCS RECEIVABLES: ₹13,980.75 (0.14 Lakhs)\n- Tds Receivables: ₹11,717,929.19 (117.18 Lakhs)\n"
+    },
+    {
+      "note_number": "13",
+      "note_title": "Cash and Bank Balances",
+      "full_title": "13. Cash and Bank Balances",
+      "total_amount": 67691454.18,
+      "total_amount_lakhs": 676.91,
+      "matched_accounts_count": 3,
+      "matched_accounts": [
+        {
+          "account": "Deposits (Asset)",
+          "amount": 48479841.0,
+          "amount_lakhs": 484.8,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Cash-in-Hand",
+          "amount": 368226.0,
+          "amount_lakhs": 3.68,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Bank Accounts",
+          "amount": 18843387.18,
+          "amount_lakhs": 188.43,
+          "group": "Current Asset"
+        }
+      ],
+      "breakdown": {
+        "cash_in_hand": {
+          "description": "Cash in hand",
+          "amount": 368226.0,
+          "amount_lakhs": 3.68
+        },
+        "bank_balances": {
+          "description": "Balances with banks in current accounts",
+          "amount": 18843387.18,
+          "amount_lakhs": 188.43
+        },
+        "fixed_deposits": {
+          "description": "Fixed Deposit",
+          "amount": 48479841.0,
+          "amount_lakhs": 484.8
+        }
+      },
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 67691454.18,
+          "amount_lakhs": 676.91
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 13. Cash and Bank Balances\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| **Cash and cash equivalents** | | |\n| Balances with banks in current accounts | 188.43 | - |\n| Cash in hand | 3.68 | - |\n| **Other Bank Balances** | | |\n| Fixed Deposit | 484.8 | - |\n| **Total** | 676.91 | - |\n\n**Account-wise breakdown:**\n- Deposits (Asset): ₹48,479,841.00 (484.8 Lakhs)\n- Cash-in-Hand: ₹368,226.00 (3.68 Lakhs)\n- Bank Accounts: ₹18,843,387.18 (188.43 Lakhs)\n"
+    },
+    {
+      "note_number": "14",
+      "note_title": "Short Term Loans and Advances",
+      "full_title": "14. Short Term Loans and Advances",
+      "total_amount": 50272362.94,
+      "total_amount_lakhs": 502.72,
+      "matched_accounts_count": 6,
+      "matched_accounts": [
+        {
+          "account": "Loans & Advances (Asset)",
+          "amount": 25661755.0,
+          "amount_lakhs": 256.62,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Advance to Perennail Code IT Conslultants Pvt Ltd",
+          "amount": 3776.0,
+          "amount_lakhs": 0.04,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Prepaid Expenses",
+          "amount": 1589845.0,
+          "amount_lakhs": 15.9,
+          "group": "Current Asset"
+        },
+        {
+          "account": "TCS RECEIVABLES",
+          "amount": 13980.75,
+          "amount_lakhs": 0.14,
+          "group": "Current Asset"
+        },
+        {
+          "account": "TDS Advance Tax Paid SEC 100",
+          "amount": 11285077.0,
+          "amount_lakhs": 112.85,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Tds Receivables",
+          "amount": 11717929.19,
+          "amount_lakhs": 117.18,
+          "group": "Current Asset"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 50272362.94,
+          "amount_lakhs": 502.72
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 14. Short Term Loans and Advances\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Short Term Loans and Advances | 502.72 | - |\n\n**Account-wise breakdown:**\n- Loans & Advances (Asset): ₹25,661,755.00 (256.62 Lakhs)\n- Advance to Perennail Code IT Conslultants Pvt Ltd: ₹3,776.00 (0.04 Lakhs)\n- Prepaid Expenses: ₹1,589,845.00 (15.9 Lakhs)\n- TCS RECEIVABLES: ₹13,980.75 (0.14 Lakhs)\n- TDS Advance Tax Paid SEC 100: ₹11,285,077.00 (112.85 Lakhs)\n- Tds Receivables: ₹11,717,929.19 (117.18 Lakhs)\n"
+    },
+    {
+      "note_number": "15",
+      "note_title": "Other Current Assets",
+      "full_title": "15. Other Current Assets",
+      "total_amount": 202445127.03,
+      "total_amount_lakhs": 2024.45,
+      "matched_accounts_count": 1,
+      "matched_accounts": [
+        {
+          "account": "Current Assets",
+          "amount": 202445127.03,
+          "amount_lakhs": 2024.45,
+          "group": "Current Asset"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 202445127.03,
+          "amount_lakhs": 2024.45
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 15. Other Current Assets\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Other Current Assets | 2024.45 | - |\n\n**Account-wise breakdown:**\n- Current Assets: ₹202,445,127.03 (2024.45 Lakhs)\n"
+    },
+    {
+      "note_number": "16",
+      "note_title": "Revenue from Operations",
+      "full_title": "16. Revenue from Operations",
+      "total_amount": 330078262.53,
+      "total_amount_lakhs": 3300.78,
+      "matched_accounts_count": 8,
+      "matched_accounts": [
+        {
+          "account": "DAIMLER FINANCIAL SERVICES INDIA PVT LTD",
+          "amount": 4469387.1,
+          "amount_lakhs": 44.69,
+          "group": "Non-Current Liability"
+        },
+        {
+          "account": "Sales Accounts",
+          "amount": 330858462.82,
+          "amount_lakhs": 3308.58,
+          "group": "Revenue from Operations"
+        },
+        {
+          "account": "Ambulance Service Charges",
+          "amount": 244000.0,
+          "amount_lakhs": 2.44,
+          "group": "Direct Expenses"
+        },
+        {
+          "account": "Indirect Incomes",
+          "amount": 2784718.0,
+          "amount_lakhs": 27.85,
+          "group": "Other Income"
+        },
+        {
+          "account": "Interest on Income Tax Refund",
+          "amount": 267800.0,
+          "amount_lakhs": 2.68,
+          "group": "Other Income"
+        },
+        {
+          "account": "CDM AND CDISC SERVICES",
+          "amount": 2572000.0,
+          "amount_lakhs": 25.72,
+          "group": "Other Expenses"
+        },
+        {
+          "account": "SECURITY SERVICES",
+          "amount": 1173753.0,
+          "amount_lakhs": 11.74,
+          "group": "Other Expenses"
+        },
+        {
+          "account": "Service Charges",
+          "amount": 24970.0,
+          "amount_lakhs": 0.25,
+          "group": "Other Expenses"
+        }
+      ],
+      "breakdown": {
+        "domestic_revenue": {
+          "description": "Domestic Sales",
+          "amount": 184329483.33,
+          "amount_lakhs": 1843.29,
+          "components": {
+            "ba_be_interstate": 7268083.0,
+            "ba_be_intrastate": 170284955.33,
+            "ba_intrastate": 619200.0,
+            "clinical_intrastate": 6157245.0
+          }
+        },
+        "export_revenue": {
+          "description": "Export Sales",
+          "amount": 145748779.2,
+          "amount_lakhs": 1457.49,
+          "components": {
+            "ba_be_export": 145194733.6,
+            "working_standards_export": 554045.6
+          }
+        }
+      },
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 330078262.53,
+          "amount_lakhs": 3300.78
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 16. Revenue from Operations\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| **Sale of Services** | | |\n| Domestic | 1843.29 | - |\n| Exports | 1457.49 | - |\n| **Total** | 3300.78 | - |\n\n**Account-wise breakdown:**\n- DAIMLER FINANCIAL SERVICES INDIA PVT LTD: ₹4,469,387.10 (44.69 Lakhs)\n- Sales Accounts: ₹330,858,462.82 (3308.58 Lakhs)\n- Ambulance Service Charges: ₹244,000.00 (2.44 Lakhs)\n- Indirect Incomes: ₹2,784,718.00 (27.85 Lakhs)\n- Interest on Income Tax Refund: ₹267,800.00 (2.68 Lakhs)\n- CDM AND CDISC SERVICES: ₹2,572,000.00 (25.72 Lakhs)\n- SECURITY SERVICES: ₹1,173,753.00 (11.74 Lakhs)\n- Service Charges: ₹24,970.00 (0.25 Lakhs)\n"
+    },
+    {
+      "note_number": "17",
+      "note_title": "Other Income",
+      "full_title": "17. Other Income",
+      "total_amount": 11759905.16,
+      "total_amount_lakhs": 117.6,
+      "matched_accounts_count": 4,
+      "matched_accounts": [
+        {
+          "account": "Interest on FD",
+          "amount": 2516918.0,
+          "amount_lakhs": 25.17,
+          "group": "Other Income"
+        },
+        {
+          "account": "Interest on Income Tax Refund",
+          "amount": 267800.0,
+          "amount_lakhs": 2.68,
+          "group": "Other Income"
+        },
+        {
+          "account": "Forex Gain / Loss",
+          "amount": 6457341.36,
+          "amount_lakhs": 64.57,
+          "group": "Other Income"
+        },
+        {
+          "account": "Unadjusted Forex Gain/Loss",
+          "amount": 2517845.8,
+          "amount_lakhs": 25.18,
+          "group": "Other Income"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 11759905.16,
+          "amount_lakhs": 117.6
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 17. Other Income\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Other Income | 117.6 | - |\n\n**Account-wise breakdown:**\n- Interest on FD: ₹2,516,918.00 (25.17 Lakhs)\n- Interest on Income Tax Refund: ₹267,800.00 (2.68 Lakhs)\n- Forex Gain / Loss: ₹6,457,341.36 (64.57 Lakhs)\n- Unadjusted Forex Gain/Loss: ₹2,517,845.80 (25.18 Lakhs)\n"
+    },
+    {
+      "note_number": "18",
+      "note_title": "Cost of Materials Consumed",
+      "full_title": "18. Cost of Materials Consumed",
+      "total_amount": 24980879.51,
+      "total_amount_lakhs": 249.81,
+      "matched_accounts_count": 4,
+      "matched_accounts": [
+        {
+          "account": "Opening Stock",
+          "amount": 1013265.0,
+          "amount_lakhs": 10.13,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Bio Lab Consumables",
+          "amount": 9500.0,
+          "amount_lakhs": 0.1,
+          "group": "Cost of Materials Consumed"
+        },
+        {
+          "account": "Non GST",
+          "amount": 1831650.0,
+          "amount_lakhs": 18.32,
+          "group": "Cost of Materials Consumed"
+        },
+        {
+          "account": "Purchase GST",
+          "amount": 22126464.51,
+          "amount_lakhs": 221.26,
+          "group": "Cost of Materials Consumed"
+        }
+      ],
+      "breakdown": {
+        "opening_stock": {
+          "description": "Opening Stock",
+          "amount": 1013265.0,
+          "amount_lakhs": 10.13
+        },
+        "purchases": {
+          "description": "Purchases",
+          "amount": 23967614.51,
+          "amount_lakhs": 239.68,
+          "components": {
+            "bio_lab_consumables": 9500.0,
+            "non_gst": 1831650.0,
+            "purchase_gst": 22126464.51
+          }
+        },
+        "closing_stock": {
+          "description": "Closing Stock",
+          "amount": 0,
+          "amount_lakhs": 0.0
+        }
+      },
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 24980879.51,
+          "amount_lakhs": 249.81
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 18. Cost of Materials Consumed\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Opening Stock | 10.13 | - |\n| Purchases | 239.68 | - |\n| | 249.81 | - |\n| Closing Stock | 0.0 | - |\n| **Cost of materials consumed** | 249.81 | - |\n\n**Account-wise breakdown:**\n- Opening Stock: ₹1,013,265.00 (10.13 Lakhs)\n- Bio Lab Consumables: ₹9,500.00 (0.1 Lakhs)\n- Non GST: ₹1,831,650.00 (18.32 Lakhs)\n- Purchase GST: ₹22,126,464.51 (221.26 Lakhs)\n"
+    },
+    {
+      "note_number": "28",
+      "note_title": "Earnings per Share",
+      "full_title": "28. Earnings per Share",
+      "total_amount": 224187708.15000004,
+      "total_amount_lakhs": 2241.88,
+      "matched_accounts_count": 3,
+      "matched_accounts": [
+        {
+          "account": "Forex Gain / Loss",
+          "amount": 6457341.36,
+          "amount_lakhs": 64.57,
+          "group": "Other Income"
+        },
+        {
+          "account": "Profit & Loss A/c",
+          "amount": 215212520.99,
+          "amount_lakhs": 2152.13,
+          "group": "Profit and Loss Account"
+        },
+        {
+          "account": "Unadjusted Forex Gain/Loss",
+          "amount": 2517845.8,
+          "amount_lakhs": 25.18,
+          "group": "Other Income"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 224187708.15000004,
+          "amount_lakhs": 2241.88
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 28. Earnings per Share\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Earnings per Share | 2241.88 | - |\n\n**Account-wise breakdown:**\n- Forex Gain / Loss: ₹6,457,341.36 (64.57 Lakhs)\n- Profit & Loss A/c: ₹215,212,520.99 (2152.13 Lakhs)\n- Unadjusted Forex Gain/Loss: ₹2,517,845.80 (25.18 Lakhs)\n"
+    },
+    {
+      "note_number": "29",
+      "note_title": "Related Party Disclosures",
+      "full_title": "29. Related Party Disclosures",
+      "total_amount": 0,
+      "total_amount_lakhs": 0.0,
+      "matched_accounts_count": 0,
+      "matched_accounts": [],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 0,
+          "amount_lakhs": 0.0
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 29. Related Party Disclosures\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Related Party Disclosures | 0.0 | - |\n"
+    },
+    {
+      "note_number": "30",
+      "note_title": "Financial Ratios",
+      "full_title": "30. Financial Ratios",
+      "total_amount": 132659125.1,
+      "total_amount_lakhs": 1326.59,
+      "matched_accounts_count": 11,
+      "matched_accounts": [
+        {
+          "account": "Loan From ICICI Bank 603090031420",
+          "amount": 81396076.35,
+          "amount_lakhs": 813.96,
+          "group": "Non-Current Liability"
+        },
+        {
+          "account": "Sundry Creditors",
+          "amount": 14701343.76,
+          "amount_lakhs": 147.01,
+          "group": "Current Liability"
+        },
+        {
+          "account": "Expenses Payable",
+          "amount": 4377982.34,
+          "amount_lakhs": 43.78,
+          "group": "Current Liability"
+        },
+        {
+          "account": "Commission Payable",
+          "amount": 0.0,
+          "amount_lakhs": 0.0,
+          "group": "Current Liability"
+        },
+        {
+          "account": "Interest Payable on APSFC LOAN",
+          "amount": 184767.0,
+          "amount_lakhs": 1.85,
+          "group": "Current Liability"
+        },
+        {
+          "account": "Opening Stock",
+          "amount": 1013265.0,
+          "amount_lakhs": 10.13,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Cash-in-Hand",
+          "amount": 368226.0,
+          "amount_lakhs": 3.68,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Bank Accounts",
+          "amount": 18843387.18,
+          "amount_lakhs": 188.43,
+          "group": "Current Asset"
+        },
+        {
+          "account": "TCS RECEIVABLES",
+          "amount": 13980.75,
+          "amount_lakhs": 0.14,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Tds Receivables",
+          "amount": 11717929.19,
+          "amount_lakhs": 117.18,
+          "group": "Current Asset"
+        },
+        {
+          "account": "Bank Charges",
+          "amount": 42167.53,
+          "amount_lakhs": 0.42,
+          "group": "Other Expenses"
+        }
+      ],
+      "breakdown": {},
+      "table_data": [],
+      "comparative_data": {
+        "current_year": {
+          "year": "2024-03-31",
+          "amount": 132659125.1,
+          "amount_lakhs": 1326.59
+        },
+        "previous_year": {
+          "year": "2023-03-31",
+          "amount": 0,
+          "amount_lakhs": 0
+        }
+      },
+      "notes_and_disclosures": [],
+      "markdown_content": "### 30. Financial Ratios\n\n\n| Particulars | March 31, 2024 | March 31, 2023 |\n|-------------|----------------|----------------|\n| Financial Ratios | 1326.59 | - |\n\n**Account-wise breakdown:**\n- Loan From ICICI Bank 603090031420: ₹81,396,076.35 (813.96 Lakhs)\n- Sundry Creditors: ₹14,701,343.76 (147.01 Lakhs)\n- Expenses Payable: ₹4,377,982.34 (43.78 Lakhs)\n- Commission Payable: ₹0.00 (0.0 Lakhs)\n- Interest Payable on APSFC LOAN: ₹184,767.00 (1.85 Lakhs)\n- Opening Stock: ₹1,013,265.00 (10.13 Lakhs)\n- Cash-in-Hand: ₹368,226.00 (3.68 Lakhs)\n- Bank Accounts: ₹18,843,387.18 (188.43 Lakhs)\n- TCS RECEIVABLES: ₹13,980.75 (0.14 Lakhs)\n- Tds Receivables: ₹11,717,929.19 (117.18 Lakhs)\n- Bank Charges: ₹42,167.53 (0.42 Lakhs)\n"
+    }
+  ]
+}
