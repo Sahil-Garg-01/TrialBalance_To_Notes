@@ -1,12 +1,57 @@
-11. Inventories
+# Note 11
 
-| Particulars                  | March 31, 2024 | March 31, 2023 |
-|------------------------------|----------------|----------------|
-| **Consumables**            |
-| Raw Materials                | {raw_materials_2024} |
-| | |
-| Work-in-Progress           | {wip_2024}     |
-| | |
-| Finished Goods             | {finished_goods_2024}|
-| | |
-| **Total**                  | {consumables_2024} | {consumables_2023} |
+```json
+{
+  "title": "Short Term Loans and Advances",
+  "full_title": "14. Short Term Loans and Advances",
+  "structure": [
+    {
+      "category": "",
+      "subcategories": [
+        {
+          "label": "March 31, 2024",
+          "value": "0.0"
+        },
+        {
+          "label": "March 31, 2023",
+          "value": "0.0"
+        }
+      ]
+    },
+    {
+      "category": "Unsecured, considered good",
+      "subcategories": [
+        {
+          "label": "Prepaid Expenses",
+          "value": "0.0"
+        },
+        {
+          "label": "Other Advances",
+          "value": "0.0"
+        }
+      ],
+      "total": "0.00",
+      "previous_total": "0.00"
+    },
+    {
+      "category": "Other loans and advances",
+      "subcategories": [
+        {
+          "label": "Advance tax",
+          "value": "0.0"
+        },
+        {
+          "label": "Balances with statutory/government authorities",
+          "value": "0.0"
+        }
+      ],
+      "total": "0.00",
+      "previous_total": "0.00"
+    }
+  ],
+  "metadata": {
+    "note_number": "14",
+    "generated_on": "2025-07-12T12:02:22.759868"
+  }
+}
+```

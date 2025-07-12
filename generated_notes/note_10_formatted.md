@@ -1,0 +1,39 @@
+# Note 10
+
+```json
+{
+  "title": "Long Term Loans and Advances",
+  "full_title": "10. Long Term Loans and Advances",
+  "structure": [
+    {
+      "category": "In Lakhs",
+      "subcategories": [
+        {
+          "label": "March 31, 2024",
+          "value": "{march_2024_total}"
+        },
+        {
+          "label": "March 31, 2023",
+          "value": "{march_2023_total}"
+        }
+      ]
+    },
+    {
+      "category": "Unsecured, considered good",
+      "subcategories": [
+        {
+          "label": "Long Term - Security Deposits",
+          "value": "78.0",
+          "previous_value": "54.6"
+        }
+      ],
+      "total": "78.0",
+      "previous_total": "54.6"
+    }
+  ],
+  "metadata": {
+    "note_number": "10",
+    "generated_on": "2025-07-12T12:02:13.195915"
+  }
+}
+```

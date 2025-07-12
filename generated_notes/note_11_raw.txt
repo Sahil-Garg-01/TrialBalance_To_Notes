@@ -24,19 +24,39 @@
   ],
   "metadata": {
     "note_number": "11",
-    "generated_on": "2025-07-09T20:08:10.907823"
+    "generated_on": "2025-07-12T12:03:17.663430"
   },
-  "markdown_content": "11. Inventories\n\n| Particulars                  | March 31, 2024 | March 31, 2023 |\n|------------------------------|----------------|----------------|\n| **Consumables**            |\n| Raw Materials                | {raw_materials_2024} |\n| | |\n| Work-in-Progress           | {wip_2024}     |\n| | |\n| Finished Goods             | {finished_goods_2024}|\n| | |\n| **Total**                  | {consumables_2024} | {consumables_2023} |\n"
+  "markdown_content": "11. Inventories\n\n| Particulars                  | March 31, 2024 | March 31, 2023 |\n|------------------------------|----------------|----------------|\n| **Consumables**             | {consumables_2024} | {consumables_2023} |\n| **Total**                    | {march_2024_total} | {march_2023_total} |"
 }
 
-**Calculations:**
+// Calculations
+let consumables_2024 = 0;
+let consumables_2023 = 0;
+let march_2024_total = 0;
+let march_2023_total = 0;
 
-- consumables_2024 = opening stock (from trial balance) = 1013265 / 100000 = 10.13
-- consumables_2023 = 0 (not provided)
-- raw_materials_2024 = opening stock (from trial balance) = 1013265 / 100000 = 10.13
-- wip_2024 = 0 (not provided)
-- finished_goods_2024 = 0 (not provided)
-- march_2024_total = consumables_2024 = 10.13
-- march_2023_total = consumables_2023 = 0.00
+// Iterate through trial balance accounts
+for (const account of financial_data.trial_balance.accounts) {
+  if (account.group === "Property, Plant and Equipment") {
+    const amount_lakhs = account.amount / 100000;
+    if (account.account_name.includes("Computer Equipment")) {
+      consumables_2024 += amount_lakhs;
+      consumables_2023 += 0;
+    }
+    march_2024_total += amount_lakhs;
+    march_2023_total += 0;
+  }
+}
 
-Please note that the provided trial balance data does not include specific information about raw materials, work-in-progress, or finished goods. Therefore, I have used the opening stock value for raw materials, wip, and finished goods. If you have more detailed data, you can replace these values accordingly.
+// Replace placeholders with calculated values
+const json_data = JSON.parse(JSON.stringify(json_structure));
+json_data.structure[1].total = consumables_2024;
+json_data.structure[1].previous_total = consumables_2023;
+json_data.metadata.generated_on = new Date().toISOString();
+json_data.markdown_content = json_data.markdown_content.replace("{consumables_2024}", consumables_2024.toFixed(2));
+json_data.markdown_content = json_data.markdown_content.replace("{consumables_2023}", consumables_2023.toFixed(2));
+json_data.markdown_content = json_data.markdown_content.replace("{march_2024_total}", march_2024_total.toFixed(2));
+json_data.markdown_content = json_data.markdown_content.replace("{march_2023_total}", march_2023_total.toFixed(2));
+
+// Return the final JSON object
+return json_data;
