@@ -2,107 +2,125 @@ import pandas as pd
 import json
 import jsonlines
 import os
+from datasets import Dataset
+from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments, Trainer, pipeline
+from peft import LoraConfig, get_peft_model, PeftModel
+from transformers import BitsAndBytesConfig
+from huggingface_hub import login
+from dotenv import load_dotenv
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 
-# 1. Ensure all dependencies are installed via requirements.txt:
-# transformers, peft, accelerate, bitsandbytes, datasets, jsonlines, huggingface_hub
+# Function to clean and convert numeric values
+def clean_numeric(value):
+    if isinstance(value, str):
+        # Remove commas and convert to float
+        value = value.replace(',', '')
+        try:
+            return float(value)
+        except (ValueError, TypeError):
+            return 0.0
+    return float(value) if pd.notnull(value) else 0.0
 
-# 2. Place your Excel and JSON files in the same directory as this script or provide full paths.
+# Step 1: Read and process the Excel file
+def process_trial_balance_excel(file_path, source_file_name):
+    # Try different skiprows to find the correct header
+    for skip in range(0, 10):
+        df = pd.read_excel(file_path, skiprows=skip)
+        print(f"Trying skiprows={skip} -> Columns: {df.columns.tolist()}")
+        # Try to find the correct columns for account name and amount
+        possible_account_cols = ["Account Name", "Unnamed: 0", "A/c Name", "A/c Code", "Advance Tax"]
+        possible_amount_cols = ["Net Credit", "Amount", "Net Amount", "Net Debit", "Closing Balance", "95,56,617.16", 9487093, 69524.16, 0]
+        account_col = None
+        amount_col = None
+        for col in possible_account_cols:
+            if col in df.columns:
+                account_col = col
+                break
+        for col in possible_amount_cols:
+            if col in df.columns:
+                amount_col = col
+                break
+        if account_col and amount_col:
+            print(f"Using skiprows={skip}, account_col={account_col}, amount_col={amount_col}")
+            break
+    else:
+        raise KeyError(f"Could not find account or amount columns. Columns found: {df.columns.tolist()}")
 
-# Step 1: Convert Excel files to instruction/output
-df1 = pd.read_excel("In Lakhs  BS_FY 23-24 V5 - Final.xlsx", skiprows=4)
-df2 = pd.read_excel("Trail Balance FY 24-25.xlsx", skiprows=5)
+    # Rename columns for consistency
+    df = df.rename(columns={account_col: "Account Name", amount_col: "Amount"})
 
-df1 = df1.rename(columns={"Unnamed: 2": "Account Name", "Unnamed: 5": "Schedule III Group"})
-df1 = df1[["Account Name", "Schedule III Group"]].dropna()
+    # Select relevant columns and drop rows with missing Account Name
+    df = df[["Account Name", "Amount"]].dropna(subset=["Account Name"])
 
-df2 = df2.rename(columns={"Unnamed: 0": "Account Name"})
-df2["Schedule III Group"] = "TO_LABEL"
-df2 = df2[["Account Name", "Schedule III Group"]].dropna()
+    # Clean account names and amounts
+    df["Account Name"] = df["Account Name"].astype(str).str.strip()
+    df["Amount"] = df["Amount"].apply(clean_numeric)
 
-excel_df = pd.concat([df1, df2], ignore_index=True).drop_duplicates()
+    # Create JSON structure
+    json_data = [
+        {
+            "account_name": row["Account Name"],
+            "group": "Unmapped" if row["Amount"] != 0 else "Unmapped",  # Placeholder for group
+            "amount": row["Amount"],
+            "mapped_by": "Unmapped",
+            "source_file": source_file_name
+        }
+        for _, row in df.iterrows() if row["Account Name"] not in ["Assets", "Liabilities", "Equities", "Income", "Expense", "Total for Trial Balance"]
+    ]
 
-excel_jsonl = [
-    {
-        "instruction": f"Classify the account name '{row['Account Name']}' under Schedule III group.",
-        "output": row["Schedule III Group"]
-    }
-    for _, row in excel_df.iterrows()
-]
+    return json_data
 
-# Step 2: Load parsed_trial_balance.json
-with open("parsed_trial_balance2.json", "r") as f:
-    parsed_data = json.load(f)
+# Step 2: Generate train.jsonl for LLM fine-tuning
+def create_train_jsonl(json_data, output_file="train.jsonl"):
+    jsonl_data = [
+        {
+            "instruction": f"Classify the account name '{entry['account_name']}' under Schedule III group.",
+            "output": entry["group"]
+        }
+        for entry in json_data
+    ]
 
-parsed_jsonl = [
-    {
-        "instruction": f"Classify the account name '{row['account_name']}' under Schedule III group.",
-        "output": row.get("group", "TO_LABEL")
-    }
-    for row in parsed_data if row.get("account_name")
-]
+    with jsonlines.open(output_file, "w") as writer:
+        writer.write_all(jsonl_data)
 
-# Step 3: Combine and save all to train.jsonl
-combined_jsonl = excel_jsonl + parsed_jsonl
-with jsonlines.open("train.jsonl", "w") as writer:
-    writer.write_all(combined_jsonl)
+    print(f"✅ Saved {len(jsonl_data)} samples to {output_file}")
+    return jsonl_data
 
-print(f"✅ Combined and saved {len(combined_jsonl)} samples to train.jsonl")
+# Step 3: Main processing
+excel_file = "input/Sample2 TB.xlsx"
+source_file_name = "Sample2 TB.xlsx"
+json_data = process_trial_balance_excel(excel_file, source_file_name)
+
+# Save JSON output
+with open("trial_balance_processed.json", "w") as f:
+    json.dump(json_data, f, indent=2)
+print(f"✅ Saved JSON output to trial_balance_processed.json")
+
+# Create train.jsonl
+create_train_jsonl(json_data)
 
 # Step 4: Prepare HuggingFace Dataset
-from datasets import Dataset
-
 dataset = Dataset.from_json("train.jsonl")
 print(dataset[0])
 
-# Step 5: (Optional) Re-create train.jsonl from parsed_trial_balance2.json
-# (Uncomment if you want to overwrite train.jsonl with only parsed_trial_balance2.json data)
-# with open("parsed_trial_balance2.json", "r") as f:
-#     data = json.load(f)
-# jsonl_data = []
-# for row in data:
-#     entry = {
-#         "instruction": f"Classify the account name '{row['account_name']}' under Schedule III group.",
-#         "output": "TO_LABEL"
-#     }
-#     jsonl_data.append(entry)
-# with open("train.jsonl", "w") as f:
-#     for item in jsonl_data:
-#         f.write(json.dumps(item) + "\n")
-# print("✅ Converted to train.jsonl with", len(jsonl_data), "entries")
+# Step 5: HuggingFace login (replace with your token)
+token = os.getenv("HFTOKEN")
+if not token:
+    raise RuntimeError("HFTOKEN not found in environment. Please check your .env file and its location.")
+print("HFTOKEN loaded successfully.")
+login(token=token)
 
-# Step 6: HuggingFace login (set your token as an environment variable or paste here)
-from huggingface_hub import login
-login(token="hf_HoTAeLXYpTcVRlhlIEWgI")  # Replace with your token
-
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
+# Step 6: Load model and tokenizer
 model_id = "deepseek-ai/deepseek-coder-1.3b-instruct"
-
 tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained(
-    model_id,
-    load_in_8bit=True,  # optional
-    device_map="auto"
-)
 
-# Step 7: Prepare dataset for training
-def tokenize(example):
-    prompt = f"{example['instruction']}\nAnswer: {example['output']}"
-    return tokenizer(prompt, truncation=True, padding="max_length", max_length=512)
-
-tokenized_dataset = dataset.map(tokenize)
-
-from transformers import BitsAndBytesConfig
-from peft import LoraConfig, get_peft_model, TaskType
-
-# Setup quantization (8-bit)
+# Setup quantization
 bnb_config = BitsAndBytesConfig(
     load_in_8bit=True,
     llm_int8_threshold=6.0,
     llm_int8_skip_modules=None,
 )
 
-# Load the DeepSeek model in 8-bit
 model = AutoModelForCausalLM.from_pretrained(
     model_id,
     device_map="auto",
@@ -110,19 +128,20 @@ model = AutoModelForCausalLM.from_pretrained(
     quantization_config=bnb_config
 )
 
-# LoRA config for parameter-efficient fine-tuning
+# LoRA config
 peft_config = LoraConfig(
     r=8,
     lora_alpha=32,
     target_modules=["q_proj", "v_proj"],
     lora_dropout=0.05,
     bias="none",
-    task_type=TaskType.CAUSAL_LM
+    task_type="CAUSAL_LM"
 )
 
-# Apply LoRA on top of base model
+# Apply LoRA
 model = get_peft_model(model, peft_config)
 
+# Tokenize dataset
 def tokenize_with_labels(example):
     prompt = f"{example['instruction']}\nAnswer: {example['output']}"
     encoded = tokenizer(prompt, truncation=True, padding="max_length", max_length=512)
@@ -131,10 +150,8 @@ def tokenize_with_labels(example):
 
 tokenized_dataset = dataset.map(tokenize_with_labels)
 
-import os
+# Step 7: Training setup
 os.environ["WANDB_DISABLED"] = "true"
-
-from transformers import TrainingArguments, Trainer
 
 training_args = TrainingArguments(
     output_dir="./deepseek_tb_lora",
@@ -152,27 +169,22 @@ trainer = Trainer(
     train_dataset=tokenized_dataset
 )
 
+# Train the model
 trainer.train()
 
-# ✅ Save the trained LoRA adapter properly
+# Save the trained LoRA adapter
 model.save_pretrained("deepseek_tb_lora")
+print("✅ Model saved to deepseek_tb_lora")
 
-# Step 8: Inference with the trained model
-from transformers import pipeline
-from peft import PeftModel
+# Step 8: Inference
+base_model_id = model_id  # Use the same model_id as above
+lora_model_path = "deepseek_tb_lora"  # Path to the saved LoRA adapter
 
-base_model_id = "deepseek-ai/deepseek-coder-1.3b-instruct"
-lora_model_path = "./deepseek_tb_lora"
-
-tokenizer = AutoTokenizer.from_pretrained(base_model_id, trust_remote_code=True)
 base_model = AutoModelForCausalLM.from_pretrained(base_model_id, device_map="auto", trust_remote_code=True)
-
 model = PeftModel.from_pretrained(base_model, lora_model_path)
-
 pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, device_map="auto")
 
 prompt = "Classify the account name 'Machinery' under Schedule III group.\nAnswer:"
-
 output = pipe(
     prompt,
     max_new_tokens=20,

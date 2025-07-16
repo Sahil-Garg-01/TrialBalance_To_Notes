@@ -1,0 +1,905 @@
+[
+  {
+    "account_name": "APC Schneider (UPS 3KVA/2.4KW)",
+    "group": "Unmapped",
+    "amount": 1750.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Apple Ipad",
+    "group": "Unmapped",
+    "amount": 2045.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Apple Iphone 12 Max Pro",
+    "group": "Unmapped",
+    "amount": 6200.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Apple Iphone 12 Max Pro - 2",
+    "group": "Unmapped",
+    "amount": 6235.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Apple Iphone XS",
+    "group": "Unmapped",
+    "amount": 3408.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Apple M2 Pro Laptop",
+    "group": "Unmapped",
+    "amount": 113025.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Apple M3 Pro Laptop",
+    "group": "Unmapped",
+    "amount": 177070.38,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Apple Macbook Pro - A1990",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Apple Watch",
+    "group": "Unmapped",
+    "amount": 828.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Canon Printer cum Scanner - 1",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Canon Printer cum Scanner - 2",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "CD Balance GHI & GPA - Aditya Birla Health Insurance Co Ltd",
+    "group": "Unmapped",
+    "amount": 121428.2,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "CD Balance GTLI - Tata AIA Life Insurance Company Limited",
+    "group": "Unmapped",
+    "amount": 36013.34,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Citi Bank (528828019)",
+    "group": "Unmapped",
+    "amount": 14091759.13,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Deferred Revenue Expenditure",
+    "group": "Unmapped",
+    "amount": 0.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Deferred Tax Asset",
+    "group": "Unmapped",
+    "amount": 313805.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Dell LAPTOP_Batch-19",
+    "group": "Unmapped",
+    "amount": 37937.6,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Dell LAPTOP_Batch-20",
+    "group": "Unmapped",
+    "amount": 56907.42,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Dell LAPTOP_Batch-21",
+    "group": "Unmapped",
+    "amount": 119324.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "EPSON Projector",
+    "group": "Unmapped",
+    "amount": -759.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Fortigate Firewall (Server) - BLR",
+    "group": "Unmapped",
+    "amount": 9620.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Fortigate Firewall (Server) - HYD",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Godrej Safe",
+    "group": "Unmapped",
+    "amount": 2562.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Godrej Wardrobe",
+    "group": "Unmapped",
+    "amount": 4826.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "HP Printer cum Scanner - 1",
+    "group": "Unmapped",
+    "amount": 710.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Input Tax Credits",
+    "group": "Unmapped",
+    "amount": 0.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Input CGST",
+    "group": "Unmapped",
+    "amount": 2232078.76,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Input IGST",
+    "group": "Unmapped",
+    "amount": 1628567.55,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Input SGST",
+    "group": "Unmapped",
+    "amount": 2161805.72,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "IT Server",
+    "group": "Unmapped",
+    "amount": 11235.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Kotak Mahindra Bank (2012183177)",
+    "group": "Unmapped",
+    "amount": 0.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Kotak Mahindra Bank (2013992013)",
+    "group": "Unmapped",
+    "amount": 0.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo Desktop CPU",
+    "group": "Unmapped",
+    "amount": 0.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo Laptop - E580",
+    "group": "Unmapped",
+    "amount": 18950.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-1",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-10",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-11",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-12",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-13",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-14",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-15",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-16",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-17",
+    "group": "Unmapped",
+    "amount": 27000.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-18",
+    "group": "Unmapped",
+    "amount": 63561.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-2",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-3",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-4",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-5",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-6",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-7",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-8",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Lenovo LAPTOP_Batch-9",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "LG Monitors 27\"",
+    "group": "Unmapped",
+    "amount": 3375.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "LG Projector - Batch-1",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "LG Projector - Batch-2",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Logitech Web Camera - 1",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Petty Cash",
+    "group": "Unmapped",
+    "amount": 28397.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Prepaid - Employees Group Life Insurance",
+    "group": "Unmapped",
+    "amount": 47271.35,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Prepaid Assets Insurance",
+    "group": "Unmapped",
+    "amount": 6987.19,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Prepaid Expenses - Laptop AMC",
+    "group": "Unmapped",
+    "amount": 126653.12,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Prepaid Expenses - Laptop Extended Warranty",
+    "group": "Unmapped",
+    "amount": 250313.69,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Prepaid Insurance - Employees Health & Personal Accident",
+    "group": "Unmapped",
+    "amount": 1362469.57,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Samsung 24\" LED Monitor - Batch-1",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Samsung 24\" LED Monitor - Batch-2",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Samsung 24\" LED Monitor - Batch-3",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Samsung 24\" LED Monitor - Batch-4",
+    "group": "Unmapped",
+    "amount": 847.14,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Samsung 24\" LED Monitor - Batch-5",
+    "group": "Unmapped",
+    "amount": 2968.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Samsung 32\" Monitor - 1",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Samsung Mobile Galaxy S9 SM-G960F",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Samsung Refrigerator - 1",
+    "group": "Unmapped",
+    "amount": 1656.14,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Seagate Hard Disc 2TB",
+    "group": "Unmapped",
+    "amount": 1.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Security Deposit - ESIC",
+    "group": "Unmapped",
+    "amount": 75000.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Security Deposit - Hive Space",
+    "group": "Unmapped",
+    "amount": 376200.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Security Deposit - Incuspaze Solutions Private Limited",
+    "group": "Unmapped",
+    "amount": 0.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Security Deposits - Awfis Space Solutions Private Limited",
+    "group": "Unmapped",
+    "amount": 29400.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Security Deposits - Concept Classic Converge",
+    "group": "Unmapped",
+    "amount": 675000.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Accounts Payable",
+    "group": "Unmapped",
+    "amount": -223362.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Payroll liabilities",
+    "group": "Unmapped",
+    "amount": -128700.61,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Profession Tax Payable",
+    "group": "Unmapped",
+    "amount": -19000.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Provident Fund Payables",
+    "group": "Unmapped",
+    "amount": -2329781.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Provision for Gratuity",
+    "group": "Unmapped",
+    "amount": -11855641.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Provision for Professional Fee (Transfer Pricing)",
+    "group": "Unmapped",
+    "amount": -100000.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Provision for Statutory Audit Fee",
+    "group": "Unmapped",
+    "amount": -20000.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Provision for Tax",
+    "group": "Unmapped",
+    "amount": -9421273.74,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "TDS Payable",
+    "group": "Unmapped",
+    "amount": -3669498.25,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Gulf FZE (Related Party)",
+    "group": "Unmapped",
+    "amount": -1105182.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Retained Earnings",
+    "group": "Unmapped",
+    "amount": -4770085.26,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Shares Issued to Fadhlurahman",
+    "group": "Unmapped",
+    "amount": -20.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Shares Issued to Mohammed Anwar",
+    "group": "Unmapped",
+    "amount": -10.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Shares Issued to Veripark Yazilim Anonim Sirketi",
+    "group": "Unmapped",
+    "amount": -9970.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Sales",
+    "group": "Unmapped",
+    "amount": -225987800.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Annual Maintenance Charges - Laptop",
+    "group": "Unmapped",
+    "amount": 181495.88,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Annual Profession Tax",
+    "group": "Unmapped",
+    "amount": 5000.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Asset Insurance",
+    "group": "Unmapped",
+    "amount": 16222.11,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Bank Fees and Charges",
+    "group": "Unmapped",
+    "amount": 81468.19,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Consultancy & Service Fee",
+    "group": "Unmapped",
+    "amount": 325983.86,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Conveyance Allowances",
+    "group": "Unmapped",
+    "amount": 3350.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Deferred Tax Expense",
+    "group": "Unmapped",
+    "amount": 159481.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Depreciation And Amortisation",
+    "group": "Unmapped",
+    "amount": 514972.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Dues & Subscriptions",
+    "group": "Unmapped",
+    "amount": 4174382.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Employees Expenses Reimbursement",
+    "group": "Unmapped",
+    "amount": 382595.82,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Employees Group Life Insurance",
+    "group": "Unmapped",
+    "amount": 194413.5,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Employees Health & Personal Accident Insurance",
+    "group": "Unmapped",
+    "amount": 1589686.24,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Employer Contribution to EPF",
+    "group": "Unmapped",
+    "amount": 10675444.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Gratuity Expense",
+    "group": "Unmapped",
+    "amount": 5087080.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Income Tax",
+    "group": "Unmapped",
+    "amount": 9374675.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Laptop Accessories and Maintenance",
+    "group": "Unmapped",
+    "amount": 84367.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Laptop Extended Warranty",
+    "group": "Unmapped",
+    "amount": 241724.45,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Loss/Gain on Exchange Rate",
+    "group": "Unmapped",
+    "amount": 16074.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Loss/Gain on Foreign Exchange",
+    "group": "Unmapped",
+    "amount": 1832859.14,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Office Rent",
+    "group": "Unmapped",
+    "amount": 2975349.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Other Expenses",
+    "group": "Unmapped",
+    "amount": 0.07,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Payroll Expenses",
+    "group": "Unmapped",
+    "amount": 155613652.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Per Diem Expenses",
+    "group": "Unmapped",
+    "amount": 1864159.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "PF Administration & EDLI Charges",
+    "group": "Unmapped",
+    "amount": 520280.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Postage & Courier Charges",
+    "group": "Unmapped",
+    "amount": 84955.1,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Printing and Stationery",
+    "group": "Unmapped",
+    "amount": 8779.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Professional Fee",
+    "group": "Unmapped",
+    "amount": 310000.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Professional Fee (Transfer Pricing)",
+    "group": "Unmapped",
+    "amount": 100000.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Registrations & Renewals",
+    "group": "Unmapped",
+    "amount": 17500.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Retainership Fee",
+    "group": "Unmapped",
+    "amount": 540000.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "ROC Filing Fee",
+    "group": "Unmapped",
+    "amount": 1500.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Round off",
+    "group": "Unmapped",
+    "amount": 1.24,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Staff Welfare Expenses",
+    "group": "Unmapped",
+    "amount": 157719.5,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Statutory Audit Fee",
+    "group": "Unmapped",
+    "amount": 20000.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Telephone Expense",
+    "group": "Unmapped",
+    "amount": 40732.76,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Visa Expenses",
+    "group": "Unmapped",
+    "amount": 169599.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "GST Written off",
+    "group": "Unmapped",
+    "amount": 0.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  },
+  {
+    "account_name": "Net Profit",
+    "group": "Unmapped",
+    "amount": 0.0,
+    "mapped_by": "Unmapped",
+    "source_file": "Sample2 TB.xlsx"
+  }
+]
