@@ -253,6 +253,13 @@ def convert_json_to_excel(input_file, output_file):
         print(f"Error saving Excel file: {e}")
         return False
 
+def json_to_xlsx(input_json, output_xlsx):
+    """
+    Convert the given JSON file to Excel using the existing logic.
+    """
+    # Use your existing convert_json_to_excel function
+    convert_json_to_excel(input_json, output_xlsx)
+
 def main():
     """Main execution function"""
     # Define file paths

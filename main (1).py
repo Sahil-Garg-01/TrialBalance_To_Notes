@@ -686,7 +686,7 @@ def generate_notes(tb_df, debtors_df=None, creditors_df=None):
 
 def main():
     try:
-        json_file = "output1/parsed_trial_balance.json"
+        json_file = "output/parsed_trial_balance.json"
         if not os.path.exists(json_file):
             raise FileNotFoundError(f"❌ {json_file} not found! Please run test_mapping.py first.")
 
@@ -730,12 +730,12 @@ def main():
         with open("output2/financial_notes_all.md", "w", encoding="utf-8") as f:
             f.write(output_md)
 
-        with open("output2/notes_output.json", "w", encoding="utf-8") as f:
+        with open("output/notes_output.json", "w", encoding="utf-8") as f:
             json.dump(notes_data, f, ensure_ascii=False, indent=2)
 
         print(f"\n🎉 Notes generated successfully!")
         print(f"📄 Markdown: output2/financial_notes_all.md")
-        print(f"📊 JSON: output2/notes_output.json")
+        print(f"📊 JSON: output/notes_output.json")
 
     except Exception as e:
         print(f"❌ Error: {str(e)}")
