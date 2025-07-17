@@ -6,28 +6,23 @@
       "full_title": "16. Revenue from Operations",
       "table_data": [
         {
-          "particulars": "March 31, 2024",
-          "current_year": "330858462.82",
-          "previous_year": ""
-        },
-        {
-          "particulars": "March 31, 2023",
-          "current_year": "0.00",
-          "previous_year": ""
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
         },
         {
           "particulars": "Domestic",
-          "current_year": "25661755.00",
+          "current_year": "354.42",
           "previous_year": "0.00"
         },
         {
           "particulars": "Exports",
-          "current_year": "305206707.82",
+          "current_year": "10.00",
           "previous_year": "0.00"
         },
         {
           "particulars": "Total Sale of Services",
-          "current_year": "330858462.82",
+          "current_year": "364.42",
           "previous_year": "0.00"
         }
       ],

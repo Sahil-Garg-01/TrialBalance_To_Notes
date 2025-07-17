@@ -10,7 +10,7 @@
       "subcategories": [
         {
           "label": "March 31, 2024",
-          "value": "330858462.82"
+          "value": "364.42"
         },
         {
           "label": "March 31, 2023",
@@ -23,22 +23,22 @@
       "subcategories": [
         {
           "label": "Domestic",
-          "value": "25661755.00",
+          "value": "354.42",
           "previous_value": "0.00"
         },
         {
           "label": "Exports",
-          "value": "305206707.82",
+          "value": "10.00",
           "previous_value": "0.00"
         }
       ],
-      "total": "330858462.82",
+      "total": "364.42",
       "previous_total": "0.00"
     }
   ],
   "metadata": {
     "note_number": "16",
-    "generated_on": "2025-07-17T19:47:13.123919"
+    "generated_on": "2025-07-18T00:43:59.233323"
   }
 }
 ```
