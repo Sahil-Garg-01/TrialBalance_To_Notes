@@ -13,6 +13,7 @@ import json
 from app.main16_23 import process_json
 from app.json_xlsx import json_to_xlsx
 import json as pyjson
+from app.utils_normalize import normalize_llm_note_json
 router = APIRouter()
 
 def process_uploaded_file(file: UploadFile):
@@ -99,18 +100,23 @@ async def llm_generate_and_excel(
         if not success:
             raise HTTPException(status_code=500, detail=f"Failed to generate note {note_number}. LLM API may be down or unreachable.")
         # Convert generated note JSON to Excel
-        json_path = f"generated_notes/note_{note_number}.json"
+        json_path = f"generated_notes/notes.json"
         if not os.path.exists(json_path):
             raise HTTPException(status_code=404, detail=f"Generated note file not found: {json_path}")
         with open(json_path, "r", encoding="utf-8") as f:
             note_json = json.load(f)
         if "error" in note_json:
             raise HTTPException(status_code=500, detail=f"LLM failed to generate valid JSON for note {note_number}: {note_json.get('error')}")
-        # Wrap as {"notes": [note_json]} for Excel conversion
-        temp_json = f"generated_notes/note_{note_number}_wrapped.json"
+        
+        # --- Normalize here ---
+        normalized_note = normalize_llm_note_json(note_json)
+        wrapped = {"notes": [normalized_note]}
+        temp_json = f"generated_notes/notes_wrapped.json"
         with open(temp_json, "w", encoding="utf-8") as f2:
-            json.dump({"notes": [note_json]}, f2, ensure_ascii=False, indent=2)
-        excel_path = f"generated_notes_excel/note_{note_number}.xlsx"
+            json.dump(wrapped, f2, ensure_ascii=False, indent=2)
+        # ----------------------
+
+        excel_path = f"generated_notes_excel/notes.xlsx"
         json_to_xlsx(temp_json, excel_path)
         return {"message": f"Note {note_number} generated. Excel saved at {excel_path}."}
     else:

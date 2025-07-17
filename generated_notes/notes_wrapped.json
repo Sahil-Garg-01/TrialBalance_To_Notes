@@ -1,0 +1,44 @@
+{
+  "notes": [
+    {
+      "note_number": "16",
+      "note_title": "Revenue from Operations",
+      "full_title": "16. Revenue from Operations",
+      "table_data": [
+        {
+          "particulars": "March 31, 2024",
+          "current_year": "330858462.82",
+          "previous_year": ""
+        },
+        {
+          "particulars": "March 31, 2023",
+          "current_year": "0.00",
+          "previous_year": ""
+        },
+        {
+          "particulars": "Domestic",
+          "current_year": "25661755.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Exports",
+          "current_year": "305206707.82",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Sale of Services",
+          "current_year": "330858462.82",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    }
+  ]
+}

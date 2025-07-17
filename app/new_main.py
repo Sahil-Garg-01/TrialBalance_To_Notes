@@ -362,9 +362,9 @@ Generate the complete JSON structure now:
     def save_generated_note(self, note_data: str, note_number: str, output_dir: str = "generated_notes") -> bool:
         """Save the generated note to file in both JSON and markdown formats"""
         Path(output_dir).mkdir(parents=True, exist_ok=True)
-        json_output_path = f"{output_dir}/note_{note_number}.json"
-        raw_output_path = f"{output_dir}/note_{note_number}_raw.txt"
-        formatted_md_path = f"{output_dir}/note_{note_number}_formatted.md"
+        json_output_path = f"{output_dir}/notes.json"
+        raw_output_path = f"{output_dir}/notes_raw.txt"
+        formatted_md_path = f"{output_dir}/notes_formatted.md"
         
         try:
             with open(raw_output_path, 'w', encoding='utf-8') as f:
