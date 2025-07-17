@@ -7,56 +7,28 @@
       "subcategories": [
         {
           "label": "March 31, 2024",
-          "value": "{march_2024_total}"
+          "value": "0.00"
         },
         {
           "label": "March 31, 2023",
-          "value": "{march_2023_total}"
+          "value": "0.00"
         }
       ]
     },
     {
       "category": "Consumables",
-      "subcategories": [],
-      "total": "{consumables_2024}",
-      "previous_total": "{consumables_2023}"
+      "subcategories": [
+        {
+          "label": "Opening Stock",
+          "value": "1.01"
+        }
+      ],
+      "total": "1.01",
+      "previous_total": "0.00"
     }
   ],
   "metadata": {
     "note_number": "11",
-    "generated_on": "2025-07-12T12:03:17.663430"
-  },
-  "markdown_content": "11. Inventories\n\n| Particulars                  | March 31, 2024 | March 31, 2023 |\n|------------------------------|----------------|----------------|\n| **Consumables**             | {consumables_2024} | {consumables_2023} |\n| **Total**                    | {march_2024_total} | {march_2023_total} |"
-}
-
-// Calculations
-let consumables_2024 = 0;
-let consumables_2023 = 0;
-let march_2024_total = 0;
-let march_2023_total = 0;
-
-// Iterate through trial balance accounts
-for (const account of financial_data.trial_balance.accounts) {
-  if (account.group === "Property, Plant and Equipment") {
-    const amount_lakhs = account.amount / 100000;
-    if (account.account_name.includes("Computer Equipment")) {
-      consumables_2024 += amount_lakhs;
-      consumables_2023 += 0;
-    }
-    march_2024_total += amount_lakhs;
-    march_2023_total += 0;
+    "generated_on": "2025-07-17T17:10:06.354115"
   }
 }
-
-// Replace placeholders with calculated values
-const json_data = JSON.parse(JSON.stringify(json_structure));
-json_data.structure[1].total = consumables_2024;
-json_data.structure[1].previous_total = consumables_2023;
-json_data.metadata.generated_on = new Date().toISOString();
-json_data.markdown_content = json_data.markdown_content.replace("{consumables_2024}", consumables_2024.toFixed(2));
-json_data.markdown_content = json_data.markdown_content.replace("{consumables_2023}", consumables_2023.toFixed(2));
-json_data.markdown_content = json_data.markdown_content.replace("{march_2024_total}", march_2024_total.toFixed(2));
-json_data.markdown_content = json_data.markdown_content.replace("{march_2023_total}", march_2023_total.toFixed(2));
-
-// Return the final JSON object
-return json_data;

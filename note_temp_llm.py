@@ -246,10 +246,6 @@ class FlexibleFinancialNoteGenerator:
         
         prompt = f"""
 You are a financial reporting expert. Generate a JSON object for "{template['full_title']}" following the exact template structure provided.
-CRITICAL: Respond ONLY with a single valid JSON object. 
-If you cannot calculate a value, use 0.0. 
-Do NOT include any comments, markdown, code, or explanations. 
-Do NOT use placeholders like "march_2024_total" or JavaScript code.
 You are an API. Respond ONLY with a single valid JSON object, no markdown, no explanations, no extra text. The JSON should have the following structure:
 
 *CRITICAL INSTRUCTIONS:*

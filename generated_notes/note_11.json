@@ -1,6 +1,34 @@
 {
-  "note_number": "11",
-  "raw_response": " {\n  \"title\": \"Inventories\",\n  \"full_title\": \"11. Inventories\",\n  \"structure\": [\n    {\n      \"category\": \"\",\n      \"subcategories\": [\n        {\n          \"label\": \"March 31, 2024\",\n          \"value\": \"{march_2024_total}\"\n        },\n        {\n          \"label\": \"March 31, 2023\",\n          \"value\": \"{march_2023_total}\"\n        }\n      ]\n    },\n    {\n      \"category\": \"Consumables\",\n      \"subcategories\": [],\n      \"total\": \"{consumables_2024}\",\n      \"previous_total\": \"{consumables_2023}\"\n    }\n  ],\n  \"metadata\": {\n    \"note_number\": \"11\",\n    \"generated_on\": \"2025-07-12T12:03:17.663430\"\n  },\n  \"markdown_content\": \"11. Inventories\\n\\n| Particulars                  | March 31, 2024 | March 31, 2023 |\\n|------------------------------|----------------|----------------|\\n| **Consumables**             | {consumables_2024} | {consumables_2023} |\\n| **Total**                    | {march_2024_total} | {march_2023_total} |\"\n}\n\n// Calculations\nlet consumables_2024 = 0;\nlet consumables_2023 = 0;\nlet march_2024_total = 0;\nlet march_2023_total = 0;\n\n// Iterate through trial balance accounts\nfor (const account of financial_data.trial_balance.accounts) {\n  if (account.group === \"Property, Plant and Equipment\") {\n    const amount_lakhs = account.amount / 100000;\n    if (account.account_name.includes(\"Computer Equipment\")) {\n      consumables_2024 += amount_lakhs;\n      consumables_2023 += 0;\n    }\n    march_2024_total += amount_lakhs;\n    march_2023_total += 0;\n  }\n}\n\n// Replace placeholders with calculated values\nconst json_data = JSON.parse(JSON.stringify(json_structure));\njson_data.structure[1].total = consumables_2024;\njson_data.structure[1].previous_total = consumables_2023;\njson_data.metadata.generated_on = new Date().toISOString();\njson_data.markdown_content = json_data.markdown_content.replace(\"{consumables_2024}\", consumables_2024.toFixed(2));\njson_data.markdown_content = json_data.markdown_content.replace(\"{consumables_2023}\", consumables_2023.toFixed(2));\njson_data.markdown_content = json_data.markdown_content.replace(\"{march_2024_total}\", march_2024_total.toFixed(2));\njson_data.markdown_content = json_data.markdown_content.replace(\"{march_2023_total}\", march_2023_total.toFixed(2));\n\n// Return the final JSON object\nreturn json_data;",
-  "error": "Could not parse JSON from response",
-  "generated_on": "2025-07-12T12:03:28.104999"
+  "title": "Inventories",
+  "full_title": "11. Inventories",
+  "structure": [
+    {
+      "category": "",
+      "subcategories": [
+        {
+          "label": "March 31, 2024",
+          "value": "0.00"
+        },
+        {
+          "label": "March 31, 2023",
+          "value": "0.00"
+        }
+      ]
+    },
+    {
+      "category": "Consumables",
+      "subcategories": [
+        {
+          "label": "Opening Stock",
+          "value": "1.01"
+        }
+      ],
+      "total": "1.01",
+      "previous_total": "0.00"
+    }
+  ],
+  "metadata": {
+    "note_number": "11",
+    "generated_on": "2025-07-17T17:10:06.354115"
+  }
 }

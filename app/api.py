@@ -5,12 +5,14 @@ from app.notes import generate_notes
 from app.utils import clean_value
 import pandas as pd
 import os
+
 import shutil
 from app.extract import extract_trial_balance_data, analyze_and_save_results
 from app.new_main import FlexibleFinancialNoteGenerator  
 import json
 from app.main16_23 import process_json
 from app.json_xlsx import json_to_xlsx
+import json as pyjson
 router = APIRouter()
 
 def process_uploaded_file(file: UploadFile):
@@ -58,11 +60,15 @@ async def post_notes_text(
         md += f"## {note['Note']}\n\n{note['Content']}\n\n"
     return PlainTextResponse(md, media_type="text/plain")
 
+
+
+
 @router.post("/llm")
 async def generate_llm_note(
     file: UploadFile = File(...),
     note_number: Optional[str] = Form(None)
 ):
+    
     # 1. Save uploaded Excel file
     os.makedirs("input", exist_ok=True)
     file_location = f"input/{file.filename}"
@@ -85,19 +91,13 @@ async def generate_llm_note(
         success = generator.generate_note(note_number, trial_balance_path=output_json)
         if not success:
             raise HTTPException(status_code=500, detail=f"Failed to generate note {note_number}. LLM API may be down or unreachable.")
-        # Read and return the generated JSON file content
-        json_path = f"generated_notes/note_{note_number}.json"
-        if not os.path.exists(json_path):
-            raise HTTPException(status_code=404, detail=f"Generated note file not found: {json_path}")
-        with open(json_path, "r", encoding="utf-8") as f:
-            note_content = f.read()
-        import json as pyjson
-        return JSONResponse(content=pyjson.loads(note_content))
+        return JSONResponse({"message": f"Note {note_number} generated successfully."})
     else:
         results = generator.generate_all_notes(trial_balance_path=output_json)
         if not any(results.values()):
             raise HTTPException(status_code=500, detail="Failed to generate any notes. LLM API may be down or unreachable.")
         return JSONResponse({"results": results})
+
 
 @router.post("/new")
 async def run_full_pipeline(
