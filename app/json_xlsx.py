@@ -29,6 +29,42 @@ def read_json_file(file_path):
         print(f"Error reading file '{file_path}': {e}")
         return None
 
+def normalize_llm_note_json(llm_json):
+    """
+    Convert LLM note JSON (single note, custom structure) to the standard notes_output.json format.
+    """
+    # If already in standard format, return as-is
+    if "note_number" in llm_json or "full_title" in llm_json or "table_data" in llm_json:
+        return llm_json
+
+    # Example mapping: adjust as needed for your real LLM output
+    normalized = {
+        "note_number": llm_json.get("metadata", {}).get("note_number", ""),
+        "note_title": llm_json.get("title", ""),
+        "full_title": llm_json.get("full_title", ""),
+        "table_data": [],
+        "breakdown": {},
+        "matched_accounts": [],
+        "total_amount": None,
+        "total_amount_lakhs": None,
+        "matched_accounts_count": None,
+        "comparative_data": {},
+        "notes_and_disclosures": [],
+        "markdown_content": "",
+    }
+    # Example: flatten structure into table_data
+    if "structure" in llm_json:
+        for item in llm_json["structure"]:
+            if "category" in item and "subcategories" in item:
+                for sub in item["subcategories"]:
+                    row = {
+                        "particulars": sub.get("label", ""),
+                        "current_year": sub.get("value", ""),
+                        "previous_year": ""  # or fill as needed
+                    }
+                    normalized["table_data"].append(row)
+    return normalized
+
 def create_financial_table_sheet(workbook, sheet_name, note_data):
     """Create a properly formatted financial table sheet"""
     ws = workbook.create_sheet(title=sheet_name)
@@ -206,14 +242,23 @@ def convert_json_to_excel(input_file, output_file):
     json_data = read_json_file(input_file)
     if json_data is None:
         return False
-    
+
+    # --- Normalize if needed ---
+    # If it's a single note (not a dict with 'notes'), wrap it
+    if isinstance(json_data, dict) and "notes" not in json_data:
+        # Try to normalize LLM note JSON
+        normalized_note = normalize_llm_note_json(json_data)
+        json_data = {"notes": [normalized_note]}
+    elif isinstance(json_data, list):
+        # If it's a list, wrap as notes
+        json_data = {"notes": json_data}
+
     # Create workbook
     workbook = Workbook()
-    
     # Remove default sheet
     default_sheet = workbook.active
     workbook.remove(default_sheet)
-    
+
     # Handle different JSON structures
     if 'notes' in json_data:
         # If JSON has 'notes' key, process each note
@@ -257,7 +302,6 @@ def json_to_xlsx(input_json, output_xlsx):
     """
     Convert the given JSON file to Excel using the existing logic.
     """
-    # Use your existing convert_json_to_excel function
     convert_json_to_excel(input_json, output_xlsx)
 
 def main():

@@ -10,7 +10,7 @@
       "subcategories": [
         {
           "label": "March 31, 2024",
-          "value": "0.00"
+          "value": "10.23"
         },
         {
           "label": "March 31, 2023",
@@ -20,19 +20,14 @@
     },
     {
       "category": "Consumables",
-      "subcategories": [
-        {
-          "label": "Opening Stock",
-          "value": "1.01"
-        }
-      ],
-      "total": "1.01",
+      "subcategories": [],
+      "total": "10.23",
       "previous_total": "0.00"
     }
   ],
   "metadata": {
     "note_number": "11",
-    "generated_on": "2025-07-17T17:10:06.354115"
+    "generated_on": "2025-07-17T00:00:00.000Z"
   }
 }
 ```

@@ -64,11 +64,14 @@ async def post_notes_text(
 
 
 @router.post("/llm")
-async def generate_llm_note(
+async def llm_generate_and_excel(
     file: UploadFile = File(...),
     note_number: Optional[str] = Form(None)
 ):
-    
+    import os
+    import json
+    import shutil
+
     # 1. Save uploaded Excel file
     os.makedirs("input", exist_ok=True)
     file_location = f"input/{file.filename}"
@@ -87,17 +90,45 @@ async def generate_llm_note(
         raise HTTPException(status_code=500, detail=f"Generator init failed: {e}")
 
     # 4. Generate notes using the extracted JSON
+    os.makedirs("generated_notes_excel", exist_ok=True)
+    from app.json_xlsx import json_to_xlsx
+
     if note_number:
+        # Generate single note
         success = generator.generate_note(note_number, trial_balance_path=output_json)
         if not success:
             raise HTTPException(status_code=500, detail=f"Failed to generate note {note_number}. LLM API may be down or unreachable.")
-        return JSONResponse({"message": f"Note {note_number} generated successfully."})
+        # Convert generated note JSON to Excel
+        json_path = f"generated_notes/note_{note_number}.json"
+        if not os.path.exists(json_path):
+            raise HTTPException(status_code=404, detail=f"Generated note file not found: {json_path}")
+        with open(json_path, "r", encoding="utf-8") as f:
+            note_json = json.load(f)
+        if "error" in note_json:
+            raise HTTPException(status_code=500, detail=f"LLM failed to generate valid JSON for note {note_number}: {note_json.get('error')}")
+        # Wrap as {"notes": [note_json]} for Excel conversion
+        temp_json = f"generated_notes/note_{note_number}_wrapped.json"
+        with open(temp_json, "w", encoding="utf-8") as f2:
+            json.dump({"notes": [note_json]}, f2, ensure_ascii=False, indent=2)
+        excel_path = f"generated_notes_excel/note_{note_number}.xlsx"
+        json_to_xlsx(temp_json, excel_path)
+        return {"message": f"Note {note_number} generated. Excel saved at {excel_path}."}
     else:
+        # Generate all notes
         results = generator.generate_all_notes(trial_balance_path=output_json)
         if not any(results.values()):
             raise HTTPException(status_code=500, detail="Failed to generate any notes. LLM API may be down or unreachable.")
-        return JSONResponse({"results": results})
-
+        # Combine all generated notes into one Excel
+        notes = []
+        for filename in os.listdir("generated_notes"):
+            if filename.endswith(".json"):
+                with open(os.path.join("generated_notes", filename), "r", encoding="utf-8") as f:
+                    note_json = json.load(f)
+                    if "error" not in note_json:
+                        notes.append(note_json)
+        if not notes:
+            raise HTTPException(status_code=404, detail="No valid note JSON files found.")
+        
 
 @router.post("/new")
 async def run_full_pipeline(
