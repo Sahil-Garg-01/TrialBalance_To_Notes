@@ -245,62 +245,57 @@ class FlexibleFinancialNoteGenerator:
         }
         
         prompt = f"""
-You are a financial reporting expert. Generate a JSON object for "{template['full_title']}" following the exact template structure provided.
-CRITICAL: Respond ONLY with a single valid JSON object. 
-If you cannot calculate a value, use 0.0. 
-Do NOT include any comments, markdown, code, or explanations. 
-Do NOT use placeholders like "march_2024_total" or JavaScript code.
-You are an API. Respond ONLY with a single valid JSON object, no markdown, no explanations, no extra text. The JSON should have the following structure:
+You are a financial reporting AI system with two roles:
+1. ACCOUNTANT — You extract, compute, and classify data from the financial context and trial balance.
+2. AUDITOR — You review the Accountant’s output for accuracy, assumptions, and consistency with reporting standards.
 
-*CRITICAL INSTRUCTIONS:*
-1. Return ONLY valid JSON - no markdown formatting, no explanations
-2. Follow the exact template structure provided
-3. All amounts must be in lakhs (₹ in lakhs, divide by 100000, round to 2 decimal places)
-4. Use trial balance data for accurate values
-5. For 2023 data (previous year), use 0 if not available
-6. Ensure totals add up correctly
-7. Include markdown_content with a formatted table as specified
-8. Use professional financial reporting standards
+Your task is to generate a financial note titled: "{template['full_title']}" strictly following the JSON structure below, based on the provided financial context and trial balance data.
 
-*TEMPLATE STRUCTURE:*
+---
+**CRITICAL RULES**
+- Respond ONLY with a valid JSON object (no markdown, no explanations).
+- If a value is unavailable or not calculable, use `0.0`.
+- Convert all ₹ amounts to lakhs by dividing by 100000 and round to 2 decimal places.
+- Ensure that category subtotals **match** the grand total.
+- Return a key `markdown_content` containing a markdown-formatted table for this note.
+- Validate that your JSON structure matches the `TEMPLATE STRUCTURE` exactly.
+- Perform intelligent classification: if an entry from the trial balance clearly fits a category, assign it logically.
+- If data is ambiguous, make a conservative estimate, and record it in an `assumptions` field inside the JSON.
+
+---
+**TEMPLATE STRUCTURE**
 {json.dumps(template, indent=2)}
 
-*FINANCIAL CONTEXT:*
+---
+**TRIAL BALANCE & CONTEXT**
 {json.dumps(context, indent=2)}
 
-*SPECIFIC REQUIREMENTS FOR NOTE 14 (Short Term Loans and Advances):*
-- Categorize into:
+---
+**CATEGORY RULES FOR NOTE 14 (Short Term Loans and Advances):**
+- Categorize entries under:
   - Unsecured, considered good:
     - Prepaid Expenses
     - Other Advances
   - Other loans and advances:
-    - Advance tax
+    - Advance Tax
     - Balances with statutory/government authorities
-- Use exact values from trial balance or categorized accounts
-- Ensure totals match the sum of subcategories
-- Generate markdown_content with a table in this exact format:
+- Use logical inference to map trial balance entries into these subcategories
+- If values for March 31, 2023 are missing, default to 0
+- Ensure the sum of all subcategories = `Total`
 
-14. Short Term Loans and Advances
+---
+**REQUIRED OUTPUT JSON FORMAT**
+- The JSON must include:
+  - All categories and subcategories with March 2024 and March 2023 values
+  - A computed `grand_total_lakhs`
+  - A `markdown_content` with the financial note table
+  - A `generated_on` timestamp
+  - An `assumptions` field (optional, if any data was inferred or missing)
 
-| Particulars                  | March 31, 2024 | March 31, 2023 |
-|------------------------------|----------------|----------------|
-| **Unsecured, considered good**|                |                |
-| Prepaid Expenses             | {category_totals.get('prepaid_expenses', {}).get('lakhs', 0.00)} | - |
-| Other Advances               | {category_totals.get('other_advances', {}).get('lakhs', 0.00)} | - |
-| **Other loans and advances** |                |                |
-| Advance tax                  | {category_totals.get('advance_tax', {}).get('lakhs', 0.00)} | - |
-| Balances with statutory/government authorities | {category_totals.get('statutory_balances', {}).get('lakhs', 0.00)} | - |
-| **Total**                    | {grand_total_lakhs} | - |
-
-
-*CALCULATION RULES:*
-- Convert amounts to lakhs by dividing by 100000
-- Round to 2 decimal places
-- Validate totals: Sum of subcategories must equal the grand total
-- Include generated_on timestamp: {datetime.now().isoformat()}
-
-Generate the complete JSON structure now:
+---
+Generate the final JSON now:
 """
+
         return prompt
     
     def call_openrouter_api(self, prompt: str) -> Optional[str]:

@@ -7,31 +7,82 @@ from datetime import datetime
 
 def load_note_data(note_number, folder="generated_notes"):
     """Load note data from JSON file in the specified folder."""
-    file_path = os.path.join(folder, f"note_{note_number}.json")
+    file_path = os.path.join(folder, f"notes.json")
     try:
         with open(file_path, "r", encoding="utf-8") as f:
             return json.load(f)
     except FileNotFoundError:
+        print(f"Warning: Note {note_number} file not found at {file_path}")
+        return None
+    except json.JSONDecodeError:
+        print(f"Warning: Invalid JSON in note {note_number}")
         return None
 
-def extract_value(note_data, key, default=None):
-    """Extract a value from note data, handling placeholders or actual values for 2024 and 2023."""
-    if not note_data:
-        return default or f"{{{key}}}"
-    # Check subcategories first
-    for category in note_data.get("structure", []):
-        for subcat in category.get("subcategories", []):
-            if subcat.get("value") and key.startswith(subcat.get("label", "").lower().replace(" ", "").replace("-", "").replace("/", "").replace("&", "")) and key.endswith("_2024"):
-                return subcat.get("value", default or f"{{{key}}}")
-            if subcat.get("previous_value") and key.startswith(subcat.get("label", "").lower().replace(" ", "").replace("-", "").replace("/", "").replace("&", "")) and key.endswith("_2023"):
-                return subcat.get("previous_value", default or f"{{{key}}}")
-    # Check for total and previous_total across all categories
-    for category in note_data.get("structure", []):
-        if "total" in category and key.endswith("_total_2024"):
-            return category.get("total", default or f"{{{key}}}")
-        if "previous_total" in category and key.endswith("_total_2023"):
-            return category.get("previous_total", default or f"{{{key}}}")
-    return default or f"{{{key}}}"
+def extract_total_from_note(note_data, year="2024"):
+    """Extract total value from note data for the specified year."""
+    if not note_data or "structure" not in note_data:
+        return 0.0
+    
+    # Look for total in categories
+    for category in note_data["structure"]:
+        if year == "2024" and "total" in category:
+            try:
+                return float(category["total"])
+            except (ValueError, TypeError):
+                continue
+        elif year == "2023" and "previous_total" in category:
+            try:
+                return float(category["previous_total"])
+            except (ValueError, TypeError):
+                continue
+    
+    # If no total found, sum up subcategory values
+    total = 0.0
+    for category in note_data["structure"]:
+        if "subcategories" in category:
+            for subcat in category["subcategories"]:
+                if year == "2024" and "value" in subcat:
+                    try:
+                        total += float(subcat["value"])
+                    except (ValueError, TypeError):
+                        continue
+                elif year == "2023" and "previous_value" in subcat:
+                    try:
+                        total += float(subcat["previous_value"])
+                    except (ValueError, TypeError):
+                        continue
+    
+    return total
+
+def extract_specific_value(note_data, key, year="2024"):
+    """Extract specific value from note data based on key and year."""
+    if not note_data or "structure" not in note_data:
+        return 0.0
+    
+    # Search through all categories and subcategories
+    for category in note_data["structure"]:
+        if "subcategories" in category:
+            for subcat in category["subcategories"]:
+                label = subcat.get("label", "").lower().replace(" ", "").replace("-", "").replace("/", "").replace("&", "")
+                if key.lower() in label:
+                    if year == "2024" and "value" in subcat:
+                        try:
+                            return float(subcat["value"])
+                        except (ValueError, TypeError):
+                            continue
+                    elif year == "2023" and "previous_value" in subcat:
+                        try:
+                            return float(subcat["previous_value"])
+                        except (ValueError, TypeError):
+                            continue
+    
+    return 0.0
+
+def format_currency(value):
+    """Format currency value for display."""
+    if isinstance(value, (int, float)) and value != 0:
+        return f"{value:,.2f}"
+    return "0.00"
 
 def generate_pnl_report():
     """Generate P&L report in Excel format using data from generated_notes folder."""
@@ -67,106 +118,97 @@ def generate_pnl_report():
         cell.border = thin_border
         cell.alignment = center_align if col > 1 else left_align
 
-    # P&L line items
-    row = 4
+    # Load all required notes
+    notes_data = {}
+    for note_num in range(16, 29):  # Notes 16-28
+        notes_data[str(note_num)] = load_note_data(str(note_num))
+
+    # Calculate values
+    revenue_2024 = extract_total_from_note(notes_data.get("16"), "2024")
+    revenue_2023 = extract_total_from_note(notes_data.get("16"), "2023")
+    other_income_2024 = extract_total_from_note(notes_data.get("17"), "2024")
+    other_income_2023 = extract_total_from_note(notes_data.get("17"), "2023")
+    
+    total_income_2024 = revenue_2024 + other_income_2024
+    total_income_2023 = revenue_2023 + other_income_2023
+
+    # Calculate expenses
+    cost_materials_2024 = extract_total_from_note(notes_data.get("18"), "2024")
+    cost_materials_2023 = extract_total_from_note(notes_data.get("18"), "2023")
+    employee_benefit_2024 = extract_total_from_note(notes_data.get("19"), "2024")
+    employee_benefit_2023 = extract_total_from_note(notes_data.get("19"), "2023")
+    other_expenses_2024 = extract_total_from_note(notes_data.get("20"), "2024")
+    other_expenses_2023 = extract_total_from_note(notes_data.get("20"), "2023")
+    depreciation_2024 = extract_total_from_note(notes_data.get("21"), "2024")
+    depreciation_2023 = extract_total_from_note(notes_data.get("21"), "2023")
+    loss_assets_2024 = extract_total_from_note(notes_data.get("22"), "2024")
+    loss_assets_2023 = extract_total_from_note(notes_data.get("22"), "2023")
+    finance_costs_2024 = extract_total_from_note(notes_data.get("23"), "2024")
+    finance_costs_2023 = extract_total_from_note(notes_data.get("23"), "2023")
+    auditor_payment_2024 = extract_total_from_note(notes_data.get("24"), "2024")
+    auditor_payment_2023 = extract_total_from_note(notes_data.get("24"), "2023")
+
+    total_expenses_2024 = (cost_materials_2024 + employee_benefit_2024 + other_expenses_2024 + 
+                          depreciation_2024 + loss_assets_2024 + finance_costs_2024 + auditor_payment_2024)
+    total_expenses_2023 = (cost_materials_2023 + employee_benefit_2023 + other_expenses_2023 + 
+                          depreciation_2023 + loss_assets_2023 + finance_costs_2023 + auditor_payment_2023)
+
+    profit_before_exceptional_2024 = total_income_2024 - total_expenses_2024
+    profit_before_exceptional_2023 = total_income_2023 - total_expenses_2023
+
+    # Tax calculations (assuming notes 25-28 contain tax information)
+    current_tax_2024 = extract_total_from_note(notes_data.get("25"), "2024")
+    current_tax_2023 = extract_total_from_note(notes_data.get("25"), "2023")
+    deferred_tax_2024 = extract_total_from_note(notes_data.get("26"), "2024")
+    deferred_tax_2023 = extract_total_from_note(notes_data.get("26"), "2023")
+
+    total_tax_2024 = current_tax_2024 + deferred_tax_2024
+    total_tax_2023 = current_tax_2023 + deferred_tax_2023
+
+    profit_after_tax_2024 = profit_before_exceptional_2024 - total_tax_2024
+    profit_after_tax_2023 = profit_before_exceptional_2023 - total_tax_2023
+
+    # P&L line items with calculated values
     line_items = [
-        {"label": "I. Revenue from Operations", "note": "16", "key_2024": "total_2024", "key_2023": "total_2023", "value_2024": None, "value_2023": None},
-        {"label": "II. Other Income", "note": "17", "key_2024": "total_2024", "key_2023": "total_2023", "value_2024": None, "value_2023": None},
-        {"label": "III. Total Income (I + II)", "note": "", "key_2024": "total_income_2024", "key_2023": "total_income_2023", "value_2024": None, "value_2023": None},
-        {"label": "IV. Expenses", "note": "", "key_2024": "", "key_2023": "", "value_2024": None, "value_2023": None},
-        {"label": "   Cost of Materials Consumed", "note": "18", "key_2024": "costmaterialsconsumed_2024", "key_2023": "costmaterialsconsumed_2023", "value_2024": None, "value_2023": None},
-        {"label": "   Employee Benefit Expense", "note": "19", "key_2024": "total_2024", "key_2023": "total_2023", "value_2024": None, "value_2023": None},
-        {"label": "   Other Expenses", "note": "20", "key_2024": "total_2024", "key_2023": "total_2023", "value_2024": None, "value_2023": None},
-        {"label": "   Depreciation and Amortisation Expense", "note": "21", "key_2024": "total_2024", "key_2023": "total_2023", "value_2024": None, "value_2023": None},
-        {"label": "   Loss on Sale of Assets & Investments", "note": "22", "key_2024": "total_2024", "key_2023": "total_2023", "value_2024": None, "value_2023": None},
-        {"label": "   Finance Costs", "note": "23", "key_2024": "total_2024", "key_2023": "total_2023", "value_2024": None, "value_2023": None},
-        {"label": "   Payment to Auditor", "note": "24", "key_2024": "total_2024", "key_2023": "total_2023", "value_2024": None, "value_2023": None},
-        {"label": "   Total Expenses", "note": "", "key_2024": "total_expenses_2024", "key_2023": "total_expenses_2023", "value_2024": None, "value_2023": None},
-        {"label": "V. Profit Before Exceptional and Extraordinary Items and Tax (III - IV)", "note": "", "key_2024": "profit_before_exceptional_2024", "key_2023": "profit_before_exceptional_2023", "value_2024": None, "value_2023": None},
-        {"label": "VI. Exceptional Items", "note": "", "key_2024": "exceptional_items_2024", "key_2023": "exceptional_items_2023", "value_2024": "{exceptional_items_2024}", "value_2023": "{exceptional_items_2023}"},
-        {"label": "VII. Profit Before Tax (V - VI)", "note": "", "key_2024": "profit_before_tax_2024", "key_2023": "profit_before_tax_2023", "value_2024": None, "value_2023": None},
-        {"label": "VIII. Tax Expense:", "note": "", "key_2024": "", "key_2023": "", "value_2024": None, "value_2023": None},
-        {"label": "   (1) Current Tax", "note": "", "key_2024": "current_tax_2024", "key_2023": "current_tax_2023", "value_2024": "{current_tax_2024}", "value_2023": "{current_tax_2023}"},
-        {"label": "   (2) Deferred Tax", "note": "", "key_2024": "deferred_tax_2024", "key_2023": "deferred_tax_2023", "value_2024": "{deferred_tax_2024}", "value_2023": "{deferred_tax_2023}"},
-        {"label": "IX. Profit After Tax for the period (VII - VIII)", "note": "", "key_2024": "profit_after_tax_2024", "key_2023": "profit_after_tax_2023", "value_2024": None, "value_2023": None}
+        {"label": "I. Revenue from Operations", "note": "16", "value_2024": revenue_2024, "value_2023": revenue_2023},
+        {"label": "II. Other Income", "note": "17", "value_2024": other_income_2024, "value_2023": other_income_2023},
+        {"label": "III. Total Income (I + II)", "note": "", "value_2024": total_income_2024, "value_2023": total_income_2023},
+        {"label": "IV. Expenses", "note": "", "value_2024": "", "value_2023": ""},
+        {"label": "   Cost of Materials Consumed", "note": "18", "value_2024": cost_materials_2024, "value_2023": cost_materials_2023},
+        {"label": "   Employee Benefit Expense", "note": "19", "value_2024": employee_benefit_2024, "value_2023": employee_benefit_2023},
+        {"label": "   Other Expenses", "note": "20", "value_2024": other_expenses_2024, "value_2023": other_expenses_2023},
+        {"label": "   Depreciation and Amortisation Expense", "note": "21", "value_2024": depreciation_2024, "value_2023": depreciation_2023},
+        {"label": "   Loss on Sale of Assets & Investments", "note": "22", "value_2024": loss_assets_2024, "value_2023": loss_assets_2023},
+        {"label": "   Finance Costs", "note": "23", "value_2024": finance_costs_2024, "value_2023": finance_costs_2023},
+        {"label": "   Payment to Auditor", "note": "24", "value_2024": auditor_payment_2024, "value_2023": auditor_payment_2023},
+        {"label": "   Total Expenses", "note": "", "value_2024": total_expenses_2024, "value_2023": total_expenses_2023},
+        {"label": "V. Profit Before Exceptional and Extraordinary Items and Tax (III - IV)", "note": "", "value_2024": profit_before_exceptional_2024, "value_2023": profit_before_exceptional_2023},
+        {"label": "VI. Exceptional Items", "note": "27", "value_2024": extract_total_from_note(notes_data.get("27"), "2024"), "value_2023": extract_total_from_note(notes_data.get("27"), "2023")},
+        {"label": "VII. Profit Before Tax (V - VI)", "note": "", "value_2024": profit_before_exceptional_2024, "value_2023": profit_before_exceptional_2023},
+        {"label": "VIII. Tax Expense:", "note": "", "value_2024": "", "value_2023": ""},
+        {"label": "   (1) Current Tax", "note": "25", "value_2024": current_tax_2024, "value_2023": current_tax_2023},
+        {"label": "   (2) Deferred Tax", "note": "26", "value_2024": deferred_tax_2024, "value_2023": deferred_tax_2023},
+        {"label": "IX. Profit After Tax for the period (VII - VIII)", "note": "", "value_2024": profit_after_tax_2024, "value_2023": profit_after_tax_2023}
     ]
 
-    # Load note data and populate values
-    note_values = {}
-    for note_number in [str(i) for i in range(16, 25)]:
-        note_data = load_note_data(note_number)
-        if note_data:
-            for item in line_items:
-                if item["note"] == note_number:
-                    item["value_2024"] = extract_value(note_data, item["key_2024"])
-                    item["value_2023"] = extract_value(note_data, item["key_2023"])
-
-    # Calculate totals for 2024 and 2023
-    revenue_2024 = line_items[0]["value_2024"]
-    revenue_2023 = line_items[0]["value_2023"]
-    other_income_2024 = line_items[1]["value_2024"]
-    other_income_2023 = line_items[1]["value_2023"]
-    total_income_2024 = "{total_income_2024}" if isinstance(revenue_2024, str) or isinstance(other_income_2024, str) else revenue_2024 + other_income_2024 if revenue_2024 and other_income_2024 else "{total_income_2024}"
-    total_income_2023 = "{total_income_2023}" if isinstance(revenue_2023, str) or isinstance(other_income_2023, str) else revenue_2023 + other_income_2023 if revenue_2023 and other_income_2023 else "{total_income_2023}"
-    line_items[2]["value_2024"] = total_income_2024
-    line_items[2]["value_2023"] = total_income_2023
-
-    expenses_2024 = [item["value_2024"] for item in line_items[4:11]]
-    expenses_2023 = [item["value_2023"] for item in line_items[4:11]]
-    total_expenses_2024 = "{total_expenses_2024}"
-    total_expenses_2023 = "{total_expenses_2023}"
-    if all(isinstance(x, (int, float)) for x in expenses_2024):
-        total_expenses_2024 = sum(expenses_2024)
-    if all(isinstance(x, (int, float)) for x in expenses_2023):
-        total_expenses_2023 = sum(expenses_2023)
-    line_items[11]["value_2024"] = total_expenses_2024
-    line_items[11]["value_2023"] = total_expenses_2023
-
-    profit_before_exceptional_2024 = "{profit_before_exceptional_2024}"
-    profit_before_exceptional_2023 = "{profit_before_exceptional_2023}"
-    if isinstance(total_income_2024, (int, float)) and isinstance(total_expenses_2024, (int, float)):
-        profit_before_exceptional_2024 = total_income_2024 - total_expenses_2024
-    if isinstance(total_income_2023, (int, float)) and isinstance(total_expenses_2023, (int, float)):
-        profit_before_exceptional_2023 = total_income_2023 - total_expenses_2023
-    line_items[12]["value_2024"] = profit_before_exceptional_2024
-    line_items[12]["value_2023"] = profit_before_exceptional_2023
-
-    exceptional_items_2024 = line_items[13]["value_2024"]
-    exceptional_items_2023 = line_items[13]["value_2023"]
-    profit_before_tax_2024 = "{profit_before_tax_2024}"
-    profit_before_tax_2023 = "{profit_before_tax_2023}"
-    if isinstance(profit_before_exceptional_2024, (int, float)) and isinstance(exceptional_items_2024, (int, float)):
-        profit_before_tax_2024 = profit_before_exceptional_2024 - exceptional_items_2024
-    if isinstance(profit_before_exceptional_2023, (int, float)) and isinstance(exceptional_items_2023, (int, float)):
-        profit_before_tax_2023 = profit_before_exceptional_2023 - exceptional_items_2023
-    line_items[14]["value_2024"] = profit_before_tax_2024
-    line_items[14]["value_2023"] = profit_before_tax_2023
-
-    current_tax_2024 = line_items[16]["value_2024"]
-    current_tax_2023 = line_items[16]["value_2023"]
-    deferred_tax_2024 = line_items[17]["value_2024"]
-    deferred_tax_2023 = line_items[17]["value_2023"]
-    total_tax_2024 = "{total_tax_2024}"
-    total_tax_2023 = "{total_tax_2023}"
-    if isinstance(current_tax_2024, (int, float)) and isinstance(deferred_tax_2024, (int, float)):
-        total_tax_2024 = current_tax_2024 + deferred_tax_2024
-    if isinstance(current_tax_2023, (int, float)) and isinstance(deferred_tax_2023, (int, float)):
-        total_tax_2023 = current_tax_2023 + deferred_tax_2023
-    profit_after_tax_2024 = "{profit_after_tax_2024}"
-    profit_after_tax_2023 = "{profit_after_tax_2023}"
-    if isinstance(profit_before_tax_2024, (int, float)) and isinstance(total_tax_2024, (int, float)):
-        profit_after_tax_2024 = profit_before_tax_2024 - total_tax_2024
-    if isinstance(profit_before_tax_2023, (int, float)) and isinstance(total_tax_2023, (int, float)):
-        profit_after_tax_2023 = profit_before_tax_2023 - total_tax_2023
-    line_items[18]["value_2024"] = profit_after_tax_2024
-    line_items[18]["value_2023"] = profit_after_tax_2023
-
     # Write line items to Excel
+    row = 4
     for item in line_items:
         ws.cell(row=row, column=1).value = item["label"]
         ws.cell(row=row, column=2).value = item["note"]
-        ws.cell(row=row, column=3).value = item["value_2024"]
-        ws.cell(row=row, column=4).value = item["value_2023"]
+        
+        # Format values
+        if item["value_2024"] == "":
+            ws.cell(row=row, column=3).value = ""
+        else:
+            ws.cell(row=row, column=3).value = format_currency(item["value_2024"])
+            
+        if item["value_2023"] == "":
+            ws.cell(row=row, column=4).value = ""
+        else:
+            ws.cell(row=row, column=4).value = format_currency(item["value_2023"])
+        
+        # Apply formatting
         for col in range(1, 5):
             ws.cell(row=row, column=col).border = thin_border
             ws.cell(row=row, column=col).alignment = center_align if col > 1 else left_align
@@ -174,42 +216,52 @@ def generate_pnl_report():
                 ws.cell(row=row, column=col).font = bold_font
         row += 1
 
-    # Disclosures
+    # Add notes and disclosures
     row += 1
     ws.cell(row=row, column=1).value = "Notes:"
     ws.cell(row=row, column=1).font = bold_font
     row += 1
 
-    # Note 20 disclosure
-    note_20_data = load_note_data("20")
+    # Add any specific disclosures from notes
+    note_20_data = notes_data.get("20")
     if note_20_data and "notes_and_disclosures" in note_20_data:
         ws.cell(row=row, column=1).value = note_20_data["notes_and_disclosures"][0]
         ws.cell(row=row, column=1).alignment = left_align
         row += 1
 
-    # EPS disclosure
-    ws.cell(row=row, column=1).value = "Earnings Per Share (EPS):"
-    ws.cell(row=row, column=1).font = bold_font
-    row += 1
-    ws.cell(row=row, column=1).value = "   Basic EPS"
-    ws.cell(row=row, column=3).value = "{basic_eps_2024}"
-    ws.cell(row=row, column=4).value = "{basic_eps_2023}"
-    ws.cell(row=row, column=1).alignment = left_align
-    ws.cell(row=row, column=3).alignment = center_align
-    ws.cell(row=row, column=4).alignment = center_align
-    row += 1
-    ws.cell(row=row, column=1).value = "   Diluted EPS"
-    ws.cell(row=row, column=3).value = "{diluted_eps_2024}"
-    ws.cell(row=row, column=4).value = "{diluted_eps_2023}"
-    ws.cell(row=row, column=1).alignment = left_align
-    ws.cell(row=row, column=3).alignment = center_align
-    ws.cell(row=row, column=4).alignment = center_align
+    # EPS information (if available in notes 27-28)
+    eps_data = notes_data.get("28")  # Assuming EPS is in note 28
+    if eps_data:
+        ws.cell(row=row, column=1).value = "Earnings Per Share (EPS):"
+        ws.cell(row=row, column=1).font = bold_font
+        row += 1
+        
+        basic_eps_2024 = extract_specific_value(eps_data, "basic", "2024")
+        basic_eps_2023 = extract_specific_value(eps_data, "basic", "2023")
+        diluted_eps_2024 = extract_specific_value(eps_data, "diluted", "2024")
+        diluted_eps_2023 = extract_specific_value(eps_data, "diluted", "2023")
+        
+        ws.cell(row=row, column=1).value = "   Basic EPS"
+        ws.cell(row=row, column=3).value = format_currency(basic_eps_2024)
+        ws.cell(row=row, column=4).value = format_currency(basic_eps_2023)
+        ws.cell(row=row, column=1).alignment = left_align
+        ws.cell(row=row, column=3).alignment = center_align
+        ws.cell(row=row, column=4).alignment = center_align
+        row += 1
+        
+        ws.cell(row=row, column=1).value = "   Diluted EPS"
+        ws.cell(row=row, column=3).value = format_currency(diluted_eps_2024)
+        ws.cell(row=row, column=4).value = format_currency(diluted_eps_2023)
+        ws.cell(row=row, column=1).alignment = left_align
+        ws.cell(row=row, column=3).alignment = center_align
+        ws.cell(row=row, column=4).alignment = center_align
 
     # Save Excel file with error handling
     output_file = "pnl_report.xlsx"
     try:
         wb.save(output_file)
-        print(f"P&L report generated and saved to {output_file}")
+        print(f"P&L report generated successfully and saved to {output_file}")
+        
     except PermissionError:
         print(f"PermissionError: Unable to save to {output_file}. Trying alternative location...")
         fallback_file = os.path.join(os.path.expanduser("~"), "Desktop", "pnl_report_fallback.xlsx")

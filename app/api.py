@@ -64,7 +64,7 @@ async def post_notes_text(
 
 
 
-@router.post("/llm")
+@router.post("/new")
 async def llm_generate_and_excel(
     file: UploadFile = File(...),
     note_number: Optional[str] = Form(None)
@@ -136,7 +136,7 @@ async def llm_generate_and_excel(
             raise HTTPException(status_code=404, detail="No valid note JSON files found.")
         
 
-@router.post("/new")
+@router.post("/hardcoded")
 async def run_full_pipeline(
     file: UploadFile = File(...),
     note_number: Optional[str] = Form(None)  # Accepts comma-separated note numbers

@@ -23,12 +23,12 @@
       "subcategories": [
         {
           "label": "Domestic",
-          "value": "354.42",
+          "value": "358.82",
           "previous_value": "0.00"
         },
         {
           "label": "Exports",
-          "value": "10.00",
+          "value": "5.60",
           "previous_value": "0.00"
         }
       ],
@@ -38,7 +38,7 @@
   ],
   "metadata": {
     "note_number": "16",
-    "generated_on": "2025-07-18T00:43:59.233323"
+    "generated_on": "2025-07-18T14:28:26.123Z"
   }
 }
 ```
