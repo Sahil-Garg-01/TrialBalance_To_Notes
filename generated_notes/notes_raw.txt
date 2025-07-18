@@ -1,13 +1,13 @@
  {
-  "title": "Revenue from Operations",
-  "full_title": "16. Revenue from Operations",
+  "title": "Short Term Loans and Advances",
+  "full_title": "14. Short Term Loans and Advances",
   "structure": [
     {
-      "category": "In Lakhs",
+      "category": "",
       "subcategories": [
         {
           "label": "March 31, 2024",
-          "value": "364.42"
+          "value": "20.54"
         },
         {
           "label": "March 31, 2023",
@@ -16,25 +16,46 @@
       ]
     },
     {
-      "category": "Sale of Services",
+      "category": "Unsecured, considered good",
       "subcategories": [
         {
-          "label": "Domestic",
-          "value": "358.82",
+          "label": "Prepaid Expenses",
+          "value": "15.90",
           "previous_value": "0.00"
         },
         {
-          "label": "Exports",
-          "value": "5.60",
+          "label": "Other Advances",
+          "value": "257.02",
           "previous_value": "0.00"
         }
-      ],
-      "total": "364.42",
+      ]
+    },
+    {
+      "category": "Other loans and advances",
+      "subcategories": [
+        {
+          "label": "Advance Tax",
+          "value": "112.85",
+          "previous_value": "0.00"
+        },
+        {
+          "label": "Balances with statutory/government authorities",
+          "value": "357.96",
+          "previous_value": "0.00"
+        }
+      ]
+    },
+    {
+      "category": "Total",
+      "subcategories": [],
+      "total": "743.74",
       "previous_total": "0.00"
     }
   ],
   "metadata": {
-    "note_number": "16",
-    "generated_on": "2025-07-18T14:28:26.123Z"
-  }
+    "note_number": "14",
+    "generated_on": "2025-07-18"
+  },
+  "markdown_content": "# 14. Short Term Loans and Advances\n| Category | March 31, 2024 | March 31, 2023 |\n| --- | --- | --- |\n| Unsecured, considered good | 15.90 | 0.00 |\n| Prepaid Expenses | 15.90 | 0.00 |\n| Other Advances | 257.02 | 0.00 |\n| Other loans and advances | 470.81 | 0.00 |\n| Advance Tax | 112.85 | 0.00 |\n| Balances with statutory/government authorities | 357.96 | 0.00 |\n| Total | 743.74 | 0.00 |",
+  "assumptions": "Assumptions: Previous year values were not available in the trial balance, hence set to 0.00."
 }

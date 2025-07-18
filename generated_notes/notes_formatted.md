@@ -1,44 +1,10 @@
-# Note 16
-
-```json
-{
-  "title": "Revenue from Operations",
-  "full_title": "16. Revenue from Operations",
-  "structure": [
-    {
-      "category": "In Lakhs",
-      "subcategories": [
-        {
-          "label": "March 31, 2024",
-          "value": "364.42"
-        },
-        {
-          "label": "March 31, 2023",
-          "value": "0.00"
-        }
-      ]
-    },
-    {
-      "category": "Sale of Services",
-      "subcategories": [
-        {
-          "label": "Domestic",
-          "value": "358.82",
-          "previous_value": "0.00"
-        },
-        {
-          "label": "Exports",
-          "value": "5.60",
-          "previous_value": "0.00"
-        }
-      ],
-      "total": "364.42",
-      "previous_total": "0.00"
-    }
-  ],
-  "metadata": {
-    "note_number": "16",
-    "generated_on": "2025-07-18T14:28:26.123Z"
-  }
-}
-```
+# 14. Short Term Loans and Advances
+| Category | March 31, 2024 | March 31, 2023 |
+| --- | --- | --- |
+| Unsecured, considered good | 15.90 | 0.00 |
+| Prepaid Expenses | 15.90 | 0.00 |
+| Other Advances | 257.02 | 0.00 |
+| Other loans and advances | 470.81 | 0.00 |
+| Advance Tax | 112.85 | 0.00 |
+| Balances with statutory/government authorities | 357.96 | 0.00 |
+| Total | 743.74 | 0.00 |

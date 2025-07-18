@@ -1,40 +1,122 @@
 {
-  "title": "Revenue from Operations",
-  "full_title": "16. Revenue from Operations",
-  "structure": [
+  "notes": [
     {
-      "category": "In Lakhs",
-      "subcategories": [
+      "title": "Cash and Bank Balances",
+      "full_title": "13. Cash and Bank Balances",
+      "structure": [
         {
-          "label": "March 31, 2024",
-          "value": "364.42"
+          "category": "",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "192.54"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
         },
         {
-          "label": "March 31, 2023",
-          "value": "0.00"
-        }
-      ]
-    },
-    {
-      "category": "Sale of Services",
-      "subcategories": [
-        {
-          "label": "Domestic",
-          "value": "358.82",
-          "previous_value": "0.00"
+          "category": "Cash and cash equivalents",
+          "subcategories": [
+            {
+              "label": "Balances with banks in current accounts",
+              "value": "188.43",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Cash on hand",
+              "value": "0.37",
+              "previous_value": "0.00"
+            }
+          ]
         },
         {
-          "label": "Exports",
-          "value": "5.60",
-          "previous_value": "0.00"
+          "category": "Other Bank Balances",
+          "subcategories": [
+            {
+              "label": "Fixed Deposits with ICICI Bank",
+              "value": "8.14",
+              "previous_value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Total",
+          "subcategories": [],
+          "total": "192.54",
+          "previous_total": "0.00"
         }
       ],
-      "total": "364.42",
-      "previous_total": "0.00"
+      "metadata": {
+        "note_number": "13",
+        "generated_on": "2025-07-18"
+      },
+      "markdown_content": "| Category | Subcategory | March 31, 2024 | March 31, 2023 | \n| --- | --- | --- | --- |\n| Cash and cash equivalents | Balances with banks in current accounts | 188.43 | 0.00 |\n| | Cash on hand | 0.37 | 0.00 |\n| Other Bank Balances | Fixed Deposits with ICICI Bank | 8.14 | 0.00 |\n| Total |  | 192.54 | 0.00 |",
+      "assumptions": "Values for March 31, 2023 were assumed to be zero as they were not provided in the trial balance.",
+      "generated_on": "2025-07-18"
+    },
+    {
+      "title": "Short Term Loans and Advances",
+      "full_title": "14. Short Term Loans and Advances",
+      "structure": [
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "20.54"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Unsecured, considered good",
+          "subcategories": [
+            {
+              "label": "Prepaid Expenses",
+              "value": "15.90",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Other Advances",
+              "value": "257.02",
+              "previous_value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Other loans and advances",
+          "subcategories": [
+            {
+              "label": "Advance Tax",
+              "value": "112.85",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Balances with statutory/government authorities",
+              "value": "357.96",
+              "previous_value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Total",
+          "subcategories": [],
+          "total": "743.74",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "14",
+        "generated_on": "2025-07-18"
+      },
+      "markdown_content": "# 14. Short Term Loans and Advances\n| Category | March 31, 2024 | March 31, 2023 |\n| --- | --- | --- |\n| Unsecured, considered good | 15.90 | 0.00 |\n| Prepaid Expenses | 15.90 | 0.00 |\n| Other Advances | 257.02 | 0.00 |\n| Other loans and advances | 470.81 | 0.00 |\n| Advance Tax | 112.85 | 0.00 |\n| Balances with statutory/government authorities | 357.96 | 0.00 |\n| Total | 743.74 | 0.00 |",
+      "assumptions": "Assumptions: Previous year values were not available in the trial balance, hence set to 0.00."
     }
-  ],
-  "metadata": {
-    "note_number": "16",
-    "generated_on": "2025-07-18T14:28:26.123Z"
-  }
+  ]
 }

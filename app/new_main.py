@@ -9,6 +9,7 @@ import sys
 from typing import Dict, List, Any, Optional
 import pandas as pd
 
+
 # Load environment variables
 load_dotenv()
 
@@ -424,17 +425,41 @@ Generate the final JSON now:
         print(f"{'✅' if success else '⚠'} Note {note_number} {'generated successfully' if success else 'generated with issues'}")
         return success
     
-    def generate_all_notes(self, trial_balance_path: str = "output/parsed_trial_balance2.json") -> Dict[str, bool]:
-        """Generate all available notes"""
+    def generate_all_notes(self, trial_balance_path: str = "output/parsed_trial_balance2.json") -> dict:
+        """Generate all available notes and save them in a single notes.json file."""
         print(f"\n🚀 Starting generation of all {len(self.note_templates)} notes...")
         results = {}
+        all_notes = []
         for note_number in self.note_templates.keys():
             print(f"\n{'='*60}\n📝 Processing Note {note_number}\n{'='*60}")
-            success = self.generate_note(note_number, trial_balance_path)
-            results[note_number] = success
+            trial_balance = self.load_trial_balance(trial_balance_path)
+            if not trial_balance:
+                results[note_number] = False
+                continue
+            classified_accounts = self.classify_accounts_by_note(trial_balance, note_number)
+            prompt = self.build_llm_prompt(note_number, trial_balance, classified_accounts)
+            if not prompt:
+                results[note_number] = False
+                continue
+            response = self.call_openrouter_api(prompt)
+            if not response:
+                results[note_number] = False
+                continue
+            json_data, _ = self.extract_json_from_markdown(response)
+            if json_data:
+                all_notes.append(json_data)
+                results[note_number] = True
+            else:
+                results[note_number] = False
             import time
             time.sleep(1)
-        
+
+        # Save all notes in one file
+        output_dir = "generated_notes"
+        Path(output_dir).mkdir(parents=True, exist_ok=True)
+        with open(f"{output_dir}/notes.json", "w", encoding="utf-8") as f:
+            json.dump({"notes": all_notes}, f, indent=2, ensure_ascii=False)
+
         print(f"\n{'='*60}\n📊 GENERATION SUMMARY\n{'='*60}")
         successful = sum(1 for success in results.values() if success)
         total = len(results)
@@ -442,8 +467,8 @@ Generate the final JSON now:
             status = "✅ SUCCESS" if success else "❌ FAILED"
             print(f"Note {note_number}: {status}")
         print(f"\nTotal: {successful}/{total} notes generated successfully")
-        print(f"📁 Check 'generated_notes' folder for outputs")
-        
+        print(f"📁 All notes saved to {output_dir}/notes.json")
+
         return results
 
 def main():

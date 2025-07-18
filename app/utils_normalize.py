@@ -53,3 +53,12 @@ def normalize_llm_note_json(llm_json):
         "markdown_content": llm_json.get("markdown_content", ""),
     }
     return normalized
+
+
+def normalize_llm_notes_json(llm_json):
+    """
+    Accepts {"notes": [ ... ]} and returns {"notes": [ ...normalized... ]}
+    """
+    notes = llm_json.get("notes", [])
+    normalized_notes = [normalize_llm_note_json(note) for note in notes]
+    return {"notes": normalized_notes}

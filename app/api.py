@@ -62,8 +62,6 @@ async def post_notes_text(
     return PlainTextResponse(md, media_type="text/plain")
 
 
-
-
 @router.post("/new")
 async def llm_generate_and_excel(
     file: UploadFile = File(...),
@@ -72,6 +70,7 @@ async def llm_generate_and_excel(
     import os
     import json
     import shutil
+    from app.utils_normalize import normalize_llm_note_json, normalize_llm_notes_json
 
     # 1. Save uploaded Excel file
     os.makedirs("input", exist_ok=True)
@@ -94,47 +93,48 @@ async def llm_generate_and_excel(
     os.makedirs("generated_notes_excel", exist_ok=True)
     from app.json_xlsx import json_to_xlsx
 
-    if note_number:
-        # Generate single note
-        success = generator.generate_note(note_number, trial_balance_path=output_json)
-        if not success:
-            raise HTTPException(status_code=500, detail=f"Failed to generate note {note_number}. LLM API may be down or unreachable.")
-        # Convert generated note JSON to Excel
-        json_path = f"generated_notes/notes.json"
-        if not os.path.exists(json_path):
-            raise HTTPException(status_code=404, detail=f"Generated note file not found: {json_path}")
-        with open(json_path, "r", encoding="utf-8") as f:
-            note_json = json.load(f)
-        if "error" in note_json:
-            raise HTTPException(status_code=500, detail=f"LLM failed to generate valid JSON for note {note_number}: {note_json.get('error')}")
-        
-        # --- Normalize here ---
-        normalized_note = normalize_llm_note_json(note_json)
-        wrapped = {"notes": [normalized_note]}
-        temp_json = f"generated_notes/notes_wrapped.json"
-        with open(temp_json, "w", encoding="utf-8") as f2:
-            json.dump(wrapped, f2, ensure_ascii=False, indent=2)
-        # ----------------------
+    wrapped_json_path = "generated_notes/notes_wrapped.json"
 
+    if note_number:
+        # Support multiple note numbers (comma-separated)
+        note_numbers = [n.strip() for n in note_number.split(",")]
+        all_notes = []
+        for n in note_numbers:
+            success = generator.generate_note(n, trial_balance_path=output_json)
+            if success:
+                # Read the just-generated note
+                with open("generated_notes/notes.json", "r", encoding="utf-8") as f:
+                    note_json = json.load(f)
+                all_notes.append(note_json)
+        # Now write all notes together
+        with open("generated_notes/notes.json", "w", encoding="utf-8") as f:
+            json.dump({"notes": all_notes}, f, indent=2, ensure_ascii=False)
+        # --- Normalize all notes ---
+        wrapped = normalize_llm_notes_json({"notes": all_notes})
+        with open(wrapped_json_path, "w", encoding="utf-8") as f2:
+            json.dump(wrapped, f2, ensure_ascii=False, indent=2)
+        # --------------------------
         excel_path = f"generated_notes_excel/notes.xlsx"
-        json_to_xlsx(temp_json, excel_path)
-        return {"message": f"Note {note_number} generated. Excel saved at {excel_path}."}
+        json_to_xlsx(wrapped_json_path, excel_path)
+        return {"message": f"Notes {', '.join(note_numbers)} generated. Excel saved at {excel_path}."}
     else:
         # Generate all notes
         results = generator.generate_all_notes(trial_balance_path=output_json)
         if not any(results.values()):
             raise HTTPException(status_code=500, detail="Failed to generate any notes. LLM API may be down or unreachable.")
-        # Combine all generated notes into one Excel
-        notes = []
-        for filename in os.listdir("generated_notes"):
-            if filename.endswith(".json"):
-                with open(os.path.join("generated_notes", filename), "r", encoding="utf-8") as f:
-                    note_json = json.load(f)
-                    if "error" not in note_json:
-                        notes.append(note_json)
-        if not notes:
-            raise HTTPException(status_code=404, detail="No valid note JSON files found.")
+        # Read all notes.json
+        with open("generated_notes/notes.json", "r", encoding="utf-8") as f:
+            notes_json = json.load(f)
+        # --- Normalize all notes ---
+        wrapped = normalize_llm_notes_json(notes_json)
+        with open(wrapped_json_path, "w", encoding="utf-8") as f2:
+            json.dump(wrapped, f2, ensure_ascii=False, indent=2)
+        # --------------------------
+        excel_path = f"generated_notes_excel/notes.xlsx"
+        json_to_xlsx(wrapped_json_path, excel_path)
+        return {"message": f"All notes generated. Excel saved at {excel_path}."}
         
+
 
 @router.post("/hardcoded")
 async def run_full_pipeline(
