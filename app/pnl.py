@@ -6,11 +6,22 @@ from openpyxl.utils import get_column_letter
 from datetime import datetime
 
 def load_note_data(note_number, folder="generated_notes"):
-    """Load note data from JSON file in the specified folder."""
-    file_path = os.path.join(folder, f"notes.json")
+    """
+    Load note data for a specific note_number from notes.json in the specified folder.
+    Compatible with {"notes": [ ... ]} structure.
+    """
+    file_path = os.path.join(folder, "notes.json")
     try:
         with open(file_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+            notes = data.get("notes", [])
+            for note in notes:
+                # Try both direct and metadata field for note_number
+                n_num = note.get("note_number") or note.get("metadata", {}).get("note_number")
+                if str(n_num) == str(note_number):
+                    return note
+            print(f"Warning: Note {note_number} not found in {file_path}")
+            return None
     except FileNotFoundError:
         print(f"Warning: Note {note_number} file not found at {file_path}")
         return None
@@ -257,7 +268,9 @@ def generate_pnl_report():
         ws.cell(row=row, column=4).alignment = center_align
 
     # Save Excel file with error handling
-    output_file = "pnl_report.xlsx"
+    output_folder = "pnl_excel"
+    os.makedirs(output_folder, exist_ok=True)
+    output_file = os.path.join(output_folder, "pnl_report.xlsx")
     try:
         wb.save(output_file)
         print(f"P&L report generated successfully and saved to {output_file}")

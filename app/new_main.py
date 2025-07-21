@@ -71,10 +71,9 @@ class FlexibleFinancialNoteGenerator:
         ]
     
     def load_note_templates(self) -> Dict[str, Any]:
-        """Load note templates from note/note_temp.py file."""
+        """Load note templates from app.new.py file."""
         try:
-            sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-            from app.new import note_templates
+            from .new import note_templates
             return note_templates
         except ImportError as e:
             print(f"❌ Error importing note_templates from app.new: {e}")
@@ -83,7 +82,7 @@ class FlexibleFinancialNoteGenerator:
             print(f"❌ Unexpected error loading note_templates: {e}")
             return {}
     
-    def load_trial_balance(self, file_path: str = "output/parsed_trial_balance2.json") -> Optional[Dict[str, Any]]:
+    def load_trial_balance(self, file_path: str = "output1/parsed_trial_balance.json") -> Optional[Dict[str, Any]]:
         """Load the classified trial balance from Excel or JSON."""
         try:
             if file_path.endswith('.json'):
@@ -398,7 +397,8 @@ Generate the final JSON now:
             print(f"❌ Error saving files: {e}")
             return False
     
-    def generate_note(self, note_number: str, trial_balance_path: str = "output/parsed_trial_balance2.json") -> bool:
+    def generate_note(self, note_number: str, trial_balance_path: str = "output1/parsed_trial_balance"
+    ".json") -> bool:
         """Generate a specific note based on note number"""
         if note_number not in self.note_templates:
             print(f"❌ Note template {note_number} not found")
@@ -425,7 +425,7 @@ Generate the final JSON now:
         print(f"{'✅' if success else '⚠'} Note {note_number} {'generated successfully' if success else 'generated with issues'}")
         return success
     
-    def generate_all_notes(self, trial_balance_path: str = "output/parsed_trial_balance2.json") -> dict:
+    def generate_all_notes(self, trial_balance_path: str = "output1/parsed_trial_balance.json") -> dict:
         """Generate all available notes and save them in a single notes.json file."""
         print(f"\n🚀 Starting generation of all {len(self.note_templates)} notes...")
         results = {}
@@ -476,7 +476,7 @@ def main():
     try:
         generator = FlexibleFinancialNoteGenerator()
         if not generator.note_templates:
-            print("❌ No note templates loaded. Check note/note_temp.py")
+            print("❌ No note templates loaded. Check app/new.py")
             return
         
         print(f"✅ Loaded {len(generator.note_templates)} note templates")

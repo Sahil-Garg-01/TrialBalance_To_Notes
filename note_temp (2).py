@@ -1728,3 +1728,55 @@ note_templates = {
         }
     }
 }
+
+def generate_note_template(note_number, llm_data=None):
+    """Generate a note template with placeholders for LLM to fill."""
+    if note_number not in note_templates:
+        return None
+    
+    template = note_templates[note_number].copy()
+    template["metadata"]["generated_on"] = datetime.now().isoformat()
+    
+    # Placeholder values to be replaced by LLM
+    if llm_data:
+        for category in template["structure"]:
+            if "total" in category:
+                category["total"] = llm_data.get(f"{note_number}_total_2024", "{march_2024_total}")
+                category["previous_total"] = llm_data.get(f"{note_number}_total_2023", "{march_2023_total}")
+            for subcat in category.get("subcategories", []):
+                for key in ["value", "previous_value"]:
+                    if key in subcat:
+                        field_name = subcat["label"].lower().replace(" ", "").replace("-", "")
+                        subcat[key] = llm_data.get(f"{note_number}{field_name}{key.split('_')[0]}", f"{{{field_name}{key.split('_')[0]}}}")
+            for subcat in category.get("columns", []):
+                subcat["value"] = llm_data.get(f"{note_number}{subcat['header'].lower().replace(' ', '')}2024", f"{{{subcat['header'].lower().replace(' ', '')}_2024}}")
+            for subcat in category.get("values", []):
+                subcat["value"] = llm_data.get(f"{note_number}{subcat['period'].lower().replace(' ', '').replace('-', '')}{subcat['label'].lower().replace(' ', '')}_2024", f"{{{subcat['period'].lower().replace(' ', '').replace('-', '')}{subcat['label'].lower().replace(' ', '_')}_2024}}")
+    
+    return template
+
+def generate_all_notes():
+    """Generate templates for all notes and save to JSON."""
+    all_notes = {
+        "metadata": {
+            "generated_on": datetime.now().isoformat(),
+            "financial_year": "2024-03-31",
+            "company_name": "Your Company Name",
+            "total_notes": len(note_templates)
+        },
+        "notes": []
+    }
+    
+    for note_number in note_templates.keys():
+        note = generate_note_template(note_number)
+        if note:
+            all_notes["notes"].append(note)
+    
+    with open("note_templates.json", "w", encoding="utf-8") as f:
+        json.dump(all_notes, f, indent=2, ensure_ascii=False)
+    
+    return all_notes
+
+if __name__ == "__main__":
+    notes_data = generate_all_notes()
+    print("Note templates generated and saved to note_templates.json")

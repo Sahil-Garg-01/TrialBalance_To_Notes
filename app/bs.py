@@ -5,12 +5,26 @@ from openpyxl.styles import Font, Border, Side, Alignment
 from openpyxl.utils import get_column_letter
 from datetime import datetime
 
-def load_note_data(note_number, folder="generated_notes"):
-    """Load note data from JSON file in the specified folder."""
-    file_path = os.path.join(folder, f"notes.json")
+def load_note_data(note_number, folder=None):
+    """
+    Load note data for a specific note_number from notes.json in the specified folder.
+    Compatible with {"notes": [ ... ]} structure.
+    """
+    import os
+    import json
+    if folder is None:
+        folder = os.path.join(os.path.dirname(os.path.dirname(__file__)), "generated_notes")
+    file_path = os.path.join(folder, "notes.json")
     try:
         with open(file_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+            notes = data.get("notes", [])
+            for note in notes:
+                n_num = note.get("note_number") or note.get("metadata", {}).get("note_number")
+                if str(n_num) == str(note_number):
+                    return note
+            print(f"Warning: Note {note_number} not found in {file_path}")
+            return None
     except FileNotFoundError:
         print(f"Warning: Note {note_number} file not found at {file_path}")
         return None
