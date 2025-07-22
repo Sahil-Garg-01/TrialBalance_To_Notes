@@ -1,0 +1,164 @@
+{
+        "1. Significant accounting policies": {
+            "": []
+        },
+        "2. Share Capital": {
+            "keywords": []
+        },
+        "3. Reserves and Surplus": {
+            "Securities Premium": ["Share Premium Account"],
+            "Balance": ["opening balance","profit", "dividend"],
+            "total reserves":["balance", "Securities Premium"]
+        },
+        "4. Long Term Borrowings": {
+            "Long Term Borrowings": ["Andhra Pradesh State Financial Corporation","State Bank of India - SME","Loan From ICICI Bank 603090031420","Diamler Financial Services India Private Limited"]
+        },
+        "5. Deferred Tax Liability": {
+            "Deferred Tax Liability": ["Deferred Tax","tax Expenses from Deferred Tax"]
+        },
+        "6. Trade Payables": {
+            "": []
+        },
+        "7. Other Current Liabilities": {
+            "Current Maturities of Long Term Borrowings": [],
+            "Outstanding Liabilities for Expenses": ["Expenses Payable","Interest Payable on APSFC LOAN","Refundable Advance"],
+            "Statutory dues": ["Duties & Taxes","Provisions"]
+        },
+        "8. Short Term Provisions": {
+            "Provision for Taxation": ["Provisions"]
+        },
+        "9. Fixed Assets": {
+            "": []
+        },
+        "10. Long Term Loans and Advances": {
+            "Long Term - Security Deposits": ["Deposits (Asset)"]
+        },
+        "11. Inventories": {
+            "Consumables": ["Opening Stock"]
+        },
+        "12. Trade Receivables": {
+            "": []
+        },
+        "13. Cash and Bank Balances": {
+            "Balances with banks in current accounts": ["Bank Accounts"],
+            "Cash on hand": ["Cash-in-Hand"],
+            "Fixed Deposits with ICICI Bank": ["Fixed Deposits"]
+        },
+        "14. Short Term Loans and Advances": {
+            "Other Advances": ["Loans & Advances (Asset)"],
+            "Prepaid Expenses": ["Prepaid Expenses"],
+            "Advance tax":["TDS Advance Tax Paid SEC 100"],
+            "Balances with statutory/government authorities":["Tds Receivables","TCS RECEIVABLES"]
+        },
+        "15. Other Current Assets": {
+            "Interest accrued on fixed deposits": []
+        },
+        "16. Revenue from Operations": {
+            "Domestic": ["Servicing of BA/BE PROJECTS-Inter State",
+                         "Servicing of BA/BE PROJECTS-Inter State",
+                         "Servicing of BA/BE PROJECTS-Intra State",
+                         "Servicing of BA PROJECTS-Intra State",
+                         "Servicing of ONLY CLINICAL INTRA STATE"],
+            "Exports": ["Servicing of BA/BE PROJECTS EXPORT",
+                        "Servicing of BA/BE PROJECTS EXPORT",
+                        "Servicing of BA PROJECTS EXPORT",
+                        "Servicing of ONLY CLINICAL EXPORT"]
+        },
+        "17. Other Income": {
+            "Interest income": ["Interest on FD","Interest on Income Tax Refund"],
+            "Foreign exchange gain (Net)":["Forex Gain / Loss","Unadjusted Forex Gain / Loss"]
+        },
+        "18. Cost of Materials Consumed": {
+            "Opening stock": ["Opening Stock"],
+            "Purchases": ["Purchases"],
+            "Closing stock": ["Closing Stock"]
+        },
+        "19. Employee Benefits Expense": {
+            "Salaries, wages and bonus": ["Salaries", "Wages", "incentives", "gratuity" ],
+            "Contribution to PF & ESI":[],
+            "Staff welfare expenses": ["Staff Welfare","Food expenses"]
+        },
+        "20. Other expenses": {
+            "20. Other expenses":[
+                "BA / BE NOC Charges",
+                "BA Expenses",
+                "Payments to Volunteers",
+                "Other Operating Expenses",
+                "Laboratory testing charges",
+                "Rent",
+                "Rates & Taxes",
+                "Fees & licenses",
+                "Insurance",
+                "Membership & Subscription Charges",
+                "Postage & Communication Cost",
+                "Printing and stationery",
+                "CSR Fund Expenses",
+                "Telephone & Internet",
+                "Travelling and Conveyance",
+                "Translation Charges",
+                "Electricity Charges",
+                "Security Charges",
+                "Annual Maintenance Charges",
+                "Fire Extingushiers Refilling Charges",
+                "Food Expenses for Guests",
+                "Diesel Expenses",
+                "Interest Under 234 C Fy 2021-22",
+                "Loan Processing Charges",
+                "Bank Charges",
+                "Sitting Fee of Directors",
+                "Customs Duty Payment",
+                "Transportation and Unloading Charges",
+                "Software Equipment",
+                "Miscellaneous expenses"
+            ]
+        },
+        "21. Depreciation and amortisation expense": {
+            "Depreciation & amortisation": []
+        },
+        "22. Loss on Sale of Assets & Investments": {
+            "Short Term Loss on Sale of Investments (Non Derivative Loss)": [],
+            "Long Term Loss on Sale of Investments": [],
+            "Loss on Sale of Fixed Assets": []
+        },
+        "23. Finance Costs": {
+            "Bank & Finance Charges": ["Interest on APSFC Loan","Interest on SBI Loan","Interest on ICICI Bank Loan","Bank Charges","Loan Processing Charges"]
+        },
+        "24. Payment to auditor": {
+            "- For Audit fee": []
+        },
+        "25. Earnings in foreign currency:":
+        {
+            "Income from export of services": []
+        },
+        "26. Particulars of un-hedged foreign currency exposure:": {
+            "Income from export of services": ["export sale"]
+        },
+        "27. Relationship with Struck off Companies": {
+            "Relationship with Struck off Companies": []
+        },
+        "28. Earnings per Share": {
+            "": []
+        },
+        "29. Related Party Disclosures": {
+            "": []
+        },
+        "30. Depreciation": {
+            "": []
+        },
+        "31. Financial Ratios": {
+            "(i) Current Ratio": ["Current Ratio"],
+            "(ii) Debt-Equity Ratio": ["Debt-Equity Ratio"],
+            "(iii) Debt Service Coverage Ratio": ["Debt Service Coverage Ratio"],
+            "(iv) Return on Equity Ratio": ["Return on Equity Ratio"],
+            "(v) Inventory Turnover Ratio": [],
+            "(vi) Trade Receivables Turnover Ratio": ["Trade Receivables Turnover Ratio"],
+            "(vii) Trade Payables Turnover Ratio": ["Trade Payables Turnover Ratio"],
+            "(viii) Net Capital Turnover Ratio": ["Net Capital Turnover Ratio"],
+            "(ix) Net Profit Ratio": ["Net Profit Ratio"],
+            "(x) Return on Capital Employed": ["Return on Capital Employed"]
+        },
+        "32. Previous year's figures have been regrouped wherever necessary to confirm to Current year's classification": {
+            "": []
+        }
+
+}
