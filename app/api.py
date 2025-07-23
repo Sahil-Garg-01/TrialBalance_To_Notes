@@ -5,7 +5,7 @@ from app.notes import generate_notes
 from app.utils import clean_value
 import pandas as pd
 import os
-
+from app.pnl import generate_pnl_report
 import shutil
 from app.extract import extract_trial_balance_data, analyze_and_save_results
 from app.new_main import FlexibleFinancialNoteGenerator  
@@ -14,6 +14,9 @@ from app.main16_23 import process_json
 from app.json_xlsx import json_to_xlsx
 import json as pyjson
 from app.utils_normalize import normalize_llm_note_json
+from app.bs import generate_balance_sheet_report
+from app.cashflow import generate_cashflow_report
+
 router = APIRouter()
 
 def process_uploaded_file(file: UploadFile):
@@ -61,7 +64,37 @@ async def post_notes_text(
         md += f"## {note['Note']}\n\n{note['Content']}\n\n"
     return PlainTextResponse(md, media_type="text/plain")
 
+@router.post("/cf")
+async def generate_cashflow():
+    try:
+        generate_cashflow_report()
+        return {"message": "Cash Flow report generated successfully as 'cashflow_excel/cashflow_report.xlsx'."}
+    except Exception as e:
+        return {"error": f"Failed to generate Cash Flow report: {str(e)}"}
+    
 
+@router.post("/bs")
+async def generate_balancesheet():
+    """
+    Generates the Balance Sheet Excel file from the notes in generated_notes/notes.json.
+    Returns a message with the output file location.
+    """
+    try:
+        generate_balance_sheet_report()
+        return {"message": "Balance Sheet report generated successfully as 'balance_sheet_report.xlsx'."}
+    except Exception as e:
+        return {"error": f"Failed to generate Balance Sheet: {str(e)}"}
+
+@router.post("/pnl")
+async def generate_pnl():
+    
+    try:
+        generate_pnl_report()
+        return {"message": "P&L report generated successfully as 'pnl_report.xlsx'."}
+    except Exception as e:
+        return {"error": f"Failed to generate P&L report: {str(e)}"}
+    
+    
 @router.post("/new")
 async def llm_generate_and_excel(
     file: UploadFile = File(...),

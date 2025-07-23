@@ -323,8 +323,11 @@ def generate_balance_sheet_report():
     ws.cell(row=row, column=4).alignment = center_align
 
     # Save Excel file with error handling
-    output_file = "balance_sheet_report.xlsx"
+    
     try:
+        output_folder = "balancesheet_excel"
+        os.makedirs(output_folder, exist_ok=True)
+        output_file = os.path.join(output_folder, "balancesheet_report.xlsx")
         wb.save(output_file)
         print(f"Balance Sheet report generated successfully and saved to {output_file}")
         

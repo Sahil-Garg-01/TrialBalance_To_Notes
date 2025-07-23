@@ -17,9 +17,28 @@ def load_data(file_path):
         print(f"Warning: Invalid JSON in {file_path}")
         return {}
 
-def load_note_data(note_number, folder="generated_notes"):
-    """Load note data from JSON file in the specified folder."""
-    return load_data(os.path.join(folder, f"notes.json"))
+def load_note_data(note_number, folder=None):
+    import os
+    import json
+    if folder is None:
+        folder = os.path.join(os.path.dirname(os.path.dirname(__file__)), "generated_notes")
+    file_path = os.path.join(folder, "notes.json")
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            notes = data.get("notes", [])
+            for note in notes:
+                n_num = note.get("note_number") or note.get("metadata", {}).get("note_number")
+                if str(n_num) == str(note_number):
+                    return note
+            print(f"Warning: Note {note_number} not found in {file_path}")
+            return None
+    except FileNotFoundError:
+        print(f"Warning: Note {note_number} file not found at {file_path}")
+        return None
+    except json.JSONDecodeError:
+        print(f"Warning: Invalid JSON in note {note_number}")
+        return None
 
 def load_trail_balance(folder="output1"):
     """Load parsed trial balance data from JSON file in the specified folder."""
@@ -78,7 +97,7 @@ def format_currency(value):
         return f"{value:,.2f}"
     return "-"
 
-def generate_cash_flow_report():
+def generate_cashflow_report():
     """Generate Cash Flow Statement report in Excel format using notes and trial balance data."""
     wb = Workbook()
     ws = wb.active
@@ -305,12 +324,13 @@ def generate_cash_flow_report():
     ws.cell(row=row, column=1).alignment = left_align
 
     # Save Excel file
-    output_file = "cash_flow_report.xlsx"
     try:
+        output_folder = "cashflow_excel"
+        os.makedirs(output_folder, exist_ok=True)
+        output_file = os.path.join(output_folder, "cashflow_report.xlsx")
         wb.save(output_file)
         print(f"Cash Flow Statement report generated successfully and saved to {output_file}")
-        print(f"Net Cash Flow 2024: {format_currency(total_cash_flow_2024)}")
-        print(f"Net Cash Flow 2023: {format_currency(total_cash_flow_2023)}")
+        
     except PermissionError:
         print(f"PermissionError: Unable to save to {output_file}. Trying alternative location...")
         fallback_file = os.path.join(os.path.expanduser("~"), "Desktop", "cash_flow_report_fallback.xlsx")
@@ -323,4 +343,4 @@ def generate_cash_flow_report():
         print(f"Error saving Cash Flow Statement report: {str(e)}")
 
 if __name__ == "__main__":
-    generate_cash_flow_report()
+    generate_cashflow_report()

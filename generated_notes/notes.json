@@ -1,0 +1,2240 @@
+{
+  "notes": [
+    {
+      "title": "Share Capital",
+      "full_title": "2. Share Capital",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "522.34"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Authorised Share Capital",
+          "subcategories": [
+            {
+              "label": "Equity Shares of ₹10 each",
+              "value": "1033.29",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "1033.29",
+          "previous_total": "0.00"
+        },
+        {
+          "category": "Issued, Subscribed and Paid-up Share Capital",
+          "subcategories": [
+            {
+              "label": "Equity Shares of ₹10 each fully paid up",
+              "value": "542.52",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "542.52",
+          "previous_total": "0.00"
+        },
+        {
+          "category": "Reconciliation of Shares",
+          "subcategories": [
+            {
+              "label": "Number of Shares at the beginning",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Changes during the year",
+              "value": "522.34",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Number of Shares at the end",
+              "value": "522.34",
+              "previous_value": "0.00"
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "note_number": "2",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Reserves and Surplus",
+      "full_title": "3. Reserves and Surplus",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "31530.87"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "Share Premium Account",
+              "value": "17.55",
+              "previous_value": "17.54"
+            },
+            {
+              "label": "Surplus in Statement of Profit and Loss",
+              "value": "13.78",
+              "previous_value": "13.77"
+            }
+          ],
+          "total": "31.33",
+          "previous_total": "31.31"
+        }
+      ],
+      "metadata": {
+        "note_number": "3",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Long Term Borrowings",
+      "full_title": "4. Long Term Borrowings",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Secured",
+          "subcategories": [
+            {
+              "label": "Term Loans from Banks",
+              "value": "81396.07",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "81396.07",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "4",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Deferred Tax Liability (Net)",
+      "full_title": "5. Deferred Tax Liability (Net)",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "4318.65"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "Deferred Tax Liability",
+              "value": "4318.65",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "4318.65",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "5",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Trade Payables",
+      "full_title": "6. Trade Payables",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Unsecured, considered good",
+          "subcategories": [
+            {
+              "label": "Outstanding for a period exceeding six months from the date they are due for payment",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Other payables",
+              "value": "0.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "0.00",
+          "previous_total": "0.00"
+        },
+        {
+          "category": "Age wise analysis of Trade payables as on 31.03.2024",
+          "subcategories": [
+            {
+              "label": "Particulars",
+              "sub_label": "Outstanding for following periods from due date of payment",
+              "columns": [
+                {
+                  "header": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "header": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "header": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Undisputed",
+              "sub_label": "- Considered good",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Disputed",
+              "sub_label": "- Considered good",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Total",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Age wise analysis of Trade payables as on 31.03.2023",
+          "subcategories": [
+            {
+              "label": "Particulars",
+              "sub_label": "Outstanding for following periods from due date of payment",
+              "columns": [
+                {
+                  "header": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "header": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "header": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Undisputed",
+              "sub_label": "- Considered good",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Disputed",
+              "sub_label": "- Considered good",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Total",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "note_number": "6",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Other Current Liabilities",
+      "full_title": "7. Other Current Liabilities",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "Current Maturities of Long Term Borrowings",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Outstanding Liabilities for Expenses",
+              "value": "89138.60",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "89138.60",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "7",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Short Term Provisions",
+      "full_title": "8. Short Term Provisions",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "3645955.0"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.0"
+            }
+          ]
+        },
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "Provision for Taxation",
+              "value": "3645955.0",
+              "previous_value": "0.0"
+            }
+          ],
+          "total": "3645955.0",
+          "previous_total": "0.0"
+        }
+      ],
+      "metadata": {
+        "note_number": "8",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Fixed Assets",
+      "full_title": "9. Fixed Assets",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "454696.13"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Tangible Assets",
+          "subcategories": [
+            {
+              "label": "Gross Block",
+              "value": "246955658.17",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Accumulated Depreciation",
+              "value": "60344362.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Net Block",
+              "value": "186611296.17",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "186611.29",
+          "previous_total": "0.00"
+        },
+        {
+          "category": "Intangible Assets",
+          "subcategories": [
+            {
+              "label": "Gross Block",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Accumulated Amortisation",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Net Block",
+              "value": "0.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "0.00",
+          "previous_total": "0.00"
+        },
+        {
+          "category": "Capital Work-in-Progress",
+          "subcategories": [
+            {
+              "label": "Capital Work-in-Progress",
+              "value": "0.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "0.00",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "9",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Long Term Loans and Advances",
+      "full_title": "10. Long Term Loans and Advances",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "484.8"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.0"
+            }
+          ]
+        },
+        {
+          "category": "Unsecured, considered good",
+          "subcategories": [
+            {
+              "label": "Long Term - Security Deposits",
+              "value": "0.0",
+              "previous_value": "0.0"
+            }
+          ],
+          "total": "0.0",
+          "previous_total": "0.0"
+        }
+      ],
+      "metadata": {
+        "note_number": "10",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Inventories",
+      "full_title": "11. Inventories",
+      "structure": [
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Consumables",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "1.04"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "1.01"
+            }
+          ],
+          "total": "1.04",
+          "previous_total": "1.01"
+        }
+      ],
+      "metadata": {
+        "note_number": "11",
+        "generated_on": "2025-07-23"
+      },
+      "assumptions": "Assumption: Consumables category was inferred based on the account name 'Opening Stock'.",
+      "markdown_content": "| Category | March 31, 2024 | March 31, 2023 |\n| --- | --- | --- |\n| Consumables | 1.04 | 1.01 |\n| **Total** | **1.04** | **1.01** |\n"
+    },
+    {
+      "title": "Trade Receivables",
+      "full_title": "12. Trade Receivables",
+      "structure": [
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "833.79"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Unsecured, considered good",
+          "subcategories": [
+            {
+              "label": "Outstanding for a period exceeding six months from the date they are due for payment",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Other receivables",
+              "value": "833.79",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "833.79",
+          "previous_total": "0.00"
+        },
+        {
+          "category": "Age wise analysis of Trade receivables as on 31.03.2024",
+          "subcategories": [
+            {
+              "label": "Particulars",
+              "sub_label": "Outstanding for following periods from due date of payment",
+              "columns": [
+                {
+                  "header": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "header": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "header": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "Total",
+                  "value": "833.79"
+                }
+              ]
+            },
+            {
+              "label": "Undisputed",
+              "sub_label": "- Considered good",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "833.79"
+                }
+              ]
+            },
+            {
+              "label": "Undisputed",
+              "sub_label": "- Considered doubtful",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Disputed",
+              "sub_label": "- Considered good",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Disputed",
+              "sub_label": "- Considered doubtful",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Total",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "833.79"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Age wise analysis of Trade receivables as on 31.03.2023",
+          "subcategories": [
+            {
+              "label": "Particulars",
+              "sub_label": "Outstanding for following periods from due date of payment",
+              "columns": [
+                {
+                  "header": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "header": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "header": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "header": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Undisputed",
+              "sub_label": "- Considered good",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Undisputed",
+              "sub_label": "- Considered doubtful",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Disputed",
+              "sub_label": "- Considered good",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Disputed",
+              "sub_label": "- Considered doubtful",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            },
+            {
+              "label": "Total",
+              "values": [
+                {
+                  "period": "0 - 6 months",
+                  "value": "0.00"
+                },
+                {
+                  "period": "6 months - 1 Year",
+                  "value": "0.00"
+                },
+                {
+                  "period": "1 - 2 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "2 - 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "More than 3 Years",
+                  "value": "0.00"
+                },
+                {
+                  "period": "Total",
+                  "value": "0.00"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "note_number": "12",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Cash and Bank Balances",
+      "full_title": "13. Cash and Bank Balances",
+      "structure": [
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "192.54"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Cash and cash equivalents",
+          "subcategories": [
+            {
+              "label": "Balances with banks in current accounts",
+              "value": "156.54",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Cash on hand",
+              "value": "36.00",
+              "previous_value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Other Bank Balances",
+          "subcategories": [
+            {
+              "label": "Fixed Deposits with ICICI Bank",
+              "value": "8.00",
+              "previous_value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Total",
+          "subcategories": [],
+          "total": "192.54",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "13",
+        "generated_on": "2025-07-23"
+      },
+      "assumptions": "Values for March 31, 2023 have been assumed as 0.",
+      "markdown_content": "| Category | Subcategory | March 31, 2024 | March 31, 2023 |\n| --- | --- | --- | --- |\n| Cash and cash equivalents | Balances with banks in current accounts | 156.54 | 0.00 |\n| | Cash on hand | 36.00 | 0.00 |\n| Other Bank Balances | Fixed Deposits with ICICI Bank | 8.00 | 0.00 |\n| Total |  | 192.54 | 0.00 |"
+    },
+    {
+      "title": "Short Term Loans and Advances",
+      "full_title": "14. Short Term Loans and Advances",
+      "structure": [
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "270.82"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Unsecured, considered good",
+          "subcategories": [
+            {
+              "label": "Prepaid Expenses",
+              "value": "15.90",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Other Advances",
+              "value": "257.02",
+              "previous_value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Other loans and advances",
+          "subcategories": [
+            {
+              "label": "Advance Tax",
+              "value": "112.85",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Balances with statutory/government authorities",
+              "value": "357.96",
+              "previous_value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Total",
+          "subcategories": [],
+          "total": "743.74",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "14",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Other Current Assets",
+      "full_title": "15. Other Current Assets",
+      "structure": [
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Interest accrued on fixed deposits",
+          "subcategories": [],
+          "total": "0.00",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "15",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Revenue from Operations",
+      "full_title": "16. Revenue from Operations",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "330858.46"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Sale of Services",
+          "subcategories": [
+            {
+              "label": "Domestic",
+              "value": "263682.38",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Exports",
+              "value": "7414000.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "7677623.38",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "16",
+        "generated_on": "2025-07-23"
+      },
+      "assumptions": "Domestic and Exports values have been inferred based on the account names 'Servicing of BA/BE PROJECTS EXPORT', 'Servicing of BA/BE PROJECTS-Inter State', and 'Servicing of BA/BE PROJECTS-Intra State'."
+    },
+    {
+      "title": "Other Income",
+      "full_title": "17. Other Income",
+      "structure": [
+        {
+          "category": "Interest income",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Foreign exchange gain (Net)",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ],
+          "total": "0.00",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "17",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Cost of Materials Consumed",
+      "full_title": "18. Cost of Materials Consumed",
+      "structure": [
+        {
+          "category": "Opening Stock",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "101.33"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Add: Purchases",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "2396.76"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "",
+              "value": "2498.09",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Less: Closing Stock",
+              "value": "0.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "2498.09",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "18",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Employee Benefit Expense",
+      "full_title": "19. Employee Benefit Expense",
+      "structure": [
+        {
+          "category": "Employee Benefits Expense",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Employee Benefits Expense",
+          "subcategories": [
+            {
+              "label": "Salaries, wages and bonus",
+              "value": "63394867.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Contribution to PF & ESI",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Staff welfare expenses",
+              "value": "103747.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "63498614.00",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "19",
+        "generated_on": "2025-07-23"
+      },
+      "assumptions": "Salaries, wages and bonus, and Staff welfare expenses for March 31, 2023 were assumed to be zero due to unavailability of data."
+    },
+    {
+      "title": "Other Expenses",
+      "full_title": "20. Other Expenses",
+      "structure": [
+        {
+          "category": "Employee Benefits Expense",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "103747.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Finance Costs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "10391444.10"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Other Current Liabilities",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "3051650.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Property, Plant and Equipment",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "11834484.72"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Revenue from Operations",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "330858462.82"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Unmapped",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "145194733.60"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "BA / BE NOC Charges",
+              "value": "7414000.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "BA Expenses",
+              "value": "183682.38",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Payments to Volunteers",
+              "value": "16490429.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Other Operating Expenses",
+              "value": "1678510.62",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Laboratory testing charges",
+              "value": "3501405.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Rent",
+              "value": "20156550.98",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Rates & Taxes",
+              "value": "1900.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Fees & licenses",
+              "value": "100000.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Insurance",
+              "value": "140786.98",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Membership & Subscription Charges",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Postage & Communication Cost",
+              "value": "11910.20",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Printing and stationery",
+              "value": "2419542.29",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "CSR Fund Expenses",
+              "value": "2470922.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Telephone & Internet",
+              "value": "335978.02",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Travelling and Conveyance",
+              "value": "133986.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Translation Charges",
+              "value": "351574.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Electricity Charges",
+              "value": "10943323.54",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Security Charges",
+              "value": "1173753.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Annual Maintenance Charges",
+              "value": "2636798.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Repairs and maintenance - Electrical",
+              "value": "1386039.21",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Repairs and maintenance - Office",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Repairs and maintenance - Machinery",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Repairs and maintenance - Vehicles",
+              "value": "140405.58",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Repairs and maintenance - Others",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Business Development Expenses",
+              "value": "4861950.41",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Professional & Consultancy Fees",
+              "value": "92500.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Payment to Auditors",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Bad Debts Written Off",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Fire Extinguishers Refilling Charges",
+              "value": "98050.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Food Expenses for Guests",
+              "value": "521160.10",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Diesel Expenses",
+              "value": "140405.58",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Interest Under 234 C Fy 2021-22",
+              "value": "636117.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Loan Processing Charges",
+              "value": "288000.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Sitting Fee of Directors",
+              "value": "25000.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Customs Duties Payment",
+              "value": "64124.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Transportation and Unloading Charges",
+              "value": "1046782.92",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Software Equipment",
+              "value": "237500.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Miscellaneous expenses",
+              "value": "0.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "215212520.99",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "20",
+        "generated_on": "2025-07-23"
+      },
+      "notes_and_disclosures": [
+        "* Fees is net of GST which is taken as input tax credit."
+      ]
+    },
+    {
+      "title": "Depreciation and Amortisation Expense",
+      "full_title": "21. Depreciation and Amortisation Expense",
+      "structure": [
+        {
+          "category": "Depreciation & amortisation",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "60344362.00"
+            }
+          ]
+        },
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "Depreciation & amortisation",
+              "value": "0.00",
+              "previous_value": "60344362.00"
+            }
+          ],
+          "total": "0.00",
+          "previous_total": "60344362.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "21",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Loss on Sale of Assets & Investments",
+      "full_title": "22. Loss on Sale of Assets & Investments",
+      "structure": [
+        {
+          "category": "Short Term Loss on Sale of Investments (Non Derivative Loss)",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Long term loss on sale of investments",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Loss on Sale of Fixed Assets",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "note_number": "22",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Finance Costs",
+      "full_title": "23. Finance Costs",
+      "structure": [
+        {
+          "category": "Interest Expense",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "267800.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Bank & Finance Charges",
+          "subcategories": [
+            {
+              "label": "Bank Charges",
+              "value": "42167.53",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Interest on APSFC Loan",
+              "value": "3129488.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Interest on ICICI Loan-Commercial Building",
+              "value": "5041999.02",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Interest of Car Loan",
+              "value": "387546.10",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Interest on Loan From SBI",
+              "value": "73925.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "Interest Under 234 C Fy 2021-22",
+              "value": "636117.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "10242315.65",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "23",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Payment to Auditor",
+      "full_title": "24. Payment to Auditor",
+      "structure": [
+        {
+          "category": "For Audit fee",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "For Tax Audit / Certification Fees",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ],
+          "total": "0.00",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "24",
+        "generated_on": "2025-07-23"
+      },
+      "assumptions": "No entries for Payment to Auditor were found in the trial balance.",
+      "markdown_content": "| Category            | March 31, 2024 | March 31, 2023 |\n|---------------------|--------------|---------------|\n| For Audit fee        | 0.00         | 0.00          |\n| For Tax Audit / Certification Fees | 0.00 | 0.00          |"
+    },
+    {
+      "title": "Earnings in Foreign Currency",
+      "full_title": "25. Earnings in Foreign Currency",
+      "structure": [
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Inflow",
+          "subcategories": [
+            {
+              "label": "Income from export of services",
+              "value": "0.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "0.00",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "25",
+        "generated_on": "2025-07-23"
+      },
+      "assumptions": "No data was available for earnings in foreign currency. All values are assumed to be zero.",
+      "markdown_content": "| Category | Subcategory | March 31, 2024 | March 31, 2023 | \n| --- | --- | --- | --- |\n| Inflow | Income from export of services | 0.00 | 0.00 |"
+    },
+    {
+      "title": "Particulars of Un-hedged Foreign Currency Exposure",
+      "full_title": "26. Particulars of Un-hedged Foreign Currency Exposure",
+      "structure": [
+        {
+          "category": "Outflow",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Inflow",
+          "subcategories": [
+            {
+              "label": "Income from export of services",
+              "value": "0.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "0.00",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "26",
+        "generated_on": "2025-07-23"
+      },
+      "notes_and_disclosures": [
+        "(i) There is no derivate contract outstanding as at the Balance Sheet date.",
+        "(ii) Particulars of un-hedged foreign currency exposure as at the Balance Sheet date"
+      ],
+      "assumptions": "No un-hedged foreign currency exposure data was found in the trial balance."
+    },
+    {
+      "title": "Contingent Liabilities",
+      "full_title": "27. Contingent Liabilities",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "Claims against the company not acknowledged as debts",
+              "value": "0.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "0.00",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "27",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Commitments",
+      "full_title": "28. Commitments",
+      "structure": [
+        {
+          "category": "In Lakhs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "Capital Commitments",
+              "value": "0.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "0.00",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "28",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Related Party Disclosures",
+      "full_title": "29. Related Party Disclosures",
+      "structure": [
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.0"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.0"
+            }
+          ]
+        },
+        {
+          "category": "Key Management Personnel",
+          "subcategories": [
+            {
+              "label": "Remuneration",
+              "value": "0.0",
+              "previous_value": "0.0"
+            }
+          ],
+          "total": "0.0",
+          "previous_total": "0.0"
+        }
+      ],
+      "metadata": {
+        "note_number": "29",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Earnings Per Share (EPS)",
+      "full_title": "31. Earnings Per Share (EPS)",
+      "structure": [
+        {
+          "category": "Revenue from Operations",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "330858462.82"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.0"
+            }
+          ]
+        },
+        {
+          "category": "Finance Costs",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "12010882.12"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.0"
+            }
+          ]
+        },
+        {
+          "category": "Employee Benefits Expense",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "74122.0"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.0"
+            }
+          ]
+        },
+        {
+          "category": "Other Current Liabilities",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "5115150.0"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.0"
+            }
+          ]
+        },
+        {
+          "category": "Property, Plant and Equipment",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "38000617.72"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.0"
+            }
+          ]
+        },
+        {
+          "category": "Cash and Cash Equivalents",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "2250154.38"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.0"
+            }
+          ]
+        },
+        {
+          "category": "Equity Share Capital",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "157581229.0"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.0"
+            }
+          ]
+        },
+        {
+          "category": "",
+          "subcategories": [
+            {
+              "label": "Basic EPS",
+              "value": "15.76",
+              "previous_value": "0.0"
+            },
+            {
+              "label": "Diluted EPS",
+              "value": "15.76",
+              "previous_value": "0.0"
+            }
+          ],
+          "total": "15.76",
+          "previous_total": "0.0"
+        }
+      ],
+      "metadata": {
+        "note_number": "31",
+        "generated_on": "2025-07-23"
+      }
+    },
+    {
+      "title": "Additional Disclosures",
+      "full_title": "32. Additional Disclosures",
+      "structure": [
+        {
+          "category": "Unsecured, considered good",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00"
+            }
+          ]
+        },
+        {
+          "category": "Other loans and advances",
+          "subcategories": [
+            {
+              "label": "March 31, 2024",
+              "value": "0.00",
+              "previous_value": "0.00"
+            },
+            {
+              "label": "March 31, 2023",
+              "value": "0.00",
+              "previous_value": "0.00"
+            }
+          ],
+          "total": "0.00",
+          "previous_total": "0.00"
+        }
+      ],
+      "metadata": {
+        "note_number": "32",
+        "generated_on": "2025-07-23"
+      }
+    }
+  ]
+}

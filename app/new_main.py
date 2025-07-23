@@ -8,6 +8,7 @@ import re
 import sys
 from typing import Dict, List, Any, Optional
 import pandas as pd
+from app.utils import convert_note_json_to_lakhs
 
 
 # Load environment variables
@@ -255,12 +256,25 @@ Your task is to generate a financial note titled: "{template['full_title']}" str
 **CRITICAL RULES**
 - Respond ONLY with a valid JSON object (no markdown, no explanations).
 - If a value is unavailable or not calculable, use `0.0`.
-- Convert all ₹ amounts to lakhs by dividing by 100000 and round to 2 decimal places.
+- Strictly Convert all ₹ amounts to lakhs by dividing by 100000 and round to 2 decimal places.
 - Ensure that category subtotals **match** the grand total.
 - Return a key `markdown_content` containing a markdown-formatted table for this note.
 - Validate that your JSON structure matches the `TEMPLATE STRUCTURE` exactly.
 - Perform intelligent classification: if an entry from the trial balance clearly fits a category, assign it logically.
 - If data is ambiguous, make a conservative estimate, and record it in an `assumptions` field inside the JSON.
+
+---
+**REFLECTION**
+- After generating the financial note, reflect on the process: Did you miss any data? Are there any uncertainties or assumptions that should be highlighted?
+- Explicitly mention any limitations, ambiguities, or areas where further information would improve accuracy in the `assumptions` field.
+
+**REFLEXION**
+- Before finalizing the output, review your own reasoning and calculations. Double-check that all ₹ amounts are converted to lakhs and that category subtotals match the grand total.
+- If you spot any inconsistencies or possible errors, correct them and note your corrections in the `assumptions` field.
+
+**TALES**
+- For each major category or unusual entry, briefly narrate (in the `assumptions` field) the story or logic behind its classification, especially if it required inference or was ambiguous.
+- Use the `assumptions` field to share any tales of how you mapped trial balance entries to categories, including any conservative estimates or judgment calls.
 
 ---
 **TEMPLATE STRUCTURE**
@@ -369,6 +383,7 @@ Generate the final JSON now:
             
             json_data, json_string = self.extract_json_from_markdown(note_data)
             if json_data:
+                json_data = convert_note_json_to_lakhs(json_data)
                 with open(json_output_path, 'w', encoding='utf-8') as f:
                     json.dump(json_data, f, indent=2, ensure_ascii=False)
                 print(f"✅ JSON saved to {json_output_path}")

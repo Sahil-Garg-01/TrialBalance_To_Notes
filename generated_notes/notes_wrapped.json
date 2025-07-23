@@ -1,0 +1,1308 @@
+{
+  "notes": [
+    {
+      "note_number": "2",
+      "note_title": "Share Capital",
+      "full_title": "2. Share Capital",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Equity Shares of ₹10 each",
+          "current_year": "1033.29",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Authorised Share Capital",
+          "current_year": "1033.29",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Equity Shares of ₹10 each fully paid up",
+          "current_year": "542.52",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Issued, Subscribed and Paid-up Share Capital",
+          "current_year": "542.52",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Number of Shares at the beginning",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Changes during the year",
+          "current_year": "522.34",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Number of Shares at the end",
+          "current_year": "522.34",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "3",
+      "note_title": "Reserves and Surplus",
+      "full_title": "3. Reserves and Surplus",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Share Premium Account",
+          "current_year": "17.55",
+          "previous_year": "17.54"
+        },
+        {
+          "particulars": "Surplus in Statement of Profit and Loss",
+          "current_year": "13.78",
+          "previous_year": "13.77"
+        },
+        {
+          "particulars": "Total ",
+          "current_year": "31.33",
+          "previous_year": "31.31"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "4",
+      "note_title": "Long Term Borrowings",
+      "full_title": "4. Long Term Borrowings",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Term Loans from Banks",
+          "current_year": "81396.07",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Secured",
+          "current_year": "81396.07",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "5",
+      "note_title": "Deferred Tax Liability (Net)",
+      "full_title": "5. Deferred Tax Liability (Net)",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Deferred Tax Liability",
+          "current_year": "4318.65",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total ",
+          "current_year": "4318.65",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "6",
+      "note_title": "Trade Payables",
+      "full_title": "6. Trade Payables",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Outstanding for a period exceeding six months from the date they are due for payment",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Other payables",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Unsecured, considered good",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Particulars",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Undisputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Disputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Total",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Particulars",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Undisputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Disputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Total",
+          "current_year": "",
+          "previous_year": "-"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "7",
+      "note_title": "Other Current Liabilities",
+      "full_title": "7. Other Current Liabilities",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Current Maturities of Long Term Borrowings",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Outstanding Liabilities for Expenses",
+          "current_year": "89138.60",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total ",
+          "current_year": "89138.60",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "8",
+      "note_title": "Short Term Provisions",
+      "full_title": "8. Short Term Provisions",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Provision for Taxation",
+          "current_year": "3645955.0",
+          "previous_year": "0.0"
+        },
+        {
+          "particulars": "Total ",
+          "current_year": "3645955.0",
+          "previous_year": "0.0"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "9",
+      "note_title": "Fixed Assets",
+      "full_title": "9. Fixed Assets",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Gross Block",
+          "current_year": "246955658.17",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Accumulated Depreciation",
+          "current_year": "60344362.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Net Block",
+          "current_year": "186611296.17",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Tangible Assets",
+          "current_year": "186611.29",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Gross Block",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Accumulated Amortisation",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Net Block",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Intangible Assets",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Capital Work-in-Progress",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Capital Work-in-Progress",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "10",
+      "note_title": "Long Term Loans and Advances",
+      "full_title": "10. Long Term Loans and Advances",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Long Term - Security Deposits",
+          "current_year": "0.0",
+          "previous_year": "0.0"
+        },
+        {
+          "particulars": "Total Unsecured, considered good",
+          "current_year": "0.0",
+          "previous_year": "0.0"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "11",
+      "note_title": "Inventories",
+      "full_title": "11. Inventories",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Total Consumables",
+          "current_year": "1.04",
+          "previous_year": "1.01"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": "| Category | March 31, 2024 | March 31, 2023 |\n| --- | --- | --- |\n| Consumables | 1.04 | 1.01 |\n| **Total** | **1.04** | **1.01** |\n"
+    },
+    {
+      "note_number": "12",
+      "note_title": "Trade Receivables",
+      "full_title": "12. Trade Receivables",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Outstanding for a period exceeding six months from the date they are due for payment",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Other receivables",
+          "current_year": "833.79",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Unsecured, considered good",
+          "current_year": "833.79",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Particulars",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Undisputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Undisputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Disputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Disputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Total",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Particulars",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Undisputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Undisputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Disputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Disputed",
+          "current_year": "",
+          "previous_year": "-"
+        },
+        {
+          "particulars": "Total",
+          "current_year": "",
+          "previous_year": "-"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "13",
+      "note_title": "Cash and Bank Balances",
+      "full_title": "13. Cash and Bank Balances",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Balances with banks in current accounts",
+          "current_year": "156.54",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Cash on hand",
+          "current_year": "36.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Fixed Deposits with ICICI Bank",
+          "current_year": "8.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Total",
+          "current_year": "192.54",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": "| Category | Subcategory | March 31, 2024 | March 31, 2023 |\n| --- | --- | --- | --- |\n| Cash and cash equivalents | Balances with banks in current accounts | 156.54 | 0.00 |\n| | Cash on hand | 36.00 | 0.00 |\n| Other Bank Balances | Fixed Deposits with ICICI Bank | 8.00 | 0.00 |\n| Total |  | 192.54 | 0.00 |"
+    },
+    {
+      "note_number": "14",
+      "note_title": "Short Term Loans and Advances",
+      "full_title": "14. Short Term Loans and Advances",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Prepaid Expenses",
+          "current_year": "15.90",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Other Advances",
+          "current_year": "257.02",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Advance Tax",
+          "current_year": "112.85",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Balances with statutory/government authorities",
+          "current_year": "357.96",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Total",
+          "current_year": "743.74",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "15",
+      "note_title": "Other Current Assets",
+      "full_title": "15. Other Current Assets",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Total Interest accrued on fixed deposits",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "16",
+      "note_title": "Revenue from Operations",
+      "full_title": "16. Revenue from Operations",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Domestic",
+          "current_year": "263682.38",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Exports",
+          "current_year": "7414000.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Sale of Services",
+          "current_year": "7677623.38",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "17",
+      "note_title": "Other Income",
+      "full_title": "17. Other Income",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Total Foreign exchange gain (Net)",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "18",
+      "note_title": "Cost of Materials Consumed",
+      "full_title": "18. Cost of Materials Consumed",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "",
+          "current_year": "2498.09",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Less: Closing Stock",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total ",
+          "current_year": "2498.09",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "19",
+      "note_title": "Employee Benefit Expense",
+      "full_title": "19. Employee Benefit Expense",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Salaries, wages and bonus",
+          "current_year": "63394867.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Contribution to PF & ESI",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Staff welfare expenses",
+          "current_year": "103747.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Employee Benefits Expense",
+          "current_year": "63498614.00",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "20",
+      "note_title": "Other Expenses",
+      "full_title": "20. Other Expenses",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "BA / BE NOC Charges",
+          "current_year": "7414000.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "BA Expenses",
+          "current_year": "183682.38",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Payments to Volunteers",
+          "current_year": "16490429.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Other Operating Expenses",
+          "current_year": "1678510.62",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Laboratory testing charges",
+          "current_year": "3501405.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Rent",
+          "current_year": "20156550.98",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Rates & Taxes",
+          "current_year": "1900.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Fees & licenses",
+          "current_year": "100000.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Insurance",
+          "current_year": "140786.98",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Membership & Subscription Charges",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Postage & Communication Cost",
+          "current_year": "11910.20",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Printing and stationery",
+          "current_year": "2419542.29",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "CSR Fund Expenses",
+          "current_year": "2470922.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Telephone & Internet",
+          "current_year": "335978.02",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Travelling and Conveyance",
+          "current_year": "133986.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Translation Charges",
+          "current_year": "351574.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Electricity Charges",
+          "current_year": "10943323.54",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Security Charges",
+          "current_year": "1173753.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Annual Maintenance Charges",
+          "current_year": "2636798.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Repairs and maintenance - Electrical",
+          "current_year": "1386039.21",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Repairs and maintenance - Office",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Repairs and maintenance - Machinery",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Repairs and maintenance - Vehicles",
+          "current_year": "140405.58",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Repairs and maintenance - Others",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Business Development Expenses",
+          "current_year": "4861950.41",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Professional & Consultancy Fees",
+          "current_year": "92500.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Payment to Auditors",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Bad Debts Written Off",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Fire Extinguishers Refilling Charges",
+          "current_year": "98050.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Food Expenses for Guests",
+          "current_year": "521160.10",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Diesel Expenses",
+          "current_year": "140405.58",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Interest Under 234 C Fy 2021-22",
+          "current_year": "636117.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Loan Processing Charges",
+          "current_year": "288000.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Sitting Fee of Directors",
+          "current_year": "25000.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Customs Duties Payment",
+          "current_year": "64124.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Transportation and Unloading Charges",
+          "current_year": "1046782.92",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Software Equipment",
+          "current_year": "237500.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Miscellaneous expenses",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total ",
+          "current_year": "215212520.99",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "21",
+      "note_title": "Depreciation and Amortisation Expense",
+      "full_title": "21. Depreciation and Amortisation Expense",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Depreciation & amortisation",
+          "current_year": "0.00",
+          "previous_year": "60344362.00"
+        },
+        {
+          "particulars": "Total ",
+          "current_year": "0.00",
+          "previous_year": "60344362.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "22",
+      "note_title": "Loss on Sale of Assets & Investments",
+      "full_title": "22. Loss on Sale of Assets & Investments",
+      "table_data": [],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "23",
+      "note_title": "Finance Costs",
+      "full_title": "23. Finance Costs",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Bank Charges",
+          "current_year": "42167.53",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Interest on APSFC Loan",
+          "current_year": "3129488.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Interest on ICICI Loan-Commercial Building",
+          "current_year": "5041999.02",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Interest of Car Loan",
+          "current_year": "387546.10",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Interest on Loan From SBI",
+          "current_year": "73925.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Interest Under 234 C Fy 2021-22",
+          "current_year": "636117.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Bank & Finance Charges",
+          "current_year": "10242315.65",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "24",
+      "note_title": "Payment to Auditor",
+      "full_title": "24. Payment to Auditor",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Total For Tax Audit / Certification Fees",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": "| Category            | March 31, 2024 | March 31, 2023 |\n|---------------------|--------------|---------------|\n| For Audit fee        | 0.00         | 0.00          |\n| For Tax Audit / Certification Fees | 0.00 | 0.00          |"
+    },
+    {
+      "note_number": "25",
+      "note_title": "Earnings in Foreign Currency",
+      "full_title": "25. Earnings in Foreign Currency",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Income from export of services",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Inflow",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": "| Category | Subcategory | March 31, 2024 | March 31, 2023 | \n| --- | --- | --- | --- |\n| Inflow | Income from export of services | 0.00 | 0.00 |"
+    },
+    {
+      "note_number": "26",
+      "note_title": "Particulars of Un-hedged Foreign Currency Exposure",
+      "full_title": "26. Particulars of Un-hedged Foreign Currency Exposure",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Income from export of services",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total Inflow",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "27",
+      "note_title": "Contingent Liabilities",
+      "full_title": "27. Contingent Liabilities",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Claims against the company not acknowledged as debts",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total ",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "28",
+      "note_title": "Commitments",
+      "full_title": "28. Commitments",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Capital Commitments",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        },
+        {
+          "particulars": "Total ",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "29",
+      "note_title": "Related Party Disclosures",
+      "full_title": "29. Related Party Disclosures",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Remuneration",
+          "current_year": "0.0",
+          "previous_year": "0.0"
+        },
+        {
+          "particulars": "Total Key Management Personnel",
+          "current_year": "0.0",
+          "previous_year": "0.0"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "31",
+      "note_title": "Earnings Per Share (EPS)",
+      "full_title": "31. Earnings Per Share (EPS)",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Basic EPS",
+          "current_year": "15.76",
+          "previous_year": "0.0"
+        },
+        {
+          "particulars": "Diluted EPS",
+          "current_year": "15.76",
+          "previous_year": "0.0"
+        },
+        {
+          "particulars": "Total ",
+          "current_year": "15.76",
+          "previous_year": "0.0"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    },
+    {
+      "note_number": "32",
+      "note_title": "Additional Disclosures",
+      "full_title": "32. Additional Disclosures",
+      "table_data": [
+        {
+          "particulars": "Particulars",
+          "current_year": "March 31, 2024",
+          "previous_year": "March 31, 2023"
+        },
+        {
+          "particulars": "Total Other loans and advances",
+          "current_year": "0.00",
+          "previous_year": "0.00"
+        }
+      ],
+      "breakdown": {},
+      "matched_accounts": [],
+      "total_amount": null,
+      "total_amount_lakhs": null,
+      "matched_accounts_count": null,
+      "comparative_data": {},
+      "notes_and_disclosures": [],
+      "markdown_content": ""
+    }
+  ]
+}
