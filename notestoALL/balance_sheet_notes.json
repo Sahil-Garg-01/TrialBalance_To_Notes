@@ -1,0 +1,397 @@
+{
+  "2": {
+    "category_name": "0",
+    "structure": [
+      {
+        "category": "0",
+        "subcategories": []
+      }
+    ],
+    "total_2024": 0.0,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "3": {
+    "category_name": "0",
+    "structure": [
+      {
+        "category": "0",
+        "subcategories": []
+      }
+    ],
+    "total_2024": 0.0,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "4": {
+    "category_name": "0",
+    "structure": [
+      {
+        "category": "0",
+        "subcategories": []
+      }
+    ],
+    "total_2024": 0.0,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "5": {
+    "category_name": "0",
+    "structure": [
+      {
+        "category": "0",
+        "subcategories": []
+      }
+    ],
+    "total_2024": 0.0,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "6": {
+    "category_name": "0",
+    "structure": [
+      {
+        "category": "0",
+        "subcategories": []
+      }
+    ],
+    "total_2024": 0.0,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "7": {
+    "category_name": "0",
+    "structure": [
+      {
+        "category": "0",
+        "subcategories": [
+          {
+            "label": "Intangible Assets",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "1.0",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          }
+        ]
+      }
+    ],
+    "total_2024": 0.0,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "8": {
+    "category_name": "Short Term Provisions",
+    "structure": [
+      {
+        "category": "Short Term Provisions",
+        "subcategories": [
+          {
+            "label": "Provision for Taxation",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Note 9 : Fixed Assets",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Tangible Assets",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "1.0",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          }
+        ]
+      }
+    ],
+    "total_2024": 0.0,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "10": {
+    "category_name": "Long Term Loans and advances",
+    "structure": [
+      {
+        "category": "Long Term Loans and advances",
+        "subcategories": [
+          {
+            "label": "Unsecured, considered good",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Long Term - Security Deposits",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          }
+        ]
+      }
+    ],
+    "total_2024": 0.0,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "11": {
+    "category_name": "Inventories",
+    "structure": [
+      {
+        "category": "Inventories",
+        "subcategories": [
+          {
+            "label": "Consumables",
+            "value": 9.9217,
+            "previous_value": 0.0,
+            "change": 9.9217,
+            "change_percent": 0
+          }
+        ]
+      }
+    ],
+    "total_2024": 9.9217,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "12": {
+    "category_name": "Trade receivables",
+    "structure": [
+      {
+        "category": "Trade receivables",
+        "subcategories": [
+          {
+            "label": "Unsecured, considered good",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Other receivables",
+            "value": 64.0810122,
+            "previous_value": 0.0,
+            "change": 64.0810122,
+            "change_percent": 0
+          },
+          {
+            "label": "- Considered good",
+            "value": 769.7080509,
+            "previous_value": 21.4167922,
+            "change": 748.2912587,
+            "change_percent": 3493.9464870000465
+          },
+          {
+            "label": "- Considered doubtful",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "- Considered good",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "- Considered doubtful",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Total",
+            "value": 769.7080509,
+            "previous_value": 21.4167922,
+            "change": 748.2912587,
+            "change_percent": 3493.9464870000465
+          },
+          {
+            "label": "- Considered good",
+            "value": 932.93485,
+            "previous_value": 0.0,
+            "change": 932.93485,
+            "change_percent": 0
+          },
+          {
+            "label": "- Considered doubtful",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "- Considered good",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "- Considered doubtful",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Total",
+            "value": 932.93485,
+            "previous_value": 0.0,
+            "change": 932.93485,
+            "change_percent": 0
+          }
+        ]
+      }
+    ],
+    "total_2024": 3469.366814,
+    "total_2023": 42.8335844,
+    "total_change": 0.0
+  },
+  "13": {
+    "category_name": "Cash and bank balances",
+    "structure": [
+      {
+        "category": "Cash and bank balances",
+        "subcategories": [
+          {
+            "label": "Cash and cash equivalents",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Balances with banks in current accounts",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Cash on hand",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Other Bank Balances",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Fixed Deposits with ICICI Bank",
+            "value": 402.98954,
+            "previous_value": 0.0,
+            "change": 402.98954,
+            "change_percent": 0
+          }
+        ]
+      }
+    ],
+    "total_2024": 402.98954,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "14": {
+    "category_name": "Short Term Loans and Advances",
+    "structure": [
+      {
+        "category": "Short Term Loans and Advances",
+        "subcategories": [
+          {
+            "label": "Unsecured, considered good",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Prepaid Expenses",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Other Advances",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Other loans and advances",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Advance tax",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Balances with statutory/government authorities",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          }
+        ]
+      }
+    ],
+    "total_2024": 0.0,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "15": {
+    "category_name": "Other Current Assets",
+    "structure": [
+      {
+        "category": "Other Current Assets",
+        "subcategories": [
+          {
+            "label": "Interest accrued on fixed deposits",
+            "value": 2.18107,
+            "previous_value": 0.0,
+            "change": 2.18107,
+            "change_percent": 0
+          }
+        ]
+      }
+    ],
+    "total_2024": 2.18107,
+    "total_2023": 0.0,
+    "total_change": 2.18107
+  }
+}
