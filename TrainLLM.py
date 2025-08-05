@@ -87,8 +87,8 @@ def create_train_jsonl(json_data, output_file="train.jsonl"):
     return jsonl_data
 
 # Step 3: Main processing
-excel_file = "input/Sample2 TB.xlsx"
-source_file_name = "Sample2 TB.xlsx"
+excel_file = "input\Book2 (2).xlsx"
+source_file_name = "Book2 (2).xlsx"
 json_data = process_trial_balance_excel(excel_file, source_file_name)
 
 # Save JSON output

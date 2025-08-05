@@ -1,0 +1,71 @@
+{
+  "Ind AS 1": {
+    "title": "Presentation of Financial Statements",
+    "rules": [
+      "Financial statements must include: Balance Sheet, Profit & Loss, Cash Flow Statement, Statement of Changes in Equity, and Notes.",
+      "Profit & Loss must present both profit/loss and other comprehensive income.",
+      "Salary and wages, rent, and depreciation are classified as operating expenses.",
+      "Depreciation is a non-cash expenditure but must be included in the income statement.",
+      "Comparative financials for previous periods are mandatory."
+    ]
+  },
+  "Ind AS 2": {
+    "title": "Inventories",
+    "rules": [
+      "Inventories must be valued at the lower of cost or net realisable value (NRV).",
+      "Cost includes purchase cost, conversion cost, and other directly attributable costs.",
+      "Inventory costing methods allowed: FIFO and Weighted Average."
+    ]
+  },
+  "Ind AS 7": {
+    "title": "Statement of Cash Flows",
+    "rules": [
+      "Cash flows must be categorized into operating, investing, and financing activities.",
+      "Cash equivalents include demand deposits and short-term highly liquid investments.",
+      "Both direct and indirect methods of presenting cash flows are acceptable."
+    ]
+  },
+  "Ind AS 8": {
+    "title": "Accounting Policies, Changes in Estimates and Errors",
+    "rules": [
+      "Changes in accounting policies must be applied retrospectively unless impracticable.",
+      "Prior period errors must be corrected in the next financial statement.",
+      "Entities must disclose major assumptions and estimation uncertainties."
+    ]
+  },
+  "Ind AS 10": {
+    "title": "Events after the Reporting Period",
+    "rules": [
+      "Adjusting events provide evidence of conditions that existed at the balance sheet date.",
+      "Non-adjusting events are those arising after the reporting date and must be disclosed if material."
+    ]
+  },
+  "Ind AS 12": {
+    "title": "Income Taxes",
+    "rules": [
+      "Current tax is calculated on taxable profit.",
+      "Deferred tax is based on temporary differences between accounting and tax treatment.",
+      "Deferred tax liabilities are classified as non-current liabilities.",
+      "Deferred tax assets must be recognized if it is probable that taxable profit will be available.",
+      "Offsetting current/deferred tax assets and liabilities is allowed if a legal right exists and they relate to the same authority."
+    ]
+  },
+  "Ind AS 16": {
+    "title": "Property, Plant and Equipment",
+    "rules": [
+      "Initial measurement is at cost: purchase price + costs to bring to use + restoration costs.",
+      "Entities can use cost model or revaluation model for subsequent measurement.",
+      "Depreciation must reflect usage pattern; component depreciation required.",
+      "Derecognition when asset is disposed or no longer generates economic benefit."
+    ]
+  },
+  "Ind AS 19": {
+    "title": "Employee Benefits",
+    "rules": [
+      "Short-term benefits include salary and bonus \u2014 settled within 12 months.",
+      "Defined Contribution plans require only fixed payments by employer.",
+      "Defined Benefit plans obligate employer to provide fixed retirement benefit, requiring actuarial valuation.",
+      "Other long-term benefits accrue over time and must be disclosed and measured reliably."
+    ]
+  }
+}

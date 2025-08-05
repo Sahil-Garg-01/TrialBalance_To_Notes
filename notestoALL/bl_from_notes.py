@@ -1,10 +1,11 @@
 import os
 import json
 from openpyxl import load_workbook, Workbook
-from openpyxl.styles import Font, Border, Side, Alignment, PatternFill
+from openpyxl.styles import Font, Border, Side, Alignment
 import re
+import uuid
 
-INPUT_FILE = "notestoALL/BLnotes.xlsx"
+INPUT_FILE = "notestoALL/BLnotes2.xlsx"
 OUTPUT_FILE = "notestoALL/outputbs_Sheet.xlsx"
 
 def safe_float_conversion(value):
@@ -21,6 +22,7 @@ def safe_float_conversion(value):
 
 def find_data_columns(ws):
     """Find the data columns for 2024 and 2023."""
+    col_2024, col_2023 = None, None
     for row_idx in range(1, min(ws.max_row + 1, 20)):
         for col_idx in range(1, ws.max_column + 1):
             cell_value = str(ws.cell(row=row_idx, column=col_idx).value or "").strip()
@@ -28,10 +30,10 @@ def find_data_columns(ws):
                 col_2024 = col_idx
             elif re.search(r'31\.?03\.?2023|45016|2023', cell_value, re.IGNORECASE):
                 col_2023 = col_idx
-    if 'col_2024' not in locals():
-        col_2024 = 4  # Column D
-    if 'col_2023' not in locals():
-        col_2023 = 5  # Column E
+    if not col_2024:
+        col_2024 = 4  # Default to column D
+    if not col_2023:
+        col_2023 = 5  # Default to column E
     return col_2024, col_2023
 
 def load_and_map_excel_notes(file_path=INPUT_FILE):
@@ -78,17 +80,17 @@ def load_and_map_excel_notes(file_path=INPUT_FILE):
                     continue
             
             if current_note and current_note_data:
-                skip_keywords = ['in lakhs', 'march 31', 'particulars', 'year ended', 'amount',
-                               'reconciliation', 'terms/ rights', 'details of', 'disclosure of',
-                               'age wise', 'outstanding for', 'undisputed', 'disputed', 'sundry',
-                               'gross carrying', 'accumulated depreciation', 'net carrying']
+                # Refined skip keywords to avoid missing valid data
+                skip_keywords = ['reconciliation', 'terms/ rights', 'details of', 'disclosure of',
+                                'age wise', 'outstanding for', 'undisputed', 'disputed', 'sundry',
+                                'gross carrying', 'accumulated depreciation', 'net carrying']
                 if any(keyword in first_cell.lower() for keyword in skip_keywords):
                     continue
                 
                 value_2024 = safe_float_conversion(row_data[col_2024 - 1]) if col_2024 <= len(row_data) else 0.0
                 value_2023 = safe_float_conversion(row_data[col_2023 - 1]) if col_2023 <= len(row_data) else 0.0
                 
-                if first_cell:
+                if first_cell and (value_2024 != 0 or value_2023 != 0 or not re.match(r'^\d+\.?\s*', first_cell)):
                     subcategory = {
                         "label": first_cell,
                         "value": value_2024,
@@ -215,17 +217,15 @@ def generate_balance_sheet_report(notes_data):
     add_data_row("Shareholders' funds", "", 0, 0, indent=1, is_section_header=True)
     
     # Share Capital (Note 2)
-    share_capital_2024 = next((item["value"] for item in notes_data.get("2", {}).get("structure", [{}])[0].get("subcategories", [])
-                              if "total issued" in item["label"].lower()), 0.0)
-    share_capital_2023 = next((item["previous_value"] for item in notes_data.get("2", {}).get("structure", [{}])[0].get("subcategories", [])
-                              if "total issued" in item["label"].lower()), 0.0)
+    share_capital_2024 = notes_data.get("2", {}).get("total_2024", 0.0)
+    share_capital_2023 = notes_data.get("2", {}).get("total_2023", 0.0)
     if share_capital_2024 == 0 and share_capital_2023 == 0:
         print("⚠️ Warning: No data found for Note 2 (Share capital)")
     add_data_row("Share capital", "2", share_capital_2024, share_capital_2023, indent=2)
     
     # Reserves and Surplus (Note 3)
-    reserves_2024 = sum(item["value"] for item in notes_data.get("3", {}).get("structure", [{}])[0].get("subcategories", []))
-    reserves_2023 = sum(item["previous_value"] for item in notes_data.get("3", {}).get("structure", [{}])[0].get("subcategories", []))
+    reserves_2024 = notes_data.get("3", {}).get("total_2024", 0.0)
+    reserves_2023 = notes_data.get("3", {}).get("total_2023", 0.0)
     if reserves_2024 == 0 and reserves_2023 == 0:
         print("⚠️ Warning: No data found for Note 3 (Reserves and surplus)")
     add_data_row("Reserves and surplus", "3", reserves_2024, reserves_2023, indent=2)
@@ -239,15 +239,15 @@ def generate_balance_sheet_report(notes_data):
     add_data_row("Non-Current liabilities", "", 0, 0, indent=1, is_section_header=True)
     
     # Long Term Borrowings (Note 4)
-    borrowings_2024 = sum(item["value"] for item in notes_data.get("4", {}).get("structure", [{}])[0].get("subcategories", []))
-    borrowings_2023 = sum(item["previous_value"] for item in notes_data.get("4", {}).get("structure", [{}])[0].get("subcategories", []))
+    borrowings_2024 = notes_data.get("4", {}).get("total_2024", 0.0)
+    borrowings_2023 = notes_data.get("4", {}).get("total_2023", 0.0)
     if borrowings_2024 == 0 and borrowings_2023 == 0:
         print("⚠️ Warning: No data found for Note 4 (Long term borrowings)")
     add_data_row("Long term borrowings", "4", borrowings_2024, borrowings_2023, indent=2)
     
     # Deferred Tax Liability (Note 5)
-    deferred_tax_2024 = sum(item["value"] for item in notes_data.get("5", {}).get("structure", [{}])[0].get("subcategories", []))
-    deferred_tax_2023 = sum(item["previous_value"] for item in notes_data.get("5", {}).get("structure", [{}])[0].get("subcategories", []))
+    deferred_tax_2024 = notes_data.get("5", {}).get("total_2024", 0.0)
+    deferred_tax_2023 = notes_data.get("5", {}).get("total_2023", 0.0)
     if deferred_tax_2024 == 0 and deferred_tax_2023 == 0:
         print("⚠️ Warning: No data found for Note 5 (Deferred tax liability)")
     add_data_row("Deferred Tax Liability (Net)", "5", deferred_tax_2024, deferred_tax_2023, indent=2)
@@ -261,22 +261,22 @@ def generate_balance_sheet_report(notes_data):
     add_data_row("Current liabilities", "", 0, 0, indent=1, is_section_header=True)
     
     # Trade Payables (Note 6)
-    trade_payables_2024 = sum(item["value"] for item in notes_data.get("6", {}).get("structure", [{}])[0].get("subcategories", []))
-    trade_payables_2023 = sum(item["previous_value"] for item in notes_data.get("6", {}).get("structure", [{}])[0].get("subcategories", []))
+    trade_payables_2024 = notes_data.get("6", {}).get("total_2024", 0.0)
+    trade_payables_2023 = notes_data.get("6", {}).get("total_2023", 0.0)
     if trade_payables_2024 == 0 and trade_payables_2023 == 0:
         print("⚠️ Warning: No data found for Note 6 (Trade payables)")
     add_data_row("Trade payables", "6", trade_payables_2024, trade_payables_2023, indent=2)
     
     # Other Current Liabilities (Note 7)
-    other_liabilities_2024 = sum(item["value"] for item in notes_data.get("7", {}).get("structure", [{}])[0].get("subcategories", []))
-    other_liabilities_2023 = sum(item["previous_value"] for item in notes_data.get("7", {}).get("structure", [{}])[0].get("subcategories", []))
+    other_liabilities_2024 = notes_data.get("7", {}).get("total_2024", 0.0)
+    other_liabilities_2023 = notes_data.get("7", {}).get("total_2023", 0.0)
     if other_liabilities_2024 == 0 and other_liabilities_2023 == 0:
         print("⚠️ Warning: No data found for Note 7 (Other current liabilities)")
     add_data_row("Other current liabilities", "7", other_liabilities_2024, other_liabilities_2023, indent=2)
     
     # Short Term Provisions (Note 8)
-    provisions_2024 = sum(item["value"] for item in notes_data.get("8", {}).get("structure", [{}])[0].get("subcategories", []))
-    provisions_2023 = sum(item["previous_value"] for item in notes_data.get("8", {}).get("structure", [{}])[0].get("subcategories", []))
+    provisions_2024 = notes_data.get("8", {}).get("total_2024", 0.0)
+    provisions_2023 = notes_data.get("8", {}).get("total_2023", 0.0)
     if provisions_2024 == 0 and provisions_2023 == 0:
         print("⚠️ Warning: No data found for Note 8 (Short term provisions)")
     add_data_row("Short term provisions", "8", provisions_2024, provisions_2023, indent=2)
@@ -324,8 +324,8 @@ def generate_balance_sheet_report(notes_data):
     add_data_row("Capital Work in Progress", "", capital_wip_2024, capital_wip_2023, indent=3)
     
     # Long Term Loans and Advances (Note 10)
-    long_term_loans_2024 = sum(item["value"] for item in notes_data.get("10", {}).get("structure", [{}])[0].get("subcategories", []))
-    long_term_loans_2023 = sum(item["previous_value"] for item in notes_data.get("10", {}).get("structure", [{}])[0].get("subcategories", []))
+    long_term_loans_2024 = notes_data.get("10", {}).get("total_2024", 0.0)
+    long_term_loans_2023 = notes_data.get("10", {}).get("total_2023", 0.0)
     if long_term_loans_2024 == 0 and long_term_loans_2023 == 0:
         print("⚠️ Warning: No data found for Note 10 (Long term loans and advances)")
     add_data_row("Long Term Loans and Advances", "10", long_term_loans_2024, long_term_loans_2023, indent=2)
@@ -339,36 +339,36 @@ def generate_balance_sheet_report(notes_data):
     add_data_row("Current assets", "", 0, 0, indent=1, is_section_header=True)
     
     # Inventories (Note 11)
-    inventories_2024 = sum(item["value"] for item in notes_data.get("11", {}).get("structure", [{}])[0].get("subcategories", []))
-    inventories_2023 = sum(item["previous_value"] for item in notes_data.get("11", {}).get("structure", [{}])[0].get("subcategories", []))
+    inventories_2024 = notes_data.get("11", {}).get("total_2024", 0.0)
+    inventories_2023 = notes_data.get("11", {}).get("total_2023", 0.0)
     if inventories_2024 == 0 and inventories_2023 == 0:
         print("⚠️ Warning: No data found for Note 11 (Inventories)")
     add_data_row("Inventories", "11", inventories_2024, inventories_2023, indent=2)
     
     # Trade Receivables (Note 12)
-    trade_receivables_2024 = sum(item["value"] for item in notes_data.get("12", {}).get("structure", [{}])[0].get("subcategories", []))
-    trade_receivables_2023 = sum(item["previous_value"] for item in notes_data.get("12", {}).get("structure", [{}])[0].get("subcategories", []))
+    trade_receivables_2024 = notes_data.get("12", {}).get("total_2024", 0.0)
+    trade_receivables_2023 = notes_data.get("12", {}).get("total_2023", 0.0)
     if trade_receivables_2024 == 0 and trade_receivables_2023 == 0:
         print("⚠️ Warning: No data found for Note 12 (Trade receivables)")
     add_data_row("Trade receivables", "12", trade_receivables_2024, trade_receivables_2023, indent=2)
     
     # Cash and Bank Balances (Note 13)
-    cash_balances_2024 = sum(item["value"] for item in notes_data.get("13", {}).get("structure", [{}])[0].get("subcategories", []))
-    cash_balances_2023 = sum(item["previous_value"] for item in notes_data.get("13", {}).get("structure", [{}])[0].get("subcategories", []))
+    cash_balances_2024 = notes_data.get("13", {}).get("total_2024", 0.0)
+    cash_balances_2023 = notes_data.get("13", {}).get("total_2023", 0.0)
     if cash_balances_2024 == 0 and cash_balances_2023 == 0:
         print("⚠️ Warning: No data found for Note 13 (Cash and bank balances)")
     add_data_row("Cash and bank balances", "13", cash_balances_2024, cash_balances_2023, indent=2)
     
     # Short Term Loans and Advances (Note 14)
-    short_term_loans_2024 = sum(item["value"] for item in notes_data.get("14", {}).get("structure", [{}])[0].get("subcategories", []))
-    short_term_loans_2023 = sum(item["previous_value"] for item in notes_data.get("14", {}).get("structure", [{}])[0].get("subcategories", []))
+    short_term_loans_2024 = notes_data.get("14", {}).get("total_2024", 0.0)
+    short_term_loans_2023 = notes_data.get("14", {}).get("total_2023", 0.0)
     if short_term_loans_2024 == 0 and short_term_loans_2023 == 0:
         print("⚠️ Warning: No data found for Note 14 (Short term loans and advances)")
     add_data_row("Short-term loans and advances", "14", short_term_loans_2024, short_term_loans_2023, indent=2)
     
     # Other Current Assets (Note 15)
-    other_assets_2024 = sum(item["value"] for item in notes_data.get("15", {}).get("structure", [{}])[0].get("subcategories", []))
-    other_assets_2023 = sum(item["previous_value"] for item in notes_data.get("15", {}).get("structure", [{}])[0].get("subcategories", []))
+    other_assets_2024 = notes_data.get("15", {}).get("total_2024", 0.0)
+    other_assets_2023 = notes_data.get("15", {}).get("total_2023", 0.0)
     if other_assets_2024 == 0 and other_assets_2023 == 0:
         print("⚠️ Warning: No data found for Note 15 (Other current assets)")
     add_data_row("Other current assets", "15", other_assets_2024, other_assets_2023, indent=2)

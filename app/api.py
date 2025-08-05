@@ -16,6 +16,8 @@ import json as pyjson
 from app.utils_normalize import normalize_llm_note_json
 from app.bs import generate_balance_sheet_report
 from app.cashflow import generate_cashflow_report
+import subprocess
+
 
 router = APIRouter()
 
@@ -243,3 +245,102 @@ async def run_full_pipeline(
         raise HTTPException(status_code=500, detail=f"json_xlsx.json_to_xlsx failed: {e}")
 
     return {"message": "Pipeline completed successfully. Excel file saved in output3."}
+
+
+
+@router.post("/bs_from_notes")
+async def bs_from_notes(file: UploadFile = File(...)):
+    """
+    Accepts an Excel file, runs the full pipeline (sircode.py -> csv_json.py -> bl_llm.py),
+    and returns the path to the generated balance sheet Excel file.
+    """
+    import os
+
+    # 1. Save uploaded Excel file
+    os.makedirs("input", exist_ok=True)
+    input_excel_path = os.path.join("input", file.filename)
+    with open(input_excel_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+    print(f"[DEBUG] Uploaded Excel saved to: {input_excel_path}")
+    print(f"[DEBUG] Files in input/: {os.listdir('input')}")
+
+    # Prepare environment for subprocesses
+    env = os.environ.copy()
+    if os.getenv("OPENROUTER_API_KEY"):
+        env["OPENROUTER_API_KEY"] = os.getenv("OPENROUTER_API_KEY")
+    env["INPUT_FILE"] = "clean_financial_data.json"
+
+    # 2. Run sircode.py with the uploaded Excel file
+    try:
+        print("[DEBUG] Running sircode.py...")
+        result1 = subprocess.run(
+            ["python", "pnlbs/sircode.py", input_excel_path],
+            capture_output=True,
+            text=True,
+            check=True,
+            env=env,
+            cwd="C:/SAHIL/NOTES"
+        )
+        print("[DEBUG] sircode.py STDOUT:\n", result1.stdout)
+        print("[DEBUG] sircode.py STDERR:\n", result1.stderr)
+        print(f"[DEBUG] Files in csv_notes/: {os.listdir('csv_notes') if os.path.exists('csv_notes') else 'csv_notes does not exist'}")
+    except subprocess.CalledProcessError as e:
+        print("[ERROR] sircode.py failed")
+        print("STDOUT:", e.stdout)
+        print("STDERR:", e.stderr)
+        raise HTTPException(status_code=500, detail=f"sircode.py failed: {e}\nSTDOUT:\n{e.stdout}\nSTDERR:\n{e.stderr}")
+
+    # 3. Run csv_json.py to generate clean_financial_data.json
+    try:
+        print("[DEBUG] Running csv_json.py...")
+        result2 = subprocess.run(
+            ["python", "pnlbs/csv_json.py"],
+            capture_output=True,
+            text=True,
+            check=True,
+            env=env,
+            cwd="C:/SAHIL/NOTES"
+        )
+        print("[DEBUG] csv_json.py STDOUT:\n", result2.stdout)
+        print("[DEBUG] csv_json.py STDERR:\n", result2.stderr)
+        print(f"[DEBUG] clean_financial_data.json exists: {os.path.exists('clean_financial_data.json')}")
+    except subprocess.CalledProcessError as e:
+        print("[ERROR] csv_json.py failed")
+        print("STDOUT:", e.stdout)
+        print("STDERR:", e.stderr)
+        raise HTTPException(status_code=500, detail=f"csv_json.py failed: {e}\nSTDOUT:\n{e.stdout}\nSTDERR:\n{e.stderr}")
+
+    # 4. Run bl_llm.py to generate the balance sheet Excel
+    try:
+        print("[DEBUG] Running bl_llm.py...")
+        result3 = subprocess.run(
+            ["python", "pnlbs/bl_llm.py"],
+            capture_output=True,
+            text=True,
+            check=True,
+            env=env,
+            cwd="C:/SAHIL/NOTES"
+        )
+        print("[DEBUG] bl_llm.py STDOUT:\n", result3.stdout)
+        print("[DEBUG] bl_llm.py STDERR:\n", result3.stderr)
+        # Try to extract the output file path from the script output
+        output_file = None
+        for line in result3.stdout.splitlines():
+            if "Output file:" in line:
+                output_file = line.split("Output file:")[-1].strip()
+                break
+        if not output_file or not os.path.exists(output_file):
+            debug_msg = f"\nSTDOUT:\n{result3.stdout}\nSTDERR:\n{result3.stderr}"
+            print("[ERROR] Could not determine output file from bl_llm.py output.", debug_msg)
+            raise Exception(f"Could not determine output file from bl_llm.py output.{debug_msg}")
+    except subprocess.CalledProcessError as e:
+        print("[ERROR] bl_llm.py failed")
+        print("STDOUT:", e.stdout)
+        print("STDERR:", e.stderr)
+        raise HTTPException(
+            status_code=500,
+            detail=f"bl_llm.py failed: {e}\nSTDOUT:\n{e.stdout}\nSTDERR:\n{e.stderr}"
+        )
+
+    print(f"[DEBUG] Pipeline completed. Output file: {output_file}")
+    return {"message": "Balance Sheet generated successfully.", "file": output_file}

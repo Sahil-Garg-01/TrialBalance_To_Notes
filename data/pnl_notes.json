@@ -1,0 +1,532 @@
+{
+  "16": {
+    "category_name": "Revenue from Operations",
+    "structure": [
+      {
+        "category": "Revenue from Operations",
+        "subcategories": [
+          {
+            "label": "Sale of Services",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Domestic",
+            "value": 1851.0968362,
+            "previous_value": 2696.58147,
+            "change": -845.4846338,
+            "change_percent": -31.353943621069234
+          },
+          {
+            "label": "Exports",
+            "value": 1457.487792,
+            "previous_value": 1576.5099475,
+            "change": -119.02215550000005,
+            "change_percent": -7.549724357194394
+          }
+        ]
+      }
+    ],
+    "total_2024": 3308.5846282,
+    "total_2023": 4273.0914175,
+    "total_change": -964.5067892999996
+  },
+  "17": {
+    "category_name": "Other income",
+    "structure": [
+      {
+        "category": "Other income",
+        "subcategories": [
+          {
+            "label": "Interest income",
+            "value": 30.02825,
+            "previous_value": 23.89011,
+            "change": 6.13814,
+            "change_percent": 25.693226192763447
+          },
+          {
+            "label": "Foreign exchange gain (Net)",
+            "value": 89.7518716,
+            "previous_value": 68.7249753,
+            "change": 21.026896300000004,
+            "change_percent": 30.595713142438925
+          }
+        ]
+      }
+    ],
+    "total_2024": 119.7801216,
+    "total_2023": 92.6150853,
+    "total_change": 27.165036299999997
+  },
+  "18": {
+    "category_name": "Cost of materials consumed",
+    "structure": [
+      {
+        "category": "Cost of materials consumed",
+        "subcategories": [
+          {
+            "label": "Opening stock",
+            "value": 10.13265,
+            "previous_value": 11.4616,
+            "change": -1.3289500000000007,
+            "change_percent": -11.594803517833467
+          },
+          {
+            "label": "Add: Purchases",
+            "value": 239.6761451,
+            "previous_value": 402.5562072,
+            "change": -162.8800621,
+            "change_percent": -40.46144592650067
+          },
+          {
+            "label": "Less: Closing stock",
+            "value": 9.9217,
+            "previous_value": 10.13265,
+            "change": -0.21095000000000041,
+            "change_percent": -2.0818838112438542
+          },
+          {
+            "label": "Cost of materials consumed",
+            "value": 239.8870951,
+            "previous_value": 403.8851572,
+            "change": -163.99806209999997,
+            "change_percent": -40.605122316686106
+          }
+        ]
+      }
+    ],
+    "total_2024": 239.8870951,
+    "total_2023": 403.8851572,
+    "total_change": -163.99806209999997
+  },
+  "19": {
+    "category_name": "Employee benefit expense",
+    "structure": [
+      {
+        "category": "Employee benefit expense",
+        "subcategories": [
+          {
+            "label": "Salaries, wages and bonus",
+            "value": 822.17814,
+            "previous_value": 823.8120288,
+            "change": -1.6338888000000225,
+            "change_percent": -0.19833271946514486
+          },
+          {
+            "label": "Contribution to PF & ESI",
+            "value": 0.0,
+            "previous_value": 27.13278,
+            "change": -27.13278,
+            "change_percent": -100.0
+          },
+          {
+            "label": "Staff welfare expenses",
+            "value": 9.8749916,
+            "previous_value": 13.843275,
+            "change": -3.9682834000000007,
+            "change_percent": -28.665784649947362
+          }
+        ]
+      }
+    ],
+    "total_2024": 832.0531316,
+    "total_2023": 864.7880838,
+    "total_change": -32.73495219999995
+  },
+  "20": {
+    "category_name": "Other expenses",
+    "structure": [
+      {
+        "category": "Other expenses",
+        "subcategories": [
+          {
+            "label": "BA / BE NOC Charges",
+            "value": 74.14,
+            "previous_value": 55.26363,
+            "change": 18.87637,
+            "change_percent": 34.15694915444389
+          },
+          {
+            "label": "BA Expenses",
+            "value": 1.8368238,
+            "previous_value": 0.0,
+            "change": 1.8368238,
+            "change_percent": 0
+          },
+          {
+            "label": "Payments to Volunteers",
+            "value": 308.76459,
+            "previous_value": 591.9919095,
+            "change": -283.2273195,
+            "change_percent": -47.8431064605622
+          },
+          {
+            "label": "Other Operating Expenses",
+            "value": 175.8134131,
+            "previous_value": 231.605269,
+            "change": -55.7918559,
+            "change_percent": -24.089199758231754
+          },
+          {
+            "label": "Laboratory testing charges",
+            "value": 35.01405,
+            "previous_value": 60.29296,
+            "change": -25.278910000000003,
+            "change_percent": -41.92680206777044
+          },
+          {
+            "label": "Rent",
+            "value": 201.56551,
+            "previous_value": 143.69435,
+            "change": 57.87116,
+            "change_percent": 40.273789470497626
+          },
+          {
+            "label": "Rates & Taxes",
+            "value": 1.0217,
+            "previous_value": 0.3307316,
+            "change": 0.6909684,
+            "change_percent": 208.92119168534245
+          },
+          {
+            "label": "Fees & licenses",
+            "value": 1.6744,
+            "previous_value": 1.5664,
+            "change": 0.1080000000000001,
+            "change_percent": 6.894790602655777
+          },
+          {
+            "label": "Insurance",
+            "value": 2.5668498,
+            "previous_value": 2.8074586,
+            "change": -0.24060879999999996,
+            "change_percent": -8.570341874320068
+          },
+          {
+            "label": "Membership & Subscription Charges",
+            "value": 0.3312,
+            "previous_value": 1.692,
+            "change": -1.3608,
+            "change_percent": -80.42553191489363
+          },
+          {
+            "label": "Postage & Communication Cost",
+            "value": 0.119102,
+            "previous_value": 0.63432,
+            "change": -0.515218,
+            "change_percent": -81.22367259427418
+          },
+          {
+            "label": "Printing and stationery",
+            "value": 24.1954229,
+            "previous_value": 33.6403124,
+            "change": -9.444889499999999,
+            "change_percent": -28.076105202875578
+          },
+          {
+            "label": "CSR Fund Expenses",
+            "value": 24.70922,
+            "previous_value": 13.39841,
+            "change": 11.310809999999998,
+            "change_percent": 84.41904673763527
+          },
+          {
+            "label": "Telephone & Internet",
+            "value": 3.3597802,
+            "previous_value": 2.7140504,
+            "change": 0.6457297999999998,
+            "change_percent": 23.792107913692384
+          },
+          {
+            "label": "Travelling and Conveyance",
+            "value": 1.33986,
+            "previous_value": 0.53803,
+            "change": 0.80183,
+            "change_percent": 149.03072319387397
+          },
+          {
+            "label": "Translation Charges",
+            "value": 3.51574,
+            "previous_value": 0.0,
+            "change": 3.51574,
+            "change_percent": 0
+          },
+          {
+            "label": "Electricity Charges",
+            "value": 109.4332354,
+            "previous_value": 115.18647,
+            "change": -5.753234599999999,
+            "change_percent": -4.994713875683489
+          },
+          {
+            "label": "Security Charges",
+            "value": 11.73753,
+            "previous_value": 9.90744,
+            "change": 1.8300900000000002,
+            "change_percent": 18.471875681306173
+          },
+          {
+            "label": "Annual Maintenance Charges",
+            "value": 26.36798,
+            "previous_value": 34.13233,
+            "change": -7.764350000000004,
+            "change_percent": -22.747787801184398
+          },
+          {
+            "label": "Repairs and maintenance",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "- Electrical",
+            "value": 13.8603921,
+            "previous_value": 2.7825734,
+            "change": 11.0778187,
+            "change_percent": 398.11415936054016
+          },
+          {
+            "label": "- Office",
+            "value": 48.7939825,
+            "previous_value": 48.4389044,
+            "change": 0.35507810000000006,
+            "change_percent": 0.7330432106139875
+          },
+          {
+            "label": "- Machinery",
+            "value": 17.6743542,
+            "previous_value": 10.318571,
+            "change": 7.355783199999999,
+            "change_percent": 71.28684000914467
+          },
+          {
+            "label": "- Vehicles",
+            "value": 0.0,
+            "previous_value": 1.828347,
+            "change": -1.828347,
+            "change_percent": -100.0
+          },
+          {
+            "label": "- Others",
+            "value": 0.0,
+            "previous_value": 4.1043752,
+            "change": -4.1043752,
+            "change_percent": -100.0
+          },
+          {
+            "label": "Business Development Expenses",
+            "value": 48.6195041,
+            "previous_value": 38.9486005,
+            "change": 9.670903600000003,
+            "change_percent": 24.82991295155779
+          },
+          {
+            "label": "Professional & Consultancy Fees",
+            "value": 23.78041,
+            "previous_value": 48.09414,
+            "change": -24.313730000000003,
+            "change_percent": -50.55445424328203
+          },
+          {
+            "label": "Payment to Auditors*",
+            "value": 0.35,
+            "previous_value": 0.35,
+            "change": 0.0,
+            "change_percent": 0.0
+          },
+          {
+            "label": "Bad Debts Written Off",
+            "value": 0.0,
+            "previous_value": 1.6738732,
+            "change": -1.6738732,
+            "change_percent": -100.0
+          },
+          {
+            "label": "Fire Extingushiers Refilling Charges",
+            "value": 0.9805,
+            "previous_value": 0.0,
+            "change": 0.9805,
+            "change_percent": 0
+          },
+          {
+            "label": "Food Expenses for Guests",
+            "value": 5.211601,
+            "previous_value": 0.0,
+            "change": 5.211601,
+            "change_percent": 0
+          },
+          {
+            "label": "Diesel Expenses",
+            "value": 11.2432237,
+            "previous_value": 0.0,
+            "change": 11.2432237,
+            "change_percent": 0
+          },
+          {
+            "label": "Interest Under 234 C Fy 2021-22",
+            "value": 6.36117,
+            "previous_value": 0.0,
+            "change": 6.36117,
+            "change_percent": 0
+          },
+          {
+            "label": "Loan Processing Charges",
+            "value": 2.88,
+            "previous_value": 0.0,
+            "change": 2.88,
+            "change_percent": 0
+          },
+          {
+            "label": "Sitting Fee of Directors",
+            "value": 0.25,
+            "previous_value": 0.0,
+            "change": 0.25,
+            "change_percent": 0
+          },
+          {
+            "label": "Customs Duty Payment",
+            "value": 0.64124,
+            "previous_value": 0.0,
+            "change": 0.64124,
+            "change_percent": 0
+          },
+          {
+            "label": "Transportation and Unloading Charges",
+            "value": 10.4678292,
+            "previous_value": 0.0,
+            "change": 10.4678292,
+            "change_percent": 0
+          },
+          {
+            "label": "Software Equipment",
+            "value": 2.375,
+            "previous_value": 0.0,
+            "change": 2.375,
+            "change_percent": 0
+          },
+          {
+            "label": "Miscellaneous expenses",
+            "value": 3.5723319,
+            "previous_value": 16.6191467,
+            "change": -13.046814800000002,
+            "change_percent": -78.50472130437359
+          },
+          {
+            "label": "* Fees is net of GST which is taken as input tax credit.",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          }
+        ]
+      }
+    ],
+    "total_2024": 1204.5679459,
+    "total_2023": 1472.5546029,
+    "total_change": -267.9866569999999
+  },
+  "21": {
+    "category_name": "Depreciation and amortisation expense",
+    "structure": [
+      {
+        "category": "Depreciation and amortisation expense",
+        "subcategories": [
+          {
+            "label": "Depreciation & amortisation",
+            "value": 184.79778,
+            "previous_value": 169.97991,
+            "change": 14.81787,
+            "change_percent": 8.717424312084882
+          }
+        ]
+      }
+    ],
+    "total_2024": 184.79778,
+    "total_2023": 169.97991,
+    "total_change": 14.81787
+  },
+  "22": {
+    "category_name": "Loss on Sale of Assets & Investments",
+    "structure": [
+      {
+        "category": "Loss on Sale of Assets & Investments",
+        "subcategories": [
+          {
+            "label": "Short Term Loss on Sale of Investments (Non Derivative Loss)",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Long term loss on sale of investments",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          },
+          {
+            "label": "Loss on Sale of Fixed Assets",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          }
+        ]
+      }
+    ],
+    "total_2024": 0.0,
+    "total_2023": 0.0,
+    "total_change": 0.0
+  },
+  "23": {
+    "category_name": "Finance costs",
+    "structure": [
+      {
+        "category": "Finance costs",
+        "subcategories": [
+          {
+            "label": "Bank & Finance Charges",
+            "value": 80.6476362,
+            "previous_value": 71.1867225,
+            "change": 9.460913699999992,
+            "change_percent": 13.290278534736574
+          }
+        ]
+      }
+    ],
+    "total_2024": 80.6476362,
+    "total_2023": 71.1867225,
+    "total_change": 9.460913699999992
+  },
+  "24": {
+    "category_name": "Payment to auditor",
+    "structure": [
+      {
+        "category": "Payment to auditor",
+        "subcategories": [
+          {
+            "label": "- For Audit fee",
+            "value": 35.0,
+            "previous_value": 35.0,
+            "change": 0.0,
+            "change_percent": 0.0
+          },
+          {
+            "label": "- For Tax Audit / Certification Fees",
+            "value": 0.0,
+            "previous_value": 0.0,
+            "change": 0.0,
+            "change_percent": 0
+          }
+        ]
+      }
+    ],
+    "total_2024": 35.0,
+    "total_2023": 35.0,
+    "total_change": 0.0
+  }
+}
