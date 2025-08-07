@@ -251,7 +251,7 @@ async def run_full_pipeline(
 @router.post("/bs_from_notes")
 async def bs_from_notes(file: UploadFile = File(...)):
     """
-    Accepts an Excel file, runs the full pipeline (sircode.py -> csv_json.py -> bl_llm.py),
+    Accepts an Excel file, runs the full pipeline (sircodebs.py -> csv_json.py -> bl_llm.py),
     and returns the path to the generated balance sheet Excel file.
     """
     import os
@@ -268,47 +268,47 @@ async def bs_from_notes(file: UploadFile = File(...)):
     env = os.environ.copy()
     if os.getenv("OPENROUTER_API_KEY"):
         env["OPENROUTER_API_KEY"] = os.getenv("OPENROUTER_API_KEY")
-    env["INPUT_FILE"] = "clean_financial_data.json"
+    env["INPUT_FILE"] = "clean_financial_data_bs.json"
 
-    # 2. Run sircode.py with the uploaded Excel file
+    # 2. Run sircodebs.py with the uploaded Excel file
     try:
-        print("[DEBUG] Running sircode.py...")
+        print("[DEBUG] Running sircodebs.py...")
         result1 = subprocess.run(
-            ["python", "pnlbs/sircode.py", input_excel_path],
+            ["python", "pnlbs/sircodebs.py", input_excel_path],
             capture_output=True,
             text=True,
             check=True,
             env=env,
             cwd="C:/SAHIL/NOTES"
         )
-        print("[DEBUG] sircode.py STDOUT:\n", result1.stdout)
-        print("[DEBUG] sircode.py STDERR:\n", result1.stderr)
-        print(f"[DEBUG] Files in csv_notes/: {os.listdir('csv_notes') if os.path.exists('csv_notes') else 'csv_notes does not exist'}")
+        print("[DEBUG] sircodebs.py STDOUT:\n", result1.stdout)
+        print("[DEBUG] sircodebs.py STDERR:\n", result1.stderr)
+        print(f"[DEBUG] Files in csv_notes_bs/: {os.listdir('csv_notes_bs') if os.path.exists('csv_notes_bs') else 'csv_notes_bs does not exist'}")
     except subprocess.CalledProcessError as e:
-        print("[ERROR] sircode.py failed")
+        print("[ERROR] sircodebs.py failed")
         print("STDOUT:", e.stdout)
         print("STDERR:", e.stderr)
-        raise HTTPException(status_code=500, detail=f"sircode.py failed: {e}\nSTDOUT:\n{e.stdout}\nSTDERR:\n{e.stderr}")
+        raise HTTPException(status_code=500, detail=f"sircodebs.py failed: {e}\nSTDOUT:\n{e.stdout}\nSTDERR:\n{e.stderr}")
 
-    # 3. Run csv_json.py to generate clean_financial_data.json
+    # 3. Run csv_json.py to generate clean_financial_data_bs.json
     try:
-        print("[DEBUG] Running csv_json.py...")
+        print("[DEBUG] Running csv_json_bs.py...")
         result2 = subprocess.run(
-            ["python", "pnlbs/csv_json.py"],
+            ["python", "pnlbs/csv_json_bs.py"],
             capture_output=True,
             text=True,
             check=True,
             env=env,
             cwd="C:/SAHIL/NOTES"
         )
-        print("[DEBUG] csv_json.py STDOUT:\n", result2.stdout)
-        print("[DEBUG] csv_json.py STDERR:\n", result2.stderr)
-        print(f"[DEBUG] clean_financial_data.json exists: {os.path.exists('clean_financial_data.json')}")
+        print("[DEBUG] csv_json_bs.py STDOUT:\n", result2.stdout)
+        print("[DEBUG] csv_json_bs.py STDERR:\n", result2.stderr)
+        print(f"[DEBUG] clean_financial_data_bs.json exists: {os.path.exists('clean_financial_data_bs.json')}")
     except subprocess.CalledProcessError as e:
-        print("[ERROR] csv_json.py failed")
+        print("[ERROR] csv_json_bs.py failed")
         print("STDOUT:", e.stdout)
         print("STDERR:", e.stderr)
-        raise HTTPException(status_code=500, detail=f"csv_json.py failed: {e}\nSTDOUT:\n{e.stdout}\nSTDERR:\n{e.stderr}")
+        raise HTTPException(status_code=500, detail=f"csv_json_bs.py failed: {e}\nSTDOUT:\n{e.stdout}\nSTDERR:\n{e.stderr}")
 
     # 4. Run bl_llm.py to generate the balance sheet Excel
     try:
@@ -344,3 +344,102 @@ async def bs_from_notes(file: UploadFile = File(...)):
 
     print(f"[DEBUG] Pipeline completed. Output file: {output_file}")
     return {"message": "Balance Sheet generated successfully.", "file": output_file}
+
+
+
+@router.post("/pnl_from_notes")
+async def bs_from_notes(file: UploadFile = File(...)):
+    """
+    Accepts an Excel file, runs the full pipeline (sircodebs.py -> csv_json.py -> bl_llm.py),
+    and returns the path to the generated balance sheet Excel file.
+    """
+    import os
+
+    # 1. Save uploaded Excel file
+    os.makedirs("input", exist_ok=True)
+    input_excel_path = os.path.join("input", file.filename)
+    with open(input_excel_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+    print(f"[DEBUG] Uploaded Excel saved to: {input_excel_path}")
+    print(f"[DEBUG] Files in input/: {os.listdir('input')}")
+
+    # Prepare environment for subprocesses
+    env = os.environ.copy()
+    if os.getenv("OPENROUTER_API_KEY"):
+        env["OPENROUTER_API_KEY"] = os.getenv("OPENROUTER_API_KEY")
+    env["INPUT_FILE"] = "clean_financial_data_pnl.json"
+
+    # 2. Run sircodepnl.py with the uploaded Excel file
+    try:
+        print("[DEBUG] Running sircodepnl.py...")
+        result1 = subprocess.run(
+            ["python", "pnlbs/sircodepnl.py", input_excel_path],
+            capture_output=True,
+            text=True,
+            check=True,
+            env=env,
+            cwd="C:/SAHIL/NOTES"
+        )
+        print("[DEBUG] sircodepnl.py STDOUT:\n", result1.stdout)
+        print("[DEBUG] sircodepnl.py STDERR:\n", result1.stderr)
+        print(f"[DEBUG] Files in csv_notes_pnl/: {os.listdir('csv_notes_pnl') if os.path.exists('csv_notes_pnl') else 'csv_notes_pnl does not exist'}")
+    except subprocess.CalledProcessError as e:
+        print("[ERROR] sircodepnl.py failed")
+        print("STDOUT:", e.stdout)
+        print("STDERR:", e.stderr)
+        raise HTTPException(status_code=500, detail=f"sircodepnl.py failed: {e}\nSTDOUT:\n{e.stdout}\nSTDERR:\n{e.stderr}")
+
+    # 3. Run csv_json.py to generate clean_financial_data_pnl.json
+    try:
+        print("[DEBUG] Running csv_json_pnl.py...")
+        result2 = subprocess.run(
+            ["python", "pnlbs/csv_json_pnl.py"],
+            capture_output=True,
+            text=True,
+            check=True,
+            env=env,
+            cwd="C:/SAHIL/NOTES"
+        )
+        print("[DEBUG] csv_json_pnl.py STDOUT:\n", result2.stdout)
+        print("[DEBUG] csv_json_pnl.py STDERR:\n", result2.stderr)
+        print(f"[DEBUG] clean_financial_data_pnl.json exists: {os.path.exists('clean_financial_data_pnl.json')}")
+    except subprocess.CalledProcessError as e:
+        print("[ERROR] csv_json_pnl.py failed")
+        print("STDOUT:", e.stdout)
+        print("STDERR:", e.stderr)
+        raise HTTPException(status_code=500, detail=f"csv_json_pnl.py failed: {e}\nSTDOUT:\n{e.stdout}\nSTDERR:\n{e.stderr}")
+
+    # 4. Run pnl_note.py to generate the balance sheet Excel
+    try:
+        print("[DEBUG] Running pnl_note.py...")
+        result3 = subprocess.run(
+            ["python", "pnlbs/pnl_note.py"],
+            capture_output=True,
+            text=True,
+            check=True,
+            env=env,
+            cwd="C:/SAHIL/NOTES"
+        )
+        print("[DEBUG] pnl_note.py STDOUT:\n", result3.stdout)
+        print("[DEBUG] pnl_note.py STDERR:\n", result3.stderr)
+        # Try to extract the output file path from the script output
+        output_file = None
+        for line in result3.stdout.splitlines():
+            if "Output file:" in line:
+                output_file = line.split("Output file:")[-1].strip()
+                break
+        if not output_file or not os.path.exists(output_file):
+            debug_msg = f"\nSTDOUT:\n{result3.stdout}\nSTDERR:\n{result3.stderr}"
+            print("[ERROR] Could not determine output file from pnl_note.py output.", debug_msg)
+            raise Exception(f"Could not determine output file from pnl_note.py output.{debug_msg}")
+    except subprocess.CalledProcessError as e:
+        print("[ERROR] pnl_note.py failed")
+        print("STDOUT:", e.stdout)
+        print("STDERR:", e.stderr)
+        raise HTTPException(
+            status_code=500,
+            detail=f"pnl_note.py failed: {e}\nSTDOUT:\n{e.stdout}\nSTDERR:\n{e.stderr}"
+        )
+
+    print(f"[DEBUG] Pipeline completed. Output file: {output_file}")
+    return {"message": "Profit and Loss statement generated successfully.", "file": output_file}

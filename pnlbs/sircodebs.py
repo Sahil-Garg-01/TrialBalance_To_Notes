@@ -19,7 +19,7 @@ note_9_df = clean_note("Note 9", skiprows=3)
 note_10_15_df = clean_note("Note 10-15", skiprows=3)
 
 # Ensure output folder exists
-output_folder = "csv_notes"
+output_folder = "csv_notes_bs"
 os.makedirs(output_folder, exist_ok=True)
 
 # Export each as CSV in the folder

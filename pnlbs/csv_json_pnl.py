@@ -6,7 +6,7 @@ from datetime import datetime
 from typing import Dict, List, Any, Optional
 
 class FinancialCSVMapper:
-    def __init__(self, csv_folder_path: str = "csv_notes"):
+    def __init__(self, csv_folder_path: str = "csv_notes_pnl"):
         self.csv_folder_path = csv_folder_path
         
     def clean_value(self, value: Any) -> Any:
@@ -319,7 +319,7 @@ class FinancialCSVMapper:
 
 # Usage
 if __name__ == "__main__":
-    mapper = FinancialCSVMapper("csv_notes")
-    output_file = mapper.save_to_json("clean_financial_data.json")
+    mapper = FinancialCSVMapper("csv_notes_pnl")
+    output_file = mapper.save_to_json("clean_financial_data_pnl.json")
     
     print(f"Clean financial JSON created: {output_file}")

@@ -800,7 +800,7 @@ def main():
         return
     
     # Get input file
-    input_file = os.getenv("INPUT_FILE", "clean_financial_data.json")  # Changed default to paste.txt
+    input_file = os.getenv("INPUT_FILE", "clean_financial_data_bs.json")  # Changed default to paste.txt
     
     if not os.path.exists(input_file):
         print(f" Input file not found: {input_file}")
